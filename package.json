@@ -1,0 +1,13 @@
+{
+  "name": "titan-tiktok-automation",
+  "version": "1.0.0",
+  "description": "TITAN AI - TikTok Auto Posting",
+  "main": "upload.js",
+  "scripts": {
+    "upload": "node upload.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.50.0"
+  }
+}

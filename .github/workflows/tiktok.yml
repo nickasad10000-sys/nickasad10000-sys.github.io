@@ -1,0 +1,57 @@
+name: TikTok Auto Upload
+on:
+  workflow_dispatch:
+    inputs:
+      video_url:
+        description: 'Video URL to upload'
+        required: true
+        default: ''
+      description:
+        description: 'Video description'
+        required: true
+        default: 'TITAN AI - Auto uploaded #titanai'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Playwright
+        run: |
+          npm install
+          npx playwright install chromium
+      
+      - name: Create cookies file
+        run: |
+          echo '${{ secrets.TIKTOK_COOKIES }}' > cookies.json
+      
+      - name: Download video
+        run: |
+          if [ -n "${{ inputs.video_url }}" ]; then
+            curl -L "${{ inputs.video_url }}" -o video.mp4
+            echo "✅ Video downloaded"
+          else
+            echo "⚠️ No video URL provided, using test video"
+            echo "test" > video.mp4
+          fi
+      
+      - name: Upload to TikTok
+        run: node upload.js
+        env:
+          VIDEO_DESCRIPTION: "${{ inputs.description }}"
+      
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-logs
+          path: logs/
