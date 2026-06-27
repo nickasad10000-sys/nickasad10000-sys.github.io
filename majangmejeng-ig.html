@@ -43,9 +43,8 @@ a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
 .video-link{display:inline-block;padding:4px 12px;border-radius:8px;background:linear-gradient(135deg,#E1306C,#833AB4);color:#fff;font-size:0.8em;font-weight:700;white-space:nowrap;transition:all 0.2s}
 .video-link:hover{transform:scale(1.05);box-shadow:0 2px 8px rgba(225,48,108,0.4);text-decoration:none;color:#fff}
-.loading{text-align:center;padding:40px;color:var(--muted)}
-.spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+.refresh-btn{display:inline-block;padding:8px 20px;border-radius:8px;background:linear-gradient(135deg,#00d084,#00b8d4);color:#fff;font-size:0.85em;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;margin-left:12px}
+.refresh-btn:hover{transform:scale(1.02);box-shadow:0 2px 10px rgba(0,208,132,0.4)}
 @media(max-width:600px)
 {  body{padding:10px}
   table{font-size:0.78em}
@@ -57,14 +56,7 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 <h1>📊 Analisis Mendalam Instagram</h1>
-<p class="subtitle" id="subtitle">@majangmejeng_ — Loading data terbaru...</p>
-
-<div id="loading" class="loading">
-<div class="spinner"></div>
-<p style="margin-top:12px">Mengambil data dari Instagram API...</p>
-</div>
-
-<div id="content" style="display:none">
+<p class="subtitle">@majangmejeng_ — <span id="post_count">12</span> Post Di-scrape — <span id="scrape_date">27 Jun 2026</span> <button class="refresh-btn" onclick="refreshData()">🔄 Refresh</button></p>
 
 <h2>👤 Profil</h2>
 <div class="card">
@@ -75,400 +67,396 @@ a:hover{text-decoration:underline}
 📞Info, Curhatan, Kolaborasi? Klik Kontak👇🏻</td></tr>
 <tr><td><strong>Niche</strong></td><td><span class="tag tag-red">Media</span><span class="tag tag-blue">Lumajang</span><span class="tag tag-green">Berita & Event</span></td></tr>
 <tr><td><strong>Lokasi</strong></td><td>Lumajang, Jawa Timur</td></tr>
-<tr><td><strong>Pengikut</strong></td><td class="num" id="followers">—</td></tr>
-<tr><td><strong>Mengikuti</strong></td><td class="num" id="following">—</td></tr>
-<tr><td><strong>Total Post</strong></td><td class="num" id="total_posts">—</td></tr>
-<tr><td><strong>Total Suka</strong></td><td class="num" id="total_likes">—</td></tr>
-<tr><td><strong>Total Komentar</strong></td><td class="num" id="total_comments">—</td></tr>
-<tr><td><strong>Engagement Rate</strong></td><td class="num" id="er">—</td></tr>
-<tr><td><strong>Tipe Konten</strong></td><td id="content_types">—</td></tr>
-<tr><td><strong>Rentang Data</strong></td><td id="date_range">—</td></tr>
+<tr><td><strong>Pengikut</strong></td><td class="num" id="followers">1,424</td></tr>
+<tr><td><strong>Mengikuti</strong></td><td class="num" id="following">10</td></tr>
+<tr><td><strong>Total Post</strong></td><td class="num" id="total_posts">240</td></tr>
+<tr><td><strong>Total Suka</strong></td><td class="num" id="total_likes">833</td></tr>
+<tr><td><strong>Total Komentar</strong></td><td class="num" id="total_comments">42</td></tr>
+<tr><td><strong>Engagement Rate</strong></td><td class="num" id="er">61.45%</td></tr>
+<tr><td><strong>Tipe Konten</strong></td><td id="content_types">🎬 Video: 3 | 📷 Foto: 3 | 🎠 Carousel: 6</td></tr>
+<tr><td><strong>Verified</strong></td><td>✅ Ya</td></tr>
 </table>
 </div>
 
 <h2>🏆 10 Post Teratas (Likes)</h2>
 <div class="card">
 <table>
-<tr><th>#</th><th>❤️ Likes</th><th>💬 Komentar</th><th>📅 Tanggal</th><th>Caption</th><th>Link</th></tr>
-<tbody id="top_likes"></tbody>
+<tr><th>#</th><th>❤️ Likes</th><th>💬 Komentar</th><th>📅 Tanggal</th><th>Tipe</th><th>Caption</th><th>Link</th></tr>
+<tr>
+<td><span class="rank top1">1</span></td>
+<td class="num">532</td>
+<td class="num">17</td>
+<td>2026-06-25</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Berlari bukan hanya tentang mencapai garis akhir.
+
+Di Run For Ranu, setiap langk...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaAFpXwmFjR/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank top2">2</span></td>
+<td class="num">123</td>
+<td class="num">13</td>
+<td>2026-06-25</td>
+<td>🎠 carousel</td>
+<td class="title-cell">PLANA hadir membawa lagu-lagu yang dekat dengan kehidupan sehari-hari: tentang r...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaAmfdskkvT/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank top3">3</span></td>
+<td class="num">123</td>
+<td class="num">9</td>
+<td>2026-06-26</td>
+<td>🎬 video</td>
+<td class="title-cell">Situasi antrean mengular truk ini terlihat di SPBU Petahunan, Kecamatan Sumbersu...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaDLtqgzhDr/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">4</span></td>
+<td class="num">13</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>🎬 video</td>
+<td class="title-cell">Media sosial kini menyoroti lagu dari girl group asal Indonesia dan jebolan dari...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFet3TpAjo/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">5</span></td>
+<td class="num">9</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Mari merayakan waktu liburmu, ketemu orang-orang baru, dan menikmati momen yang ...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaEwWVbmD2g/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">6</span></td>
+<td class="num">7</td>
+<td class="num">3</td>
+<td>2026-06-26</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Coba awakmu nulis kalimat teko boso lumajangan iki neng kolom komentar 
+
+#wongma...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaDCdsDGNaC/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">7</span></td>
+<td class="num">5</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Move on iku ora gampang, opo maneh sek keilingan terus 😞
+
+Kosakata Lumajangan ik...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFQbujmM3U/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">8</span></td>
+<td class="num">5</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>📷 photo</td>
+<td class="title-cell">Pemkab Lumajang terus monitoring distribusi BBM untuk mengantisipasi kelangkaan....</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaEtqM2ztMq/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">9</span></td>
+<td class="num">4</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>📷 photo</td>
+<td class="title-cell">Indonesia akan memiliki Bahan Bakar Minyak (BBM) baru yakni solar dicampur minya...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaE5LuoT0l9/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">10</span></td>
+<td class="num">4</td>
+<td class="num">0</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Mikir opo Norwegia sampe ngetokno pemain pelapis tok.
+
+Didukung oleh:
+@nfseconds...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFFC6HGPWK/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
 </table>
 </div>
 
 <h2>💬 10 Post Teratas (Komentar)</h2>
 <div class="card">
 <table>
-<tr><th>#</th><th>💬 Komentar</th><th>❤️ Likes</th><th>📅 Tanggal</th><th>Caption</th><th>Link</th></tr>
-<tbody id="top_comments"></tbody>
+<tr><th>#</th><th>💬 Komentar</th><th>❤️ Likes</th><th>📅 Tanggal</th><th>Tipe</th><th>Caption</th><th>Link</th></tr>
+<tr>
+<td><span class="rank top1">1</span></td>
+<td class="num">17</td>
+<td class="num">532</td>
+<td>2026-06-25</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Berlari bukan hanya tentang mencapai garis akhir.
+
+Di Run For Ranu, setiap langk...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaAFpXwmFjR/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank top2">2</span></td>
+<td class="num">13</td>
+<td class="num">123</td>
+<td>2026-06-25</td>
+<td>🎠 carousel</td>
+<td class="title-cell">PLANA hadir membawa lagu-lagu yang dekat dengan kehidupan sehari-hari: tentang r...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaAmfdskkvT/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank top3">3</span></td>
+<td class="num">9</td>
+<td class="num">123</td>
+<td>2026-06-26</td>
+<td>🎬 video</td>
+<td class="title-cell">Situasi antrean mengular truk ini terlihat di SPBU Petahunan, Kecamatan Sumbersu...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaDLtqgzhDr/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">4</span></td>
+<td class="num">3</td>
+<td class="num">7</td>
+<td>2026-06-26</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Coba awakmu nulis kalimat teko boso lumajangan iki neng kolom komentar 
+
+#wongma...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaDCdsDGNaC/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">5</span></td>
+<td class="num">0</td>
+<td class="num">13</td>
+<td>2026-06-27</td>
+<td>🎬 video</td>
+<td class="title-cell">Media sosial kini menyoroti lagu dari girl group asal Indonesia dan jebolan dari...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFet3TpAjo/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">6</span></td>
+<td class="num">0</td>
+<td class="num">5</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Move on iku ora gampang, opo maneh sek keilingan terus 😞
+
+Kosakata Lumajangan ik...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFQbujmM3U/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">7</span></td>
+<td class="num">0</td>
+<td class="num">4</td>
+<td>2026-06-27</td>
+<td>📷 photo</td>
+<td class="title-cell">Indonesia akan memiliki Bahan Bakar Minyak (BBM) baru yakni solar dicampur minya...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaE5LuoT0l9/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">8</span></td>
+<td class="num">0</td>
+<td class="num">4</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Mikir opo Norwegia sampe ngetokno pemain pelapis tok.
+
+Didukung oleh:
+@nfseconds...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaFFC6HGPWK/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">9</span></td>
+<td class="num">0</td>
+<td class="num">5</td>
+<td>2026-06-27</td>
+<td>📷 photo</td>
+<td class="title-cell">Pemkab Lumajang terus monitoring distribusi BBM untuk mengantisipasi kelangkaan....</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaEtqM2ztMq/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+<td><span class="rank ">10</span></td>
+<td class="num">0</td>
+<td class="num">9</td>
+<td>2026-06-27</td>
+<td>🎠 carousel</td>
+<td class="title-cell">Mari merayakan waktu liburmu, ketemu orang-orang baru, dan menikmati momen yang ...</td>
+<td class="lc"><a href="https://www.instagram.com/p/DaEwWVbmD2g/" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
 </table>
 </div>
 
 <h2>📈 Distribusi Tingkatan Performa</h2>
 <div class="card">
-<div class="grid" id="performance_grid"></div>
+<div class="grid">
+<div class="stat"><div class="value" style="color:#ffc107">{viral}</div><div class="label">Viral (100+ likes) — {(viral/max(1,len(posts_data))*100):.0f}%</div></div>
+<div class="stat"><div class="value" style="color:#00d084">{high}</div><div class="label">Tinggi (50-99) — {(high/max(1,len(posts_data))*100):.0f}%</div></div>
+<div class="stat"><div class="value" style="color:#833AB4">{good}</div><div class="label">Bagus (20-49) — {(good/max(1,len(posts_data))*100):.0f}%</div></div>
+<div class="stat"><div class="value" style="color:var(--blue)">{avg_tier}</div><div class="label">Rata-rata (5-19) — {(avg_tier/max(1,len(posts_data))*100):.0f}%</div></div>
+<div class="stat"><div class="value" style="color:var(--muted)">{low}</div><div class="label">Rendah (<5) — {(low/max(1,len(posts_data))*100):.0f}%</div></div>
+</div>
 </div>
 
-<h2>🔍 Tema Konten (dari Caption)</h2>
+<h2>🏷️ Hashtag Teratas</h2>
 <div class="card">
 <table>
-<tr><th>Tema</th><th>Jumlah</th><th>%</th><th>Visual</th></tr>
-<tbody id="theme_table"></tbody>
-</table>
-</div>
-
-<h2>📅 Performa Bulanan</h2>
-<div class="card">
-<table>
-<tr><th>Bulan</th><th>Post</th><th>Total Likes</th><th>Rata-rata</th><th>Komentar</th><th>Trend</th></tr>
-<tbody id="monthly_table"></tbody>
+<tr><th>#</th><th>Hashtag</th><th>Jumlah</th><th>Frekuensi</th></tr>
+<tr>
+<td><span class="rank top1">1</span></td>
+<td><span class="tag tag-red">#majangmejeng</span></td>
+<td class="num">4</td>
+<td><div class="bar"><div class="bar-fill" style="width:66.66666666666666%"></div></div></td>
+</tr>
+<tr>
+<td><span class="rank top2">2</span></td>
+<td><span class="tag tag-red">#wongmajang</span></td>
+<td class="num">3</td>
+<td><div class="bar"><div class="bar-fill" style="width:50.0%"></div></div></td>
+</tr>
+<tr>
+<td><span class="rank top3">3</span></td>
+<td><span class="tag tag-red">#worldcup</span></td>
+<td class="num">1</td>
+<td><div class="bar"><div class="bar-fill" style="width:16.666666666666664%"></div></div></td>
+</tr>
+<tr>
+<td><span class="rank ">4</span></td>
+<td><span class="tag tag-red">#majangm</span></td>
+<td class="num">1</td>
+<td><div class="bar"><div class="bar-fill" style="width:16.666666666666664%"></div></div></td>
+</tr>
+<tr>
+<td><span class="rank ">5</span></td>
+<td><span class="tag tag-red">#lumajang</span></td>
+<td class="num">1</td>
+<td><div class="bar"><div class="bar-fill" style="width:16.666666666666664%"></div></div></td>
+</tr>
 </table>
 </div>
 
 <h2>💡 Insight & Rekomendasi</h2>
 <div class="card">
 <h3>✅ Kekuatan</h3>
-<div class="insight" id="insight_strength">Loading...</div>
-<div class="insight">Niche spesifik sebagai media lokal Lumajang memberikan diferensiasi yang kuat</div>
-<div class="insight">Konten event dan berita lokal menjadi nilai unik yang tidak dimiliki akun besar</div>
+<div class="insight">Fokus niche media lokal Lumajang memberikan diferensiasi yang kuat — tidak banyak akun spesifik event/berita lokal</div>
+<div class="insight">Engagement rate <strong>{avg_er:.2f}%</strong> dengan rata-rata <strong>{avg_likes:.0f} likes/post</strong> — audiens loyal</div>
+<div class="insight">Verified account + business account memberikan kredibilitas profesional</div>
+<div class="insight">Kombinasi konten event, berita lokal, dan kolaborasi komunitas Lumajang</div>
 
 <h3>⚠️ Kelemahan</h3>
-<div class="warning" id="insight_weakness">Loading...</div>
-<div class="warning">Perlu meningkatkan variasi konten untuk menghindari kelelahan audiens</div>
+<div class="warning">Dari {len(posts_data)} post yang di-scrape, {low} post ({(low/max(1,len(posts_data))*100):.0f}%) mendapat <5 likes — perlu evaluasi konten</div>
+<div class="warning">Frekuensi posting perlu ditingkatkan untuk algorithmic boost</div>
 
 <h3>🎯 Rekomendasi</h3>
-<div class="recommend">1. <strong>Perbanyak konten Reels</strong> — Video pendek mendapat reach 2x lebih besar</div>
-<div class="recommend">2. <strong>Posting konsisten 1x/hari</strong> — Algoritma Instagram favoritkan akun aktif</div>
-<div class="recommend">3. <strong>Gunakan hashtag mix</strong> — Kombinasi besar (#lumajang) + niche (#eventlumajang)</div>
-<div class="recommend">4. <strong>Engage dengan komunitas</strong> — Balas komentar, tag akun lokal terkait</div>
-<div class="recommend">5. <strong>Buat konten edukasi</strong> — Tips event, info lokal yang shareable</div>
+<div class="recommend">1. <strong>Perbanyak Reels</strong> — Video pendek mendapat reach 2x lebih besar dari foto</div>
+<div class="recommend">2. <strong>Posting konsisten minimal 1x/hari</strong> — Algoritma favoritkan akun aktif</div>
+<div class="recommend">3. <strong>Gunakan hashtag mix</strong> — #lumajang + #eventlumajang + #beritalumajang</div>
+<div class="recommend">4. <strong>Engage dengan komunitas</strong> — Tag dan balas komentar akun lokal terkait</div>
+<div class="recommend">5. <strong>Buat series konten</strong> — "Event Hari Ini", "Info Lumajang" untuk habit viewer</div>
 </div>
 
 <h2>📊 Benchmark Industri</h2>
 <div class="card">
 <table>
-<tr><th>Metrik</th><th>@majangmejeng_</th><th>Rata-rata Instagram</th><th>Status</th></tr>
-<tr><td>Total Post</td><td id="bench_posts">—</td><td>—</td><td id="bench_posts_status">—</td></tr>
-<tr><td>Total Likes</td><td id="bench_likes">—</td><td>Bervariasi</td><td>✅ Baik untuk niche</td></tr>
-<tr><td>Engagement Rate</td><td id="bench_er">—</td><td>1-3%</td><td id="bench_er_status">—</td></tr>
-<tr><td>Tipe Dominan</td><td id="bench_type">—</td><td>—</td><td>—</td></tr>
+<tr><th>Metrik</th><th>@{esc(profile['username'])}</th><th>Rata-rata Instagram</th><th>Status</th></tr>
+<tr><td>Total Post</td><td class="num">{profile['total_posts']}</td><td>—</td><td>✅ Aktif</td></tr>
+<tr><td>Total Likes</td><td class="num">{total_likes:,}</td><td>Bervariasi</td><td>✅ Baik untuk niche</td></tr>
+<tr><td>Engagement Rate</td><td class="num">{avg_er:.2f}%</td><td>1-3%</td><td>{'🔵 Dalam rentang' if 1 <= avg_er <= 3 else ('🟢 Di atas rata-rata' if avg_er > 3 else '🔴 Di bawah rata-rata')}</td></tr>
+<tr><td>Tipe Dominan</td><td>{'Video' if videos >= photos else 'Foto'}</td><td>—</td><td>—</td></tr>
 </table>
 </div>
-
-</div><!-- end content -->
 
 <div class="footer">
 <p>Dibuat oleh OWL — TITAN AI | Data di-scrape via Instagram Web API</p>
 <p>Link: <a href="https://nickasad10000-sys.github.io/">nickasad10000-sys.github.io</a></p>
-<p id="last_update"></p>
+<p id="last_update">🕐 Last update: 2026-06-27 20:07:07</p>
 </div>
 
 <script>
-const USERNAME = 'majangmejeng_';
-const PROFILE_ID = '36883918534';
-const MAX_FOLLOWERS = 1421;
+// Embedded data from server scrape
+const EMBEDDED_POSTS = [{"shortcode": "DaAmfdskkvT", "is_video": false, "likes": 123, "comments": 13, "taken_at": 1782391637, "caption": "PLANA hadir membawa lagu-lagu yang dekat dengan kehidupan sehari-hari: tentang rasa, hubungan, kehilangan, perjalanan, dan cerita-cerita yang sulit diucapkan.\n\nDi Lookale Market, Plana siap bikin suas", "type": "carousel"}, {"shortcode": "DaAFpXwmFjR", "is_video": false, "likes": 532, "comments": 17, "taken_at": 1782374403, "caption": "Berlari bukan hanya tentang mencapai garis akhir.\n\nDi Run For Ranu, setiap langkah membawa makna yang lebih besar. Menyusuri jalur alami Ranu Pani, menikmati udara pegunungan, lalu berkontribusi langs", "type": "carousel"}, {"shortcode": "DaFet3TpAjo", "is_video": true, "likes": 13, "comments": 0, "taken_at": 1782555309, "caption": "Media sosial kini menyoroti lagu dari girl group asal Indonesia dan jebolan dari 88rising yakni no na yang merilis lagu bertajuk ‘Rollerblade’.\n\nLagu Rollerblade akhirnya resmi dirilis dalam versi kol", "type": "video"}, {"shortcode": "DaFQbujmM3U", "is_video": false, "likes": 5, "comments": 0, "taken_at": 1782547802, "caption": "Move on iku ora gampang, opo maneh sek keilingan terus 😞\n\nKosakata Lumajangan iki pas banget nggambarke perasaanmu seng durung iso move on. 🤭\n\nTag koncomu seng sek gamon teko mantan’e.\n\n#majangmejeng", "type": "carousel"}, {"shortcode": "DaE5LuoT0l9", "is_video": false, "likes": 4, "comments": 0, "taken_at": 1782544206, "caption": "Indonesia akan memiliki Bahan Bakar Minyak (BBM) baru yakni solar dicampur minyak kelapa sawit 50% atau biodiesel 50% (B50) pada Juli 2026 ini. Adapun Presiden RI Prabowo Subianto dijadwalkan akan mer", "type": "photo"}, {"shortcode": "DaFFC6HGPWK", "is_video": false, "likes": 4, "comments": 0, "taken_at": 1782541874, "caption": "Mikir opo Norwegia sampe ngetokno pemain pelapis tok.\n\nDidukung oleh:\n@nfsecondstore @pmstorelumajang\n\n#wongmajang #majangmejeng#worldcup", "type": "carousel"}, {"shortcode": "DaEtqM2ztMq", "is_video": false, "likes": 5, "comments": 0, "taken_at": 1782540006, "caption": "Pemkab Lumajang terus monitoring distribusi BBM untuk mengantisipasi kelangkaan.\nPelaksana Harian (Plh) Kepala Bagian Perekonomian dan Sumber Daya Alam Setda Kabupaten Lumajang, Aksanul Inam, mengatak", "type": "photo"}, {"shortcode": "DaEwWVbmD2g", "is_video": false, "likes": 9, "comments": 0, "taken_at": 1782531002, "caption": "Mari merayakan waktu liburmu, ketemu orang-orang baru, dan menikmati momen yang mungkin hanya datang sekali dalam setahun.\n\nSiapkan dirimu, ajak orang-orang terdekatmu, lalu amankan tiketmu.\n\n#majangm", "type": "carousel"}, {"shortcode": "DaEmvv9T95f", "is_video": false, "likes": 4, "comments": 0, "taken_at": 1782526062, "caption": "Pemkab Lumajang mengimbau masyarakat khususnya di wilayah Kecamatan Pasirian dan sekitarnya untuk memanfaatkan layanan SPBU terdekat sementara.\n\nImbauan ini diberikan sebab SPBU Pasirian menjalani reh", "type": "photo"}, {"shortcode": "DaDLtqgzhDr", "is_video": true, "likes": 123, "comments": 9, "taken_at": 1782478793, "caption": "Situasi antrean mengular truk ini terlihat di SPBU Petahunan, Kecamatan Sumbersuko, Kabupaten Lumajang pada Jumat malam (26/6). Puluhan truk mengantre untuk mengisi bahan bakar solar subsidi. Hal ini ", "type": "video"}, {"shortcode": "DaDCdsDGNaC", "is_video": false, "likes": 7, "comments": 3, "taken_at": 1782473402, "caption": "Coba awakmu nulis kalimat teko boso lumajangan iki neng kolom komentar \n\n#wongmajang #majangmejeng", "type": "carousel"}, {"shortcode": "DaC5Tx8JQ71", "is_video": true, "likes": 4, "comments": 0, "taken_at": 1782468609, "caption": "Neng weekend iki, awakmu kate lapoan selain rebahan lur?\n\n#majangmejeng #wongmajang #lumajang", "type": "video"}];
+const EMBEDDED_PROFILE = {"username": "majangmejeng_", "full_name": "Majang Mejeng Media", "bio": "Wadah cerito, keresahan dan nggedabruse wong Lumajang. Gak selalu serius, tapi nyata. \n📞Info, Curhatan, Kolaborasi? Klik Kontak👇🏻", "followers": 1424, "following": 10, "total_posts": 240, "verified": true, "business": true, "has_clips": true, "highlights": 3, "external_url": "https://linktr.ee/adm.majangmejeng", "bio_links": [{"title": "Kerjasama dan Kolaborasi", "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fadm.majangmejeng&e=AUDhjzHZ3oCh63xEdyT1uK4h-rWtY6TOhzsUIEzEe26olZQpm9Jyw13VrYLg2RHS6s3L7Z3tjE3hnTI43kJuUeJDl3SLrxPL", "url": "https://linktr.ee/adm.majangmejeng", "link_type": "external"}], "category": "Media", "profile_pic_hd": "https://instagram.fsub8-1.fna.fbcdn.net/v/t51.82787-19/685703204_18082653416230535_826891582451521014_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsub8-1.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2gEAVyUcq5ITnGLr0j12Xr_h8yDknKfy4aNNukRAmslMlxr1MNiZblB2jq7fXM6Vuww&_nc_ohc=3nUQv0dC1SAQ7kNvwGH37vx&_nc_gid=K-XHwT6ffL9GHx6wJWzcug&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af_gBB5MjPw-wL-9cr8GTvewyQJfxG9ukU9GXd0dVe4amA&oe=6A45A6AA&_nc_sid=8b3546", "id": "36883918534"};
+const EMBEDDED_STATS = {{
+    totalLikes: {total_likes}, totalComments: {total_comments},
+    avgLikes: {avg_likes:.0f}, avgComments: {avg_comments:.1f}, avgEr: {avg_er:.2f},
+    videos: {videos}, photos: {photos}, carousels: {carousels}
+}};
 
-// Cache key
-const CACHE_KEY = 'ig_analytics_' + USERNAME;
-const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
-
-async function fetchProfile() {
-    const url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username=' + USERNAME;
-    const resp = await fetch(url, {
-        headers: {
-            'Accept': '*/*',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-IG-App-ID': '936619743392459'
-        }
-    });
-    const data = await resp.json();
-    return data.data.user;
-}
-
-async function fetchAllPosts(user) {
-    // Fetch all posts using pagination
-    let allPosts = [];
-    let cursor = null;
-    let hasNext = true;
-    
-    while (hasNext) {
-        let url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username=' + USERNAME;
-        if (cursor) url += '&max_id=' + cursor;
+// Refresh function - fetch fresh data from Instagram API
+async function refreshData() {{
+    try {{
+        const resp = await fetch('https://www.instagram.com/api/v1/users/web_profile_info/?username=@{profile["username"]}', {{
+            headers: {{
+                'Accept': '*/*',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-IG-App-ID': '936619743392459'
+            }}
+        }});
+        const data = await resp.json();
+        const user = data.data.user;
         
-        try {
-            const resp = await fetch(url, {
-                headers: {
-                    'Accept': '*/*',
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-IG-App-ID': '936619743392459'
-                }
-            });
-            const data = await resp.json();
-            const edges = data.data.user.edge_owner_to_timeline_media.edges;
-            const pageInfo = data.data.user.edge_owner_to_timeline_media.page_info;
-            
-            for (const edge of edges) {
-                const node = edge.node;
-                // Skip duplicates
-                if (!allPosts.find(p => p.id === node.id)) {
-                    allPosts.push({
-                        id: node.id,
-                        shortcode: node.shortcode,
-                        is_video: node.is_video,
-                        type: node.is_video ? 'video' : (node.edge_sidecar_to_children?.edges?.length > 0 ? 'carousel' : 'photo'),
-                        likes: node.edge_liked_by?.count || 0,
-                        comments: node.edge_media_to_comment?.count || 0,
-                        caption: (node.edge_media_to_caption?.edges?.[0]?.node?.text || '').substring(0, 200),
-                        taken_at: node.taken_at_timestamp,
-                        thumbnail: node.thumbnail_src || node.display_url,
-                        location: node.location?.name || ''
-                    });
-                }
-            }
-            
-            cursor = pageInfo.end_cursor;
-            hasNext = pageInfo.has_next_page;
-            
-            // If we got less than 12, we're done
-            if (edges.length < 12) hasNext = false;
-            // Safety: if same cursor twice, stop
-            if (allPosts.length > 0 && !hasNext) break;
-            
-        } catch(e) {
-            console.error('Fetch error:', e);
-            break;
-        }
+        // Update profile fields
+        document.getElementById('followers').textContent = user.edge_followed_by.count.toLocaleString();
+        document.getElementById('following').textContent = user.edge_follow.count.toLocaleString();
+        document.getElementById('total_posts').textContent = user.edge_owner_to_timeline_media.count.toLocaleString();
+        document.getElementById('post_count').textContent = user.edge_owner_to_timeline_media.count;
+        document.getElementById('scrape_date').textContent = new Date().toLocaleDateString('id-ID');
+        document.getElementById('last_update').textContent = '🕐 Last update: ' + new Date().toLocaleString('id-ID');
         
-        // Rate limit
-        await new Promise(r => setTimeout(r, 500));
-    }
-    
-    return allPosts;
-}
-
-function analyzeData(user, posts) {
-    const totalLikes = posts.reduce((s, p) => s + p.likes, 0);
-    const totalComments = posts.reduce((s, p) => s + p.comments, 0);
-    const avgLikes = totalLikes / posts.length;
-    const avgComments = totalComments / posts.length;
-    const er = ((totalLikes + totalComments) / user.edge_followed_by.count * 100 / posts.length).toFixed(2);
-    
-    const videos = posts.filter(p => p.type === 'video').length;
-    const photos = posts.filter(p => p.type === 'photo').length;
-    const carousels = posts.filter(p => p.type === 'carousel').length;
-    
-    // Performance tiers
-    const viral = posts.filter(p => p.likes > 100).length;
-    const high = posts.filter(p => p.likes >= 50 && p.likes <= 100).length;
-    const good = posts.filter(p => p.likes >= 20 && p.likes < 50).length;
-    const avg = posts.filter(p => p.likes >= 5 && p.likes < 20).length;
-    const low = posts.filter(p => p.likes < 5).length;
-    
-    // Monthly performance
-    const months = {};
-    posts.forEach(p => {
-        if (p.taken_at) {
-            const d = new Date(p.taken_at * 1000);
-            const key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
-            if (!months[key]) months[key] = { count: 0, likes: 0, comments: 0 };
-            months[key].count++;
-            months[key].likes += p.likes;
-            months[key].comments += p.comments;
-        }
-    });
-    
-    // Theme analysis from captions
-    const themes = {
-        'Event/Acara': 0,
-        'Berita/Info': 0,
-        'Promo/Marketing': 0,
-        'Lumajang': 0,
-        'Tips/Edukasi': 0,
-        'Behind the Scenes': 0,
-        'Lainnya': 0
-    };
-    
-    const hashtagPattern = /#(\w+)/g;
-    const allHashtags = {};
-    
-    posts.forEach(p => {
-        const cap = p.caption.toLowerCase();
-        if (cap.includes('event') || cap.includes('acara') || cap.includes('festival')) themes['Event/Acara']++;
-        if (cap.includes('berita') || cap.includes('info') || cap.includes('pengumuman')) themes['Berita/Info']++;
-        if (cap.includes('promo') || cap.includes('diskon') || cap.includes('beli') || cap.includes('marketing')) themes['Promo/Marketing']++;
-        if (cap.includes('lumajang')) themes['Lumajang']++;
-        if (cap.includes('tips') || cap.includes('edukasi') || cap.includes('cara')) themes['Tips/Edukasi']++;
-        if (cap.includes('behind') || cap.includes('bts') || cap.includes('proses')) themes['Behind the Scenes']++;
-        themes['Lainnya']++;
+        // Update posts table
+        const edges = user.edge_owner_to_timeline_media.edges;
+        const posts = edges.map(e => {{
+            const n = e.node;
+            const cap = n.edge_media_to_caption?.edges?.[0]?.node?.text || '';
+            return {{
+                shortcode: n.shortcode,
+                is_video: n.is_video,
+                type: n.is_video ? 'video' : (n.edge_sidecar_to_children?.edges?.length > 0 ? 'carousel' : 'photo'),
+                likes: n.edge_liked_by?.count || 0,
+                comments: n.edge_media_to_comment?.count || 0,
+                taken_at: n.taken_at_timestamp,
+                caption: cap.substring(0, 200)
+            }};
+        }});
         
-        // Extract hashtags
-        let match;
-        while ((match = hashtagPattern.exec(p.caption)) !== null) {
-            const tag = '#' + match[1].toLowerCase();
-            allHashtags[tag] = (allHashtags[tag] || 0) + 1;
-        }
-    });
-    
-    // Top hashtags
-    const topHashtags = Object.entries(allHashtags)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 10);
-    
-    // Date range
-    const dates = posts.filter(p => p.taken_at).map(p => p.taken_at);
-    const dateRange = dates.length > 0 ? 
-        new Date(Math.min(...dates)*1000).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) + ' — ' +
-        new Date(Math.max(...dates)*1000).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : 'N/A';
-    
-    return {
-        total: posts.length, totalLikes, totalComments, avgLikes, avgComments, er,
-        videos, photos, carousels,
-        viral, high, good, avg, low,
-        months, themes, topHashtags, dateRange
-    };
-}
-
-function renderProfile(user, analysis) {
-    document.getElementById('followers').textContent = user.edge_followed_by.count.toLocaleString();
-    document.getElementById('following').textContent = user.edge_follow.count.toLocaleString();
-    document.getElementById('total_posts').textContent = user.edge_owner_to_timeline_media.count.toLocaleString();
-    document.getElementById('total_likes').textContent = analysis.totalLikes.toLocaleString();
-    document.getElementById('total_comments').textContent = analysis.totalComments.toLocaleString();
-    document.getElementById('er').textContent = analysis.er + '%';
-    document.getElementById('content_types').textContent = 
-        '🎬 Video: ' + analysis.videos + ' | 📷 Foto: ' + analysis.photos + ' | 🎠 Carousel: ' + analysis.carousels;
-    document.getElementById('date_range').textContent = analysis.dateRange;
-    
-    // Benchmark
-    document.getElementById('bench_posts').textContent = analysis.total;
-    document.getElementById('bench_likes').textContent = analysis.totalLikes.toLocaleString();
-    document.getElementById('bench_er').textContent = analysis.er + '%';
-    document.getElementById('bench_er_status').textContent = 
-        analysis.er >= 1 && analysis.er <= 3 ? '🔵 Dalam rentang' : (analysis.er > 3 ? '🟢 Di atas rata-rata' : '🔴 Di bawah rata-rata');
-    document.getElementById('bench_type').textContent = analysis.videos >= analysis.photos ? 'Video' : 'Foto';
-}
-
-function renderTopLikes(posts) {
-    const sorted = [...posts].sort((a,b) => b.likes - a.likes).slice(0, 10);
-    const tbody = document.getElementById('top_likes');
-    tbody.innerHTML = sorted.map((p, i) => {
-        const rank = i < 3 ? 'top'+(i+1) : '';
-        const date = p.taken_at ? new Date(p.taken_at*1000).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : '';
-        return `<tr>
-<td><span class="rank ${rank}">${i+1}</span></td>
-<td class="num">${p.likes.toLocaleString()}</td>
-<td class="num">${p.comments.toLocaleString()}</td>
-<td>${date}</td>
-<td class="title-cell">${p.caption.substring(0,80)}</td>
-<td class="lc"><a href="https://www.instagram.com/p/${p.shortcode}/" target="_blank" class="video-link">🎬 Buka</a></td>
+        // Rebuild top likes table
+        const sorted = [...posts].sort((a,b) => b.likes - a.likes).slice(0, 10);
+        const tbody = document.querySelector('#top_likes') || document.querySelectorAll('table')[1].querySelector('tbody');
+        if (tbody) {{
+            tbody.innerHTML = sorted.map((p, i) => {{
+                const rank = i < 3 ? 'top'+(i+1) : '';
+                const date = p.taken_at ? new Date(p.taken_at*1000).toISOString().split('T')[0] : '';
+                const icon = p.type === 'video' ? '🎬' : (p.type === 'carousel' ? '🎠' : '📷');
+                return `<tr>
+<td><span class="rank ${{rank}}">${{i+1}}</span></td>
+<td class="num">${{p.likes.toLocaleString()}}</td>
+<td class="num">${{p.comments.toLocaleString()}}</td>
+<td>${{date}}</td>
+<td>${{icon}} ${{p.type}}</td>
+<td class="title-cell">${{p.caption.substring(0,80).replace(/[<>&]/g,c=>{{'<' :'&lt;','>':'&gt;','&':'&amp;'}}[c])}}</td>
+<td class="lc"><a href="https://www.instagram.com/p/${{p.shortcode}}/" target="_blank" class="video-link">🎬 Buka</a></td>
 </tr>`;
-    }).join('');
-}
-
-function renderTopComments(posts) {
-    const sorted = [...posts].sort((a,b) => b.comments - a.comments).slice(0, 10);
-    const tbody = document.getElementById('top_comments');
-    tbody.innerHTML = sorted.map((p, i) => {
-        const rank = i < 3 ? 'top'+(i+1) : '';
-        const date = p.taken_at ? new Date(p.taken_at*1000).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : '';
-        return `<tr>
-<td><span class="rank ${rank}">${i+1}</span></td>
-<td class="num">${p.comments.toLocaleString()}</td>
-<td class="num">${p.likes.toLocaleString()}</td>
-<td>${date}</td>
-<td class="title-cell">${p.caption.substring(0,80)}</td>
-<td class="lc"><a href="https://www.instagram.com/p/${p.shortcode}/" target="_blank" class="video-link">🎬 Buka</a></td>
-</tr>`;
-    }).join('');
-}
-
-function renderPerformance(analysis) {
-    const grid = document.getElementById('performance_grid');
-    const items = [
-        { value: analysis.viral, label: 'Viral (100+ likes)', color: '#ffc107' },
-        { value: analysis.high, label: 'Tinggi (50-99)', color: '#00d084' },
-        { value: analysis.good, label: 'Bagus (20-49)', color: '#25f4ee' },
-        { value: analysis.avg, label: 'Rata-rata (5-19)', color: '#833AB4' },
-        { value: analysis.low, label: 'Rendah (<5)', color: '#8888a0' }
-    ];
-    grid.innerHTML = items.map(i => `<div class="stat"><div class="value" style="color:${i.color}">${i.value}</div><div class="label">${i.label} — ${(i.value/analysis.total*100).toFixed(0)}%</div></div>`).join('');
-}
-
-function renderThemes(analysis) {
-    const tbody = document.getElementById('theme_table');
-    const sorted = Object.entries(analysis.themes).sort((a,b) => b[1]-a[1]);
-    tbody.innerHTML = sorted.map(([theme, count]) => {
-        const pct = (count/analysis.total*100).toFixed(0);
-        return `<tr><td>${theme}</td><td class="num">${count}</td><td class="num">${pct}%</td>
-<td><div class="bar"><div class="bar-fill" style="width:${Math.min(100,pct*2)}%"></div></div></td></tr>`;
-    }).join('');
-}
-
-function renderMonthly(analysis) {
-    const tbody = document.getElementById('monthly_table');
-    const months = Object.entries(analysis.months).sort((a,b) => a[0].localeCompare(b[0]));
-    const maxLikes = Math.max(...months.map(m => m[1].likes));
-    tbody.innerHTML = months.map(([month, data]) => {
-        const avg = Math.round(data.likes / data.count);
-        const trend = (data.likes / maxLikes * 100).toFixed(0);
-        return `<tr><td>${month}</td><td class="num">${data.count}</td>
-<td class="num">${data.likes.toLocaleString()}</td><td class="num">${avg}</td>
-<td class="num">${data.comments}</td>
-<td><div class="bar"><div class="bar-fill" style="width:${trend}%"></div></div></td></tr>`;
-    }).join('');
-}
-
-function renderInsights(analysis) {
-    document.getElementById('insight_strength').innerHTML = 
-        `Engagement rate <strong>${analysis.er}%</strong> dengan rata-rata <strong>${Math.round(analysis.avgLikes)} likes/post</strong> — audiens loyal terhadap konten lokal`;
-    document.getElementById('insight_weakness').innerHTML = 
-        `Rata-rata likes <strong>${Math.round(analysis.avgLikes)}</strong> perlu ditingkatkan. ${analysis.low} post (${(analysis.low/analysis.total*100).toFixed(0)}%) mendapat <5 likes.`;
-}
-
-async function main() {
-    try {
-        // Check cache first
-        const cached = localStorage.getItem(CACHE_KEY);
-        if (cached) {
-            const { data, timestamp } = JSON.parse(cached);
-            if (Date.now() - timestamp < CACHE_DURATION) {
-                console.log('Using cached data');
-                renderAll(data.user, data.posts, data.analysis);
-                return;
-            }
-        }
+            }});
+join('');
+        }}
         
-        // Fetch fresh data
-        const user = await fetchProfile();
-        const posts = await fetchAllPosts(user);
-        const analysis = analyzeData(user, posts);
+        // Update totals
+        const totalLikes = posts.reduce((s,p) => s+p.likes, 0);
+        const totalComments = posts.reduce((s,p) => s+p.comments, 0);
+        const avgLikes = Math.round(totalLikes / posts.length);
+        const er = ((totalLikes + totalComments) / user.edge_followed_by.count * 100 / posts.length).toFixed(2);
+        document.getElementById('total_likes').textContent = totalLikes.toLocaleString();
+        document.getElementById('total_comments').textContent = totalComments.toLocaleString();
+        document.getElementById('er').textContent = er + '%';
         
-        // Cache the result
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: { user, posts, analysis }, timestamp: Date.now() }));
-        
-        renderAll(user, posts, analysis);
-    } catch(e) {
-        console.error('Error:', e);
-        document.getElementById('loading').innerHTML = '<p style="color:#ffc107">⚠️ Error loading data. Coba refresh halaman.</p>';
-    }
-}
-
-function renderAll(user, posts, analysis) {
-    document.getElementById('subtitle').textContent = '@' + user.username + ' — ' + posts.length + ' Post — ' + new Date().toLocaleDateString('id-ID');
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    
-    renderProfile(user, analysis);
-    renderTopLikes(posts);
-    renderTopComments(posts);
-    renderPerformance(analysis);
-    renderThemes(analysis);
-    renderMonthly(analysis);
-    renderInsights(analysis);
-    
-    document.getElementById('last_update').textContent = '🕐 Last update: ' + new Date().toLocaleString('id-ID');
-}
-
-// Run
-main();
+        alert('✅ Data berhasil diupdate! ' + posts.length + ' post terbaru.');
+    }} catch(e) {{
+        alert('❌ Error: ' + e.message + '. Coba lagi nanti.');
+    }}
+}}
 </script>
 </body>
 </html>
