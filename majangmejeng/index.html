@@ -51,9 +51,9 @@ a:hover{text-decoration:underline}
   .grid{grid-template-columns:repeat(2,1fr)}
 }
 
-.refresh-btn{display:inline-block;padding:6px 16px;border-radius:8px;background:linear-gradient(135deg,#00d084,#00b8d4);color:#fff;font-size:0.8em;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;margin-left:12px}
-.refresh-btn:hover{transform:scale(1.02);box-shadow:0 2px 10px rgba(0,208,132,0.4)}
-.refresh-btn:disabled{opacity:0.5;cursor:not-allowed}
+.update-btn{display:inline-block;padding:6px 16px;border-radius:8px;background:linear-gradient(135deg,#00d084,#00b8d4);color:#fff;font-size:0.8em;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;margin-left:12px}
+.update-btn:hover{transform:scale(1.02);box-shadow:0 2px 10px rgba(0,208,132,0.4)}
+.update-btn:disabled{opacity:0.5;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -201,8 +201,18 @@ a:hover{text-decoration:underline}
 </ul>
 </div>
 
+
+<h2>📅 Performa Bulanan</h2>
+<div class="card">
+<table>
+<tr><th>Bulan</th><th>Post</th><th>Total Likes</th><th>Rata-rata</th><th>Komentar</th><th>Trend</th></tr>
+<tbody id="monthly_table">
+<tr><td colspan="6" style="text-align:center;color:var(--muted)">Loading...</td></tr>
+</tbody>
+</table>
+</div>
 <div class="footer">
-<p>Dibuat oleh MADA | Data di-scrape via yt-dlp | 339 video dianalisis</p>
+<p>Dibuat oleh MADA | Data di-scrape via yt-dlp | 339 video</p>
 <p>Link: <a href="https://nickasad10000.github.io/">nickasad10000.github.io</a></p>
 </div>
 
@@ -210,8 +220,8 @@ a:hover{text-decoration:underline}
 const USERNAME = "majangmejeng_";
 
 <script>
-async function refreshData() {
-    const btn = document.querySelector('.refresh-btn');
+async function updateData() {
+    const btn = document.querySelector('.update-btn');
     if (btn) { btn.disabled = true; btn.textContent = '⏳ Loading...'; }
     
     try {
@@ -245,9 +255,35 @@ async function refreshData() {
     } catch(e) {
         alert('⚠️ Error: ' + e.message);
     } finally {
-        if (btn) { btn.disabled = false; btn.textContent = '🔄 Refresh'; }
+        if (btn) { btn.disabled = false; btn.textContent = '🔄 Update'; }
     }
 }
+</script>
+<script>
+(function() {
+    const posts = [];
+    const months = {};
+    posts.forEach(p => {
+        if (p.taken_at) {
+            const d = new Date(p.taken_at * 1000);
+            const key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
+            if (!months[key]) months[key] = {count: 0, likes: 0, comments: 0};
+            months[key].count++;
+            months[key].likes += p.likes;
+            months[key].comments += p.comments;
+        }
+    });
+    const tbody = document.getElementById('monthly_table');
+    if (!tbody) return;
+    const keys = Object.keys(months).sort();
+    const maxLikes = Math.max(...keys.map(k => months[k].likes), 1);
+    tbody.innerHTML = keys.map(key => {
+        const d = months[key];
+        const avg = Math.round(d.likes / Math.max(1, d.count));
+        const trend = (d.likes / maxLikes * 100).toFixed(0);
+        return '<tr><td>'+key+'</td><td class="num">'+d.count+'</td><td class="num">'+d.likes.toLocaleString()+'</td><td class="num">'+avg+'</td><td class="num">'+d.comments+'</td><td><div class="bar"><div class="bar-fill" style="width:'+trend+'%"></div></div></td></tr>';
+    });
+})();
 </script>
 </body>
 </html>
