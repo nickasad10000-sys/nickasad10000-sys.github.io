@@ -50,6 +50,10 @@ a:hover{text-decoration:underline}
   .title-cell{max-width:160px}
   .grid{grid-template-columns:repeat(2,1fr)}
 }
+
+.refresh-btn{display:inline-block;padding:6px 16px;border-radius:8px;background:linear-gradient(135deg,#00d084,#00b8d4);color:#fff;font-size:0.8em;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;margin-left:12px}
+.refresh-btn:hover{transform:scale(1.02);box-shadow:0 2px 10px rgba(0,208,132,0.4)}
+.refresh-btn:disabled{opacity:0.5;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -476,5 +480,50 @@ a:hover{text-decoration:underline}
 <p>Dibuat oleh MADA | Data di-scrape via yt-dlp | 397 video dianalisis</p>
 <p>Link: <a href="https://nickasad160392-cmyk.github.io/">nickasad160392-cmyk.github.io</a></p>
 </div>
+
+<script>
+const USERNAME = "syahfalahproperti";
+
+<script>
+async function refreshData() {
+    const btn = document.querySelector('.refresh-btn');
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Loading...'; }
+    
+    try {
+        const resp = await fetch('https://www.instagram.com/api/v1/users/web_profile_info/?username=' + USERNAME, {
+            headers: {
+                'Accept': '*/*',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-IG-App-ID': '936619743392459'
+            }
+        });
+        
+        if (!resp.ok) throw new Error('API error: ' + resp.status);
+        
+        const data = await resp.json();
+        const user = data.data.user;
+        
+        // Update profile stats if elements exist
+        const followersEl = document.getElementById('followers');
+        const followingEl = document.getElementById('following');
+        const totalPostsEl = document.getElementById('total_posts');
+        const totalLikesEl = document.getElementById('total_likes');
+        const totalCommentsEl = document.getElementById('total_comments');
+        const erEl = document.getElementById('er');
+        
+        if (followersEl) followersEl.textContent = user.edge_followed_by.count.toLocaleString();
+        if (followingEl) followingEl.textContent = user.edge_follow.count.toLocaleString();
+        if (totalPostsEl) totalPostsEl.textContent = user.edge_owner_to_timeline_media.count.toLocaleString();
+        
+        alert('✅ Profile data updated! ' + user.edge_followed_by.count.toLocaleString() + ' followers');
+        
+    } catch(e) {
+        alert('⚠️ Error: ' + e.message);
+    } finally {
+        if (btn) { btn.disabled = false; btn.textContent = '🔄 Refresh'; }
+    }
+}
+</script>
+</script>
 </body>
 </html>
