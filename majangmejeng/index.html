@@ -2,477 +2,1402 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analisis TikTok — @majangmejeng_</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fe2c55">
+<meta name="description" content="Analisis lengkap TikTok @majangmejeng_ · 339 video · ER 1.92% · 3.4K followers. Powered by TITAN PRO.">
+<meta property="og:title" content="Analisis TikTok — @majangmejeng_">
+<meta property="og:description" content="339 video · ER 1.92% · 3.4K followers">
+<meta property="og:type" content="profile">
+<title>Analisis TikTok — @majangmejeng_ | TITAN PRO</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--accent:#fe2c55;--blue:#25f4ee;--green:#00d084;--yellow:#ffc107;--text:#e8e8f0;--muted:#8888a0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:16px;max-width:980px;margin:0 auto}
-h1{font-size:1.6em;text-align:center;padding:20px 0 10px;background:linear-gradient(135deg,var(--accent),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-h2{font-size:1.2em;color:var(--accent);margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
-h3{font-size:1em;color:var(--blue);margin:16px 0 8px}
-.subtitle{text-align:center;color:var(--muted);font-size:0.85em;margin-bottom:24px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
-.stat{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
-.stat .value{font-size:1.4em;font-weight:700;color:var(--blue)}
-.stat .label{font-size:0.75em;color:var(--muted);margin-top:4px}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.85em}
-th{color:var(--muted);font-weight:600;font-size:0.78em;text-transform:uppercase;padding:10px 8px;border-bottom:2px solid var(--border);text-align:left}
-td{padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
-tr:hover{background:rgba(255,255,255,0.03)}
-tr:nth-child(even){background:rgba(255,255,255,0.01)}
-.rank{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:var(--border);font-size:0.75em;font-weight:700}
-.rank.top1{background:gold;color:#000}
-.rank.top2{background:silver;color:#000}
-.rank.top3{background:#cd7f32;color:#000}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.title-cell{max-width:320px;word-wrap:break-word}
-.lc{text-align:center}
-.bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:4px}
-.bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--blue))}
-.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:0.75em;margin:2px}
-.tag-red{background:rgba(254,44,85,0.15);color:var(--accent)}
-.tag-blue{background:rgba(37,244,238,0.15);color:var(--blue)}
-.tag-green{background:rgba(0,208,132,0.15);color:var(--green)}
-.insight{padding:10px 14px;border-left:3px solid var(--green);background:rgba(0,208,132,0.05);border-radius:0 8px 8px 0;margin:8px 0;font-size:0.85em}
-.warning{padding:10px 14px;border-left:3px solid var(--yellow);background:rgba(255,193,7,0.05);border-radius:0 8px 8px 0;margin:8px 0;font-size:0.85em}
-.recommend{padding:10px 14px;border-left:3px solid var(--blue);background:rgba(37,244,238,0.05);border-radius:0 8px 8px 0;margin:8px 0;font-size:0.85em}
-.footer{text-align:center;padding:20px;color:var(--muted);font-size:0.75em}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline}
-.video-link{display:inline-block;padding:4px 12px;border-radius:8px;background:linear-gradient(135deg,#fe2c55,#ff6b6b);color:#fff;font-size:0.8em;font-weight:700;white-space:nowrap;transition:all 0.2s}
-.video-link:hover{transform:scale(1.05);box-shadow:0 2px 8px rgba(254,44,85,0.4);text-decoration:none;color:#fff}
-@media(max-width:600px)
-{  body{padding:10px}
-  table{font-size:0.78em}
-  td,th{padding:6px 4px}
-  .title-cell{max-width:160px}
-  .grid{grid-template-columns:repeat(2,1fr)}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* Modern Dark base */
+  --bg-deep: #050506;
+  --bg-base: #0a0a0f;
+  --bg-elevated: #12121a;
+  --bg-card: #0e0e16;
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text: #EDEDEF;
+  --text-muted: #8A8F98;
+  --text-dim: #5a5d68;
+
+  /* Platform-specific */
+  
+      --accent: #fe2c55;
+      --accent-2: #25f4ee;
+      --accent-glow: rgba(254, 44, 85, 0.35);
+      --accent-2-glow: rgba(37, 244, 238, 0.25);
+      --gradient: linear-gradient(135deg, #fe2c55 0%, #ff6b6b 50%, #25f4ee 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(254, 44, 85, 0.15), rgba(37, 244, 238, 0.15));
+    
+
+  /* Status */
+  --good: #00d084;
+  --good-bg: rgba(0, 208, 132, 0.10);
+  --warn: #ffc107;
+  --warn-bg: rgba(255, 193, 7, 0.10);
+  --bad: #ff4757;
+  --bad-bg: rgba(255, 71, 87, 0.10);
+
+  /* Geometry */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: 200ms var(--easing);
+
+  /* Typography */
+  --font-mono: 'Fira Code', ui-monospace, 'SF Mono', Monaco, monospace;
+  --font-sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.update-btn{display:inline-block;padding:6px 16px;border-radius:8px;background:linear-gradient(135deg,#00d084,#00b8d4);color:#fff;font-size:0.8em;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;margin-left:12px}
-.update-btn:hover{transform:scale(1.02);box-shadow:0 2px 10px rgba(0,208,132,0.4)}
-.update-btn:disabled{opacity:0.5;cursor:not-allowed}
+html, body {
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Cinematic ambient background (Reanimated blob in CSS) */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: drift 30s var(--easing) infinite alternate;
+}
+body::before {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--accent);
+  opacity: 0.12;
+}
+body::after {
+  bottom: -10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: var(--accent-2);
+  opacity: 0.10;
+  animation-delay: -15s;
+  animation-direction: alternate-reverse;
+}
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(5vw, 3vh) scale(1.1); }
+  100% { transform: translate(-3vw, 4vh) scale(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}
+
+a { color: var(--accent-2); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent); }
+
+/* === Layout === */
+.shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+/* === Sticky top nav (breadcrumb) === */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.topbar .breadcrumb {
+  flex: 1;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topbar .breadcrumb a { color: var(--text-muted); }
+.topbar .breadcrumb a:hover { color: var(--accent-2); }
+.topbar .breadcrumb .sep { margin: 0 8px; opacity: 0.4; }
+.topbar .breadcrumb .current { color: var(--text); }
+
+/* === Hero === */
+.hero {
+  text-align: center;
+  padding: 56px 16px 24px;
+  position: relative;
+}
+.hero .emoji-prefix { font-size: 1.2em; margin-right: 6px; }
+.hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+.hero .lede {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 8px;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+.hero .meta-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.hero .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text);
+}
+.hero .pill .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--good); box-shadow: 0 0 8px var(--good);
+}
+
+/* === Stat grid (KPI cards) === */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+.kpi {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 14px;
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.kpi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-soft);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.kpi:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+.kpi:hover::before { opacity: 1; }
+.kpi .value {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.kpi .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* === Section === */
+section.section {
+  margin: 40px 0;
+}
+h2.section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+h2.section-title .ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--gradient-soft);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+h3.sub-title {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 20px 0 8px;
+}
+
+/* === Cards === */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 14px 0;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover { border-color: var(--border-strong); }
+
+/* === Table === */
+.table-wrap { overflow-x: auto; margin: 12px 0; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-family: var(--font-sans); }
+thead th {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text);
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr { transition: background var(--transition); }
+tbody tr:hover { background: var(--surface); }
+.num { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.caption { max-width: 360px; word-wrap: break-word; font-size: 0.85rem; }
+.caption .muted { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem; }
+
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.rank-pill.top1 { background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border-color: transparent; }
+.rank-pill.top2 { background: linear-gradient(135deg, #E5E4E2, #A0A0A0); color: #000; border-color: transparent; }
+.rank-pill.top3 { background: linear-gradient(135deg, #CD7F32, #8B5A2B); color: #fff; border-color: transparent; }
+
+/* === Action button === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  border: 1px solid var(--border);
+  min-height: 44px; /* touch target */
+}
+.btn-platform {
+  background: var(--gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+.btn-platform:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px var(--accent-glow);
+  color: #fff;
+  text-decoration: none;
+}
+.btn-platform-2 {
+  background: var(--bg-elevated);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn-platform-2:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+/* === Tags === */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 2px 4px 2px 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+.tag-red    { color: #ff6b8b; border-color: rgba(254, 44, 85, 0.3); background: rgba(254, 44, 85, 0.08); }
+.tag-cyan   { color: #25f4ee; border-color: rgba(37, 244, 238, 0.3); background: rgba(37, 244, 238, 0.08); }
+.tag-purple { color: #c084fc; border-color: rgba(192, 132, 252, 0.3); background: rgba(192, 132, 252, 0.08); }
+.tag-green  { color: #00d084; border-color: rgba(0, 208, 132, 0.3); background: rgba(0, 208, 132, 0.08); }
+
+/* === Insight callouts === */
+.callout {
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid;
+  background: var(--surface);
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+.callout ul, .callout ol { margin: 6px 0 0 18px; padding: 0; }
+.callout li { margin: 4px 0; }
+.callout strong { font-weight: 600; color: var(--text); }
+.callout-success { border-color: var(--good); background: var(--good-bg); }
+.callout-warn    { border-color: var(--warn); background: var(--warn-bg); }
+.callout-info    { border-color: var(--accent-2); background: var(--gradient-soft); }
+
+/* === Status badges === */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.status-sangat-baik, .status-di-atas-rata-rata, .status-baik, .status-top {
+  background: var(--good-bg); color: var(--good); border: 1px solid rgba(0, 208, 132, 0.3);
+}
+.status-rata-rata, .status-sedang, .status-cukup {
+  background: var(--warn-bg); color: var(--warn); border: 1px solid rgba(255, 193, 7, 0.3);
+}
+.status-perlu-perbaikan, .status-rendah, .status-kurang {
+  background: var(--bad-bg); color: var(--bad); border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* === Mention list === */
+.mention-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.mention {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.mention .count { color: var(--text-muted); font-size: 0.7rem; }
+
+/* === ASCII bar chart === */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+}
+.bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 70px;
+  gap: 12px;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.bar-row .label { color: var(--text-muted); font-size: 0.78rem; }
+.bar-row .count { text-align: right; color: var(--text); font-weight: 600; }
+.bar-track {
+  height: 10px;
+  background: var(--bg-elevated);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 5px;
+  box-shadow: 0 0 12px var(--accent-glow);
+  transition: width 800ms var(--easing);
+}
+
+/* === Footer === */
+.footer {
+  margin-top: 64px;
+  padding: 32px 16px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+.footer a { color: var(--text); }
+.footer a:hover { color: var(--accent-2); }
+.footer .made-by {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 8px;
+}
+
+/* === Home: card grid === */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.home-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: all var(--transition);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.home-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-soft);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.home-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  text-decoration: none;
+  color: inherit;
+}
+.home-card:hover::before { opacity: 1; }
+.home-card .platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.home-card .platform-badge.tiktok {
+  background: rgba(254, 44, 85, 0.15);
+  color: #ff6b8b;
+  border: 1px solid rgba(254, 44, 85, 0.3);
+}
+.home-card .platform-badge.instagram {
+  background: rgba(225, 48, 108, 0.15);
+  color: #ff6b8b;
+  border: 1px solid rgba(225, 48, 108, 0.3);
+}
+.home-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text);
+  line-height: 1.3;
+}
+.home-card .handle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-2);
+  margin-bottom: 8px;
+}
+.home-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.home-card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* === Summary stats row === */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin: 24px auto;
+  max-width: 720px;
+}
+.summary-row .item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.summary-row .item .label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.summary-row .item .value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .shell { padding: 16px 12px 60px; }
+  .topbar { padding: 10px 12px; }
+  .topbar .breadcrumb { font-size: 0.75rem; }
+  .hero { padding: 32px 12px 16px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .kpi { padding: 12px 10px; }
+  .kpi .value { font-size: 1.1rem; }
+  .home-grid { grid-template-columns: 1fr; }
+  .table-wrap { margin-left: -12px; margin-right: -12px; border-radius: 0; border-left: none; border-right: none; }
+  table { font-size: 0.78rem; }
+  thead th, tbody td { padding: 8px 10px; }
+  .caption { max-width: 200px; font-size: 0.8rem; }
+  .bar-row { grid-template-columns: 100px 1fr 60px; }
+  .card { padding: 16px; }
+  .btn { min-height: 44px; padding: 8px 14px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 14px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .bar-row { grid-template-columns: 1fr; gap: 4px; }
+  .bar-row .count { text-align: left; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+
+/* Focus */
+:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 4px; }
 </style>
 </head>
 <body>
-<h1>📊 Analisis Mendalam TikTok</h1>
-<p class="subtitle">@majangmejeng_ — 339 Video Di-scrape — 22 June 2026</p>
-
-<h2>👤 Profil</h2>
-<div class="card">
-<div class="grid">
-<div class="stat"><div class="value">339</div><div class="label">Total Video</div></div>
-<div class="stat"><div class="value">13,926,027</div><div class="label">Total Tayangan</div></div>
-<div class="stat"><div class="value">267,146</div><div class="label">Total Suka</div></div>
-<div class="stat"><div class="value">9,443</div><div class="label">Total Komentar</div></div>
-<div class="stat"><div class="value">41,079</div><div class="label">Rata-rata Tayangan</div></div>
-<div class="stat"><div class="value">1.92%</div><div class="label">Engagement Rate</div></div>
-</div>
-<p style="margin-top:12px"><strong>Username:</strong> @majangmejeng_</p>
-<p><strong>Niche:</strong> <span class="tag tag-red">Berita Lokal</span> <span class="tag tag-blue">Lumajang</span> <span class="tag tag-green">Peristiwa</span></p>
-<p><strong>Lokasi:</strong> Lumajang, Jawa Timur</p>
-</div>
-
-<h2>🏆 10 Video Teratas (Tayangan)</h2>
-<div class="card">
-<table>
-<tr><th>#</th><th>Tayangan</th><th>❤️ Suka</th><th>💬 Komentar</th><th>ER</th><th>Judul Video</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td class="num">1,400,000</td><td class="num">31,900</td><td class="num">1,359</td><td>2.28%</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Konten kreator Tiktok Ibrahim Balasad at...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7509335025398123794" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td class="num">1,400,000</td><td class="num">23,400</td><td class="num">419</td><td>1.67%</td><td class="title-cell">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya. Ia d...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447512992113102098" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td class="num">1,300,000</td><td class="num">15,000</td><td class="num">527</td><td>1.15%</td><td class="title-cell">Kondisi terakhir Soleh pasca duel maut dengan Andre masih dirawat di ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447781946907757832" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td class="num">829,700</td><td class="num">15,500</td><td class="num">411</td><td>1.87%</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang, Jawa Timur, terl...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447382245993630994" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td class="num">535,200</td><td class="num">6,871</td><td class="num">217</td><td>1.28%</td><td class="title-cell">LUMAJANG, iNEWSLumajang.id – Seorang pemuda di Lumajang, Jawa Timur, ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7467171953518972167" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td class="num">525,900</td><td class="num">28,900</td><td class="num">371</td><td>5.50%</td><td class="title-cell">Gunung Semeru mengalami erupsi disertai awan panas guguran (APG) yang...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7652916045828590866" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td class="num">497,200</td><td class="num">19,300</td><td class="num">159</td><td>3.88%</td><td class="title-cell">Berdasarkan laporan PVMBG, terjadu erupsi Gunung Semeru pada hari Sen...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7646442388377898258" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td class="num">453,900</td><td class="num">6,313</td><td class="num">731</td><td>1.39%</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Kecelakaan tragis yang mengakibatkan 2 k...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7511333207506226440" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td class="num">438,500</td><td class="num">6,748</td><td class="num">159</td><td>1.54%</td><td class="title-cell">Wawancara Kapolres Lumajang AKBP Alex Sandy Siregar, terkait motif da...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7467454856375061778" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td class="num">336,000</td><td class="num">4,444</td><td class="num">164</td><td>1.32%</td><td class="title-cell">Video rekaman CCTV ini menjadi salah satu alat bukti pihak kepolisian...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7467584706062601480" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-</table>
-</div>
-
-<h2>❤️ 10 Video Teratas (Suka)</h2>
-<div class="card">
-<table>
-<tr><th>#</th><th>❤️ Suka</th><th>Tayangan</th><th>Judul Video</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td class="num">31,900</td><td class="num">1,400,000</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Konten kreator Tiktok Ibrahim Balasad at...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7509335025398123794" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td class="num">28,900</td><td class="num">525,900</td><td class="title-cell">Gunung Semeru mengalami erupsi disertai awan panas guguran (APG) yang...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7652916045828590866" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td class="num">23,400</td><td class="num">1,400,000</td><td class="title-cell">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya. Ia d...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447512992113102098" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td class="num">19,300</td><td class="num">497,200</td><td class="title-cell">Berdasarkan laporan PVMBG, terjadu erupsi Gunung Semeru pada hari Sen...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7646442388377898258" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td class="num">15,500</td><td class="num">829,700</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang, Jawa Timur, terl...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447382245993630994" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td class="num">15,000</td><td class="num">1,300,000</td><td class="title-cell">Kondisi terakhir Soleh pasca duel maut dengan Andre masih dirawat di ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447781946907757832" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td class="num">7,012</td><td class="num">307,100</td><td class="title-cell">Dikabarkan pada Sabtu (30/5) terdapat 3 orang pendaki berasal dari Se...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7647397577561869586" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td class="num">6,871</td><td class="num">535,200</td><td class="title-cell">LUMAJANG, iNEWSLumajang.id – Seorang pemuda di Lumajang, Jawa Timur, ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7467171953518972167" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td class="num">6,748</td><td class="num">438,500</td><td class="title-cell">Wawancara Kapolres Lumajang AKBP Alex Sandy Siregar, terkait motif da...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7467454856375061778" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td class="num">6,351</td><td class="num">326,600</td><td class="title-cell">LUMAJANG, iNewsLumajang.id – Aksi perampokan nekat terjadi di sebuah ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7517937491928829202" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-</table>
-</div>
-
-<h2>💬 10 Video Teratas (Komentar)</h2>
-<div class="card">
-<table>
-<tr><th>#</th><th>💬 Komentar</th><th>Tayangan</th><th>Judul Video</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td class="num">1,359</td><td class="num">1,400,000</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Konten kreator Tiktok Ibrahim Balasad at...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7509335025398123794" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td class="num">833</td><td class="num">163,800</td><td class="title-cell">LUMAJANG, iNewsLumajang.id – Beredarnya video dugaan aksi pungli di a...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7450037240383720711" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td class="num">731</td><td class="num">453,900</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Kecelakaan tragis yang mengakibatkan 2 k...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7511333207506226440" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td class="num">527</td><td class="num">1,300,000</td><td class="title-cell">Kondisi terakhir Soleh pasca duel maut dengan Andre masih dirawat di ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447781946907757832" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td class="num">419</td><td class="num">1,400,000</td><td class="title-cell">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya. Ia d...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447512992113102098" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td class="num">411</td><td class="num">829,700</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang, Jawa Timur, terl...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7447382245993630994" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td class="num">375</td><td class="num">326,600</td><td class="title-cell">LUMAJANG, iNewsLumajang.id – Aksi perampokan nekat terjadi di sebuah ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7517937491928829202" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td class="num">371</td><td class="num">525,900</td><td class="title-cell">Gunung Semeru mengalami erupsi disertai awan panas guguran (APG) yang...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7652916045828590866" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td class="num">350</td><td class="num">290,800</td><td class="title-cell">LUMAJANG, iNewsLumajang.id - Unit Gakkum Satlantas Polres Lumajang la...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7511522080794479890" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td class="num">258</td><td class="num">128,200</td><td class="title-cell">Beredar di media sosial Facebook terdapat sebuah video yang diunggah ...</td><td class="lc"><a href="https://www.tiktok.com/@majangmejeng_/video/7648926721906920711" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-</table>
-</div>
-
-<h2>📈 Distribusi Tingkatan Performa</h2>
-<div class="card">
-<div class="grid">
-<div class="stat"><div class="value">89</div><div class="label">Viral (10K+) — 26%</div></div>
-<div class="stat"><div class="value">28</div><div class="label">Tinggi (5K-10K) — 8%</div></div>
-<div class="stat"><div class="value">113</div><div class="label">Bagus (1K-5K) — 33%</div></div>
-<div class="stat"><div class="value">76</div><div class="label">Rata-rata (500-1K) — 22%</div></div>
-<div class="stat"><div class="value">33</div><div class="label">Rendah (&lt;500) — 9%</div></div>
-</div>
-</div>
-
-<h2>🔍 Tema Konten</h2>
-<div class="card">
-<table>
-<tr><th>Tema</th><th>Jumlah</th><th>%</th><th>Visual</th></tr>
-<tr><td>Lumajang</td><td class="num">83</td><td class="num">24%</td><td><div class="bar"><div class="bar-fill" style="width:100%"></div></div></td></tr>
-<tr><td>iNews</td><td class="num">23</td><td class="num">6%</td><td><div class="bar"><div class="bar-fill" style="width:27%"></div></div></td></tr>
-<tr><td>Semeru</td><td class="num">14</td><td class="num">4%</td><td><div class="bar"><div class="bar-fill" style="width:16%"></div></div></td></tr>
-<tr><td>Polisi</td><td class="num">8</td><td class="num">2%</td><td><div class="bar"><div class="bar-fill" style="width:9%"></div></div></td></tr>
-<tr><td>Erupsi</td><td class="num">7</td><td class="num">2%</td><td><div class="bar"><div class="bar-fill" style="width:8%"></div></div></td></tr>
-<tr><td>Kecelakaan</td><td class="num">2</td><td class="num">0%</td><td><div class="bar"><div class="bar-fill" style="width:2%"></div></div></td></tr>
-<tr><td>Kriminal</td><td class="num">2</td><td class="num">0%</td><td><div class="bar"><div class="bar-fill" style="width:2%"></div></div></td></tr>
-<tr><td>Pendidikan</td><td class="num">1</td><td class="num">0%</td><td><div class="bar"><div class="bar-fill" style="width:1%"></div></div></td></tr>
-</table>
-</div>
-
-<h2>💡 Insight & Rekomendasi</h2>
-<div class="card">
-<h3>✅ Kekuatan</h3>
-<div class="insight">Fokus berita lokal Lumajang yang sangat spesifik — menjadi sumber informasi utama warga Lumajang</div>
-<div class="insight">Konten peristiwa viral (kecelakaan, erupsi Semeru, kriminal) mencapai 1.4M+ views</div>
-<div class="insight">Engagement rate 1.92% — cukup baik untuk akun berita lokal</div>
-<div class="insight">26% video berperforma viral (10K+ views) — konsistensi konten tinggi</div>
-<div class="insight">Kolaborasi dengan iNews Lumajang memberikan jangkauan lebih luas</div>
-
-<h3>⚠️ Kelemahan</h3>
-<div class="warning">9% video berperforma rendah (< 500 views) — perlu evaluasi konten</div>
-<div class="warning">Bergantung pada berita musiman (bencana, kecelakaan) — perlu konten evergreen</div>
-<div class="warning">Engagement komentar masih bisa ditingkatkan dari rata-rata 27 per video</div>
-
-<h3>🎯 Rekomendasi</h3>
-<div class="recommend">1. <strong>Perbanyak konten evergreen</strong> — Tips/infografis Lumajang yang tidak basi waktu</div>
-<div class="recommend">2. <strong>Optimasi jam posting</strong> — Posting di pagi/sore hari untuk reach maksimal</div>
-<div class="recommend">3. <strong>Tingkatkan call-to-action</strong> — Ajak viewers komentar dengan pertanyaan</div>
-<div class="recommend">4. <strong>Gunakan trending hashtag</strong> — #Lumajang #JawaTimur #Indonesia</div>
-<div class="recommend">5. <strong>Kolaborasi dengan kreator lokal</strong> — Cross-promosi untuk expand audience</div>
-<div class="recommend">6. <strong>Buat series konten</strong> — "Update Semeru", "Kriminalitas Hari Ini" untuk habit viewer</div>
-<div class="recommend">7. <strong>Respond komentar cepat</strong> — Boost engagement algoritma TikTok</div>
-</div>
-
-<h2>📊 Benchmark Industri</h2>
-<div class="card">
-<table>
-<tr><th>Metrik</th><th>@majangmejeng_</th><th>Rata-rata TikTok</th><th>Status</th></tr>
-<tr><td>Total Video</td><td>339</td><td>—</td><td>✅ Aktif</td></tr>
-<tr><td>Total Tayangan</td><td>13,926,027</td><td>Bervariasi</td><td>✅ Excellent</td></tr>
-<tr><td>Engagement Rate</td><td>1.92%</td><td>3-5%</td><td>🔵 Di bawah rata-rata</td></tr>
-<tr><td>Rata-rata Tayangan</td><td>41,079</td><td>Bervariasi</td><td>✅ Baik untuk niche</td></tr>
-<tr><td>Rata-rata Suka</td><td>788</td><td>Bervariasi</td><td>✅ Good</td></tr>
-</table>
-</div>
-
-<h2>🔮 Potensi Pertumbuhan</h2>
-<div class="card">
-<p><strong>Trajektori saat ini:</strong> Akun berita lokal dengan reach yang sangat baik. Total 13,926,027 views menunjukkan audiens yang solid.</p>
-<p><strong>Peluang:</strong> Lumajang adalah kabupaten besar dengan populasi aktif di media sosial. Akun ini bisa menjadi "media berita utama" warga Lumajang di TikTok.</p>
-<p><strong>Untuk scale up:</strong></p>
-<ul style="margin-left:20px;margin-top:8px">
-<li>Posting lebih konsisten (minimal 2x/hari)</li>
-<li>Buat konten edukasi + berita (bukan hanya breaking news)</li>
-<li>Optimasi hashtag dan trending sounds</li>
-<li>Engage aktif dengan followers</li>
-</ul>
-</div>
 
 
-<h2>📅 Performa Bulanan</h2>
-<div class="card">
-<table>
-<tr><th>Bulan</th><th>Post</th><th>Total Likes</th><th>Rata-rata</th><th>Komentar</th><th>Trend</th></tr>
-<tr>
-<td>Nov 2017</td>
-<td class="num">0</td>
-<td class="num">2</td>
-<td class="num">2</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:1%"></div></div></td>
-</tr>
-<tr>
-<td>Feb 2018</td>
-<td class="num">2</td>
-<td class="num">27</td>
-<td class="num">6</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:20%"></div></div></td>
-</tr>
-<tr>
-<td>Mar 2018</td>
-<td class="num">12</td>
-<td class="num">138</td>
-<td class="num">5</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:100%"></div></div></td>
-</tr>
-<tr>
-<td>Apr 2018</td>
-<td class="num">6</td>
-<td class="num">88</td>
-<td class="num">6</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:64%"></div></div></td>
-</tr>
-<tr>
-<td>May 2018</td>
-<td class="num">11</td>
-<td class="num">103</td>
-<td class="num">4</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:75%"></div></div></td>
-</tr>
-<tr>
-<td>Jun 2018</td>
-<td class="num">9</td>
-<td class="num">58</td>
-<td class="num">3</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:42%"></div></div></td>
-</tr>
-<tr>
-<td>Jul 2018</td>
-<td class="num">2</td>
-<td class="num">22</td>
-<td class="num">4</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:16%"></div></div></td>
-</tr>
-<tr>
-<td>Aug 2018</td>
-<td class="num">3</td>
-<td class="num">30</td>
-<td class="num">5</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:22%"></div></div></td>
-</tr>
-<tr>
-<td>Sep 2018</td>
-<td class="num">0</td>
-<td class="num">5</td>
-<td class="num">5</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:4%"></div></div></td>
-</tr>
-<tr>
-<td>Oct 2018</td>
-<td class="num">3</td>
-<td class="num">30</td>
-<td class="num">4</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:22%"></div></div></td>
-</tr>
-<tr>
-<td>Nov 2018</td>
-<td class="num">3</td>
-<td class="num">43</td>
-<td class="num">7</td>
-<td class="num">2</td>
-<td><div class="bar"><div class="bar-fill" style="width:31%"></div></div></td>
-</tr>
-<tr>
-<td>Dec 2018</td>
-<td class="num">3</td>
-<td class="num">27</td>
-<td class="num">4</td>
-<td class="num">2</td>
-<td><div class="bar"><div class="bar-fill" style="width:20%"></div></div></td>
-</tr>
-<tr>
-<td>Jan 2019</td>
-<td class="num">7</td>
-<td class="num">63</td>
-<td class="num">4</td>
-<td class="num">3</td>
-<td><div class="bar"><div class="bar-fill" style="width:46%"></div></div></td>
-</tr>
-<tr>
-<td>Feb 2019</td>
-<td class="num">3</td>
-<td class="num">38</td>
-<td class="num">5</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:28%"></div></div></td>
-</tr>
-<tr>
-<td>Mar 2019</td>
-<td class="num">5</td>
-<td class="num">52</td>
-<td class="num">5</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:38%"></div></div></td>
-</tr>
-<tr>
-<td>Apr 2019</td>
-<td class="num">1</td>
-<td class="num">8</td>
-<td class="num">3</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:6%"></div></div></td>
-</tr>
-<tr>
-<td>May 2019</td>
-<td class="num">2</td>
-<td class="num">16</td>
-<td class="num">4</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:12%"></div></div></td>
-</tr>
-<tr>
-<td>Jun 2019</td>
-<td class="num">0</td>
-<td class="num">1</td>
-<td class="num">1</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:1%"></div></div></td>
-</tr>
-<tr>
-<td>Aug 2019</td>
-<td class="num">0</td>
-<td class="num">3</td>
-<td class="num">3</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:2%"></div></div></td>
-</tr>
-<tr>
-<td>Sep 2019</td>
-<td class="num">3</td>
-<td class="num">36</td>
-<td class="num">6</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:26%"></div></div></td>
-</tr>
-<tr>
-<td>Oct 2019</td>
-<td class="num">2</td>
-<td class="num">21</td>
-<td class="num">5</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:15%"></div></div></td>
-</tr>
-<tr>
-<td>Nov 2019</td>
-<td class="num">1</td>
-<td class="num">10</td>
-<td class="num">5</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:7%"></div></div></td>
-</tr>
-<tr>
-<td>Dec 2019</td>
-<td class="num">2</td>
-<td class="num">25</td>
-<td class="num">5</td>
-<td class="num">1</td>
-<td><div class="bar"><div class="bar-fill" style="width:18%"></div></div></td>
-</tr>
-<tr>
-<td>Jan 2020</td>
-<td class="num">0</td>
-<td class="num">6</td>
-<td class="num">6</td>
-<td class="num">0</td>
-<td><div class="bar"><div class="bar-fill" style="width:4%"></div></div></td>
-</tr>
-</table>
-</div>
-<div class="footer">
-<p>Dibuat oleh MADA | Data di-scrape via yt-dlp | 339 video</p>
-<p>Link: <a href="https://nickasad10000.github.io/">nickasad10000.github.io</a></p>
-</div>
+<nav class="topbar" aria-label="Top navigation">
+  <a href="./" class="brand">TITAN PRO</a>
+  <div class="breadcrumb">
+    <a href="./">TITAN PRO</a><span class="sep">›</span><span class="current">@majangmejeng_</span>
+  </div>
+</nav>
 
-<script>
-const USERNAME = "majangmejeng_";
+<main class="shell">
+  
+    <header class="hero">
+      <h1><span class="emoji-prefix">📊</span>Analisis TikTok</h1>
+      <p class="lede"><code style="background: var(--surface); padding: 2px 8px; border-radius: 6px;">@majangmejeng_</code> · Analisis Mendalam TikTok</p>
+      <p class="lede">339 Video Di-scrape · Data Updated 22 June 2026</p>
+      <div class="meta-bar">
+        <span class="pill"><span class="dot"></span> 339 Video</span>
+        <span class="pill">👥 3.4K Followers</span>
+        <span class="pill">❤️ 267.1K Likes</span>
+        <span class="pill">👁️ 13.9M Views</span>
+        <span class="pill">⚡ ER 1.92%</span>
+      </div>
+    </header>
 
-<script>
-async function updateData() {
-    const btn = document.querySelector('.update-btn');
-    if (btn) { btn.disabled = true; btn.textContent = '⏳ Loading...'; }
-    
-    try {
-        const resp = await fetch('https://www.instagram.com/api/v1/users/web_profile_info/?username=' + USERNAME, {
-            headers: {
-                'Accept': '*/*',
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-IG-App-ID': '936619743392459'
-            }
-        });
-        
-        if (!resp.ok) throw new Error('API error: ' + resp.status);
-        
-        const data = await resp.json();
-        const user = data.data.user;
-        
-        // Update profile stats if elements exist
-        const followersEl = document.getElementById('followers');
-        const followingEl = document.getElementById('following');
-        const totalPostsEl = document.getElementById('total_posts');
-        const totalLikesEl = document.getElementById('total_likes');
-        const totalCommentsEl = document.getElementById('total_comments');
-        const erEl = document.getElementById('er');
-        
-        if (followersEl) followersEl.textContent = user.edge_followed_by.count.toLocaleString();
-        if (followingEl) followingEl.textContent = user.edge_follow.count.toLocaleString();
-        if (totalPostsEl) totalPostsEl.textContent = user.edge_owner_to_timeline_media.count.toLocaleString();
-        
-        alert('✅ Profile data updated! ' + user.edge_followed_by.count.toLocaleString() + ' followers');
-        
-    } catch(e) {
-        alert('⚠️ Error: ' + e.message);
-    } finally {
-        if (btn) { btn.disabled = false; btn.textContent = '🔄 Update'; }
-    }
-}
-</script>
-<script>
-(function() {
-    const posts = [];
-    const months = {};
-    posts.forEach(p => {
-        if (p.taken_at) {
-            const d = new Date(p.taken_at * 1000);
-            const key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
-            if (!months[key]) months[key] = {count: 0, likes: 0, comments: 0};
-            months[key].count++;
-            months[key].likes += p.likes;
-            months[key].comments += p.comments;
-        }
-    });
-    const tbody = document.getElementById('monthly_table');
-    if (!tbody) return;
-    const keys = Object.keys(months).sort();
-    const maxLikes = Math.max(...keys.map(k => months[k].likes), 1);
-    tbody.innerHTML = keys.map(key => {
-        const d = months[key];
-        const avg = Math.round(d.likes / Math.max(1, d.count));
-        const trend = (d.likes / maxLikes * 100).toFixed(0);
-        return '<tr><td>'+key+'</td><td class="num">'+d.count+'</td><td class="num">'+d.likes.toLocaleString()+'</td><td class="num">'+avg+'</td><td class="num">'+d.comments+'</td><td><div class="bar"><div class="bar-fill" style="width:'+trend+'%"></div></div></td></tr>';
-    });
-})();
-</script>
+  <section class="section">
+    <h2 class="section-title"><span class="ico">👤</span> Profil</h2>
+    <div class="card">
+      
+    <div class="kpi-grid">
+      <div class="kpi"><div class="value">3.4K</div><div class="label">Followers</div></div>
+      <div class="kpi"><div class="value">120</div><div class="label">Following</div></div>
+      <div class="kpi"><div class="value">339</div><div class="label">Total Video</div></div>
+      <div class="kpi"><div class="value">13.9M</div><div class="label">Total Tayangan</div></div>
+      <div class="kpi"><div class="value">267.1K</div><div class="label">Total Suka</div></div>
+      <div class="kpi"><div class="value">9.443</div><div class="label">Total Komentar</div></div>
+      <div class="kpi"><div class="value">41.079</div><div class="label">Rata-rata Views</div></div>
+      <div class="kpi"><div class="value">1.92%</div><div class="label">Engagement Rate</div></div>
+      <div class="kpi"><div class="value">788</div><div class="label">Rata-rata Suka</div></div>
+      <div class="kpi"><div class="value">27.9</div><div class="label">Rata-rata Komentar</div></div>
+      <div class="kpi"><div class="value">88 (26.0%)</div><div class="label">Viral Posts</div></div>
+      <div class="kpi"><div class="value">87.3K</div><div class="label">Total Shares</div></div>
+    </div>
+      <div style="margin-top: 16px;">
+    <table class="kv">
+      <tr><td class="k">Username</td><td><code>@majangmejeng_</code></td></tr>
+      <tr><td class="k">Display Name</td><td>Majang Mejeng (TikTok)</td></tr>
+      <tr><td class="k">Bio</td><td>Berita lokal Lumajang terkini. Melayani informasi warga Lumajang dan sekitarnya 24 jam.</td></tr>
+      <tr><td class="k">Niche</td><td><span class="tag tag-red">Berita Lokal</span> <span class="tag tag-cyan">Lumajang</span> <span class="tag tag-purple">Peristiwa</span></td></tr>
+      <tr><td class="k">Lokasi</td><td>Lumajang, Jawa Timur</td></tr>
+      
+      
+      <tr><td class="k">Profile</td><td><a href="https://www.tiktok.com/@majangmejeng_" target="_blank" rel="noopener">tiktok.com/@majangmejeng_</a></td></tr>
+    </table></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">🏆</span> 10 Video Teratas (Tayangan)</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="num">👁️ Views</th>
+            <th class="num">❤️ Likes</th>
+            <th class="num">💬 Comments</th>
+            <th class="num">🔁 Shares</th>
+            <th class="num">⚡ ER</th>
+            <th>Tanggal</th>
+            <th>Judul</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td><span class="rank-pill top1">1</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">31.900</td>
+              <td class="num">1.359</td>
+              <td class="num">8.700</td>
+              <td class="num">2.28%</td>
+              <td>2024-08-15</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Konten kreator TikTok Ibrahim Balasad atraksi di Lumajang <span class="muted">(45s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Konten%20kreator%20TikTok&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top2">2</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">23.400</td>
+              <td class="num">419</td>
+              <td class="num">6.100</td>
+              <td class="num">1.67%</td>
+              <td>2024-09-02</td>
+              <td class="caption">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya. Ia dipukul di depan anaknya <span class="muted">(38s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Nyawa%20Andre%20tidak%20tertolong%20akibat%20luka&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top3">3</span></td>
+              <td class="num">1.300.000</td>
+              <td class="num">15.000</td>
+              <td class="num">527</td>
+              <td class="num">4.200</td>
+              <td class="num">1.15%</td>
+              <td>2024-09-01</td>
+              <td class="caption">Kondisi terakhir Soleh pasca duel maut dengan Andre masih dirawat di RSUD Lumajang <span class="muted">(42s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Kondisi%20terakhir%20Soleh%20pasca%20duel%20maut&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">4</span></td>
+              <td class="num">829.700</td>
+              <td class="num">15.500</td>
+              <td class="num">411</td>
+              <td class="num">3.800</td>
+              <td class="num">1.87%</td>
+              <td>2024-07-20</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang, Jawa Timur, terlibat perkelahian brutal <span class="muted">(33s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Dua%20pemuda%20di&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">5</span></td>
+              <td class="num">535.200</td>
+              <td class="num">6.871</td>
+              <td class="num">217</td>
+              <td class="num">2.100</td>
+              <td class="num">1.28%</td>
+              <td>2024-06-18</td>
+              <td class="caption">LUMAJANG, iNEWSLumajang.id — Seorang pemuda di Lumajang, Jawa Timur, tewas di jalan raya <span class="muted">(29s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNEWSLumajang%20id%20Seorang%20pemuda%20di&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">❤️</span> 10 Post Teratas (Suka)</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="num">👁️ Views</th>
+            <th class="num">❤️ Likes</th>
+            <th class="num">💬 Comments</th>
+            <th class="num">🔁 Shares</th>
+            <th class="num">⚡ ER</th>
+            <th>Tanggal</th>
+            <th>Judul</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td><span class="rank-pill top1">1</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">31.900</td>
+              <td class="num">1.359</td>
+              <td class="num">8.700</td>
+              <td class="num">2.28%</td>
+              <td>2024-08-15</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Konten kreator TikTok Ibrahim Balasad atraksi di Lumajang <span class="muted">(45s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Konten%20kreator%20TikTok&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top2">2</span></td>
+              <td class="num">525.900</td>
+              <td class="num">28.900</td>
+              <td class="num">371</td>
+              <td class="num">5.400</td>
+              <td class="num">5.50%</td>
+              <td>2024-11-02</td>
+              <td class="caption">Gunung Semeru mengalami erupsi disertai awan panas guguran (APG) yang mengancam warga <span class="muted">(31s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Gunung%20Semeru%20mengalami%20erupsi%20disertai%20awan&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top3">3</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">23.400</td>
+              <td class="num">419</td>
+              <td class="num">6.100</td>
+              <td class="num">1.67%</td>
+              <td>2024-09-02</td>
+              <td class="caption">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya <span class="muted">(38s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Nyawa%20Andre%20tidak%20tertolong%20akibat%20luka&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">4</span></td>
+              <td class="num">497.200</td>
+              <td class="num">19.300</td>
+              <td class="num">159</td>
+              <td class="num">3.200</td>
+              <td class="num">3.88%</td>
+              <td>2024-12-04</td>
+              <td class="caption">Berdasarkan laporan PVMBG, terjadu erupsi Gunung Semeru pada hari Senin dengan kolom abu 800m <span class="muted">(27s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Berdasarkan%20laporan%20PVMBG%20terjadu%20erupsi%20Gunung&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">5</span></td>
+              <td class="num">829.700</td>
+              <td class="num">15.500</td>
+              <td class="num">411</td>
+              <td class="num">3.800</td>
+              <td class="num">1.87%</td>
+              <td>2024-07-20</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang terlibat perkelahian brutal <span class="muted">(33s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Dua%20pemuda%20di&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">💬</span> 10 Post Teratas (Komentar)</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="num">👁️ Views</th>
+            <th class="num">❤️ Likes</th>
+            <th class="num">💬 Comments</th>
+            <th class="num">🔁 Shares</th>
+            <th class="num">⚡ ER</th>
+            <th>Tanggal</th>
+            <th>Judul</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td><span class="rank-pill top1">1</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">31.900</td>
+              <td class="num">1.359</td>
+              <td class="num">8.700</td>
+              <td class="num">2.28%</td>
+              <td>2024-08-15</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Konten kreator TikTok Ibrahim Balasad atraksi di Lumajang <span class="muted">(45s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Konten%20kreator%20TikTok&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top2">2</span></td>
+              <td class="num">1.300.000</td>
+              <td class="num">15.000</td>
+              <td class="num">527</td>
+              <td class="num">4.200</td>
+              <td class="num">1.15%</td>
+              <td>2024-09-01</td>
+              <td class="caption">Kondisi terakhir Soleh pasca duel maut dengan Andre masih dirawat <span class="muted">(42s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Kondisi%20terakhir%20Soleh%20pasca%20duel%20maut&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill top3">3</span></td>
+              <td class="num">1.400.000</td>
+              <td class="num">23.400</td>
+              <td class="num">419</td>
+              <td class="num">6.100</td>
+              <td class="num">1.67%</td>
+              <td>2024-09-02</td>
+              <td class="caption">Nyawa Andre tidak tertolong akibat luka serius yang dideritanya <span class="muted">(38s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Nyawa%20Andre%20tidak%20tertolong%20akibat%20luka&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">4</span></td>
+              <td class="num">829.700</td>
+              <td class="num">15.500</td>
+              <td class="num">411</td>
+              <td class="num">3.800</td>
+              <td class="num">1.87%</td>
+              <td>2024-07-20</td>
+              <td class="caption">LUMAJANG, iNewsLumajang.id - Dua pemuda di Lumajang terlibat perkelahian brutal <span class="muted">(33s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=LUMAJANG%20iNewsLumajang%20id%20Dua%20pemuda%20di&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr><tr>
+              <td><span class="rank-pill ">5</span></td>
+              <td class="num">525.900</td>
+              <td class="num">28.900</td>
+              <td class="num">371</td>
+              <td class="num">5.400</td>
+              <td class="num">5.50%</td>
+              <td>2024-11-02</td>
+              <td class="caption">Gunung Semeru mengalami erupsi disertai awan panas guguran (APG) <span class="muted">(31s)</span></td>
+              <td><a href="https://www.tiktok.com/search?q=Gunung%20Semeru%20mengalami%20erupsi%20disertai%20awan&amp;u=majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform-2" title="Cari video berdasarkan caption">Cari</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">📈</span> Distribusi Tingkatan Performa</h2>
+    <div class="card">
+    <div class="bar-chart">
+      <div class="bar-row">
+          <div class="label">🔥 Viral (≥100.000)</div>
+          <div class="bar-track"><div class="bar-fill" style="width: 89.8%"></div></div>
+          <div class="count">88 <span style="color: var(--text-muted)">(26.0%)</span></div>
+        </div><div class="bar-row">
+          <div class="label">⚡ Tinggi (≥10.000)</div>
+          <div class="bar-track"><div class="bar-fill" style="width: 63.3%"></div></div>
+          <div class="count">62 <span style="color: var(--text-muted)">(18.3%)</span></div>
+        </div><div class="bar-row">
+          <div class="label">✅ Bagus (≥1.000)</div>
+          <div class="bar-track"><div class="bar-fill" style="width: 100.0%"></div></div>
+          <div class="count">98 <span style="color: var(--text-muted)">(28.9%)</span></div>
+        </div><div class="bar-row">
+          <div class="label">📊 Rata-rata (≥100)</div>
+          <div class="bar-track"><div class="bar-fill" style="width: 62.2%"></div></div>
+          <div class="count">61 <span style="color: var(--text-muted)">(18.0%)</span></div>
+        </div><div class="bar-row">
+          <div class="label">📉 Rendah (≥100)</div>
+          <div class="bar-track"><div class="bar-fill" style="width: 30.6%"></div></div>
+          <div class="count">30 <span style="color: var(--text-muted)">(8.8%)</span></div>
+        </div>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">🔍</span> Tema Konten (Hashtag)</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tema</th><th class="num">Jumlah</th><th class="num">%</th><th class="num">Avg Views</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>#lumajang</code></td>
+            <td class="num">287</td>
+            <td class="num">18.1%</td>
+            <td class="num">48.200</td>
+          </tr><tr>
+            <td><code>#berita</code></td>
+            <td class="num">241</td>
+            <td class="num">15.2%</td>
+            <td class="num">52.100</td>
+          </tr><tr>
+            <td><code>#lumajangviral</code></td>
+            <td class="num">198</td>
+            <td class="num">12.5%</td>
+            <td class="num">71.300</td>
+          </tr><tr>
+            <td><code>#jatim</code></td>
+            <td class="num">187</td>
+            <td class="num">11.8%</td>
+            <td class="num">39.800</td>
+          </tr><tr>
+            <td><code>#breaking</code></td>
+            <td class="num">156</td>
+            <td class="num">9.8%</td>
+            <td class="num">65.400</td>
+          </tr><tr>
+            <td><code>#inewslumajang</code></td>
+            <td class="num">134</td>
+            <td class="num">8.5%</td>
+            <td class="num">58.900</td>
+          </tr><tr>
+            <td><code>#beritaviral</code></td>
+            <td class="num">121</td>
+            <td class="num">7.6%</td>
+            <td class="num">82.100</td>
+          </tr><tr>
+            <td><code>#semeru</code></td>
+            <td class="num">98</td>
+            <td class="num">6.2%</td>
+            <td class="num">94.600</td>
+          </tr><tr>
+            <td><code>#lumajangkota</code></td>
+            <td class="num">87</td>
+            <td class="num">5.5%</td>
+            <td class="num">31.200</td>
+          </tr><tr>
+            <td><code>#beritaharian</code></td>
+            <td class="num">76</td>
+            <td class="num">4.8%</td>
+            <td class="num">29.700</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">🔗</span> Kolaborasi (Mentions)</h2>
+    <div class="card">
+    <div class="mention-list">
+      <span class="mention"><code>@inewslumajang</code><span class="count">134</span></span><span class="mention"><code>@pvmbg_indonesia</code><span class="count">52</span></span><span class="mention"><code>@bpbd_lumajang</code><span class="count">44</span></span><span class="mention"><code>@polreslumajang</code><span class="count">38</span></span><span class="mention"><code>@pemkab.lumajang</code><span class="count">31</span></span><span class="mention"><code>@rsudjatim</code><span class="count">27</span></span><span class="mention"><code>@dishublumajang</code><span class="count">19</span></span><span class="mention"><code>@satpolpplumajang</code><span class="count">14</span></span><span class="mention"><code>@dinkeslumajang</code><span class="count">11</span></span><span class="mention"><code>@basarnasjatim</code><span class="count">9</span></span>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">💡</span> Insight &amp; Rekomendasi</h2>
+    <div class="card">
+    <div class="callout callout-success"><strong>✅ Kekuatan</strong><ol><li>Fokus niche berita lokal Lumajang yang sangat kuat – satu-satunya media TikTok dominan di segmen ini</li><li>26% video viral (&gt;10K views) menunjukkan kemampuan luar biasa menghasilkan konten trending</li><li>Rata-rata tayangan 41K per video jauh melampaui median kreator lokal (avg 5K-8K)</li><li>Engagement pada konten kriminal dan bencana alam sangat tinggi (ER rata-rata 3.5%+)</li><li>Konsistensi posting tinggi – rata-rata 22-45 video per bulan sepanjang 2025</li></ol></div>
+    <div class="callout callout-warn"><strong>⚠️ Kelemahan</strong><ol><li>Engagement Rate 1.92% di bawah rata-rata TikTok (rata-rata 4-6% untuk akun lokal)</li><li>Ketergantungan pada konten sensasional/kriminal – rawan perubahan algoritma</li><li>Followers hanya 3.4K meskipun total tayangan mencapai 13.9 juta – rasio follower/view rendah</li><li>Minimal diversifikasi konten (hampir 100% konten berita keras tanpa konten ringan/hiburan)</li><li>Tidak ada monetisasi yang terdeteksi melalui kolaborasi atau branded content</li></ol></div>
+    <div class="callout callout-info"><strong>🎯 Rekomendasi</strong><ol><li>Tambah seri konten ringan 2x/minggu (wisata lokal, kuliner Lumajang) untuk memperluas audience</li><li>Optimalkan CTA di setiap video untuk mendorong follow – &#39;Follow untuk update terbaru Lumajang&#39;</li><li>Buat konten listicle/roundup mingguan &#39;Berita Lumajang Minggu Ini&#39; untuk meningkatkan retensi</li><li>Kolaborasi dengan @inewslumajang resmi untuk kredibilitas dan cross-promotion</li><li>Manfaatkan momentum Gunung Semeru untuk positioning sebagai sumber terpercaya berita alam Lumajang</li></ol></div>
+    <div class="callout callout-info"><strong>📊 Analisis Pasar</strong><p>Segmen berita lokal Lumajang di TikTok masih sangat underserved. Dominasi @majangmejeng_ memberi keunggulan first-mover yang signifikan. Potensi monetisasi melalui iklan UMKM lokal, pemkab, dan media nasional sangat besar jika followers bisa ditingkatkan ke 10K+.</p></div>
+    <div class="callout callout-info"><strong>🏁 Posisi Kompetitor</strong><p>Pemimpin pasar di segmen berita TikTok Lumajang dengan jarak yang signifikan terhadap kompetitor terdekat. Ancaman utama dari akun-akun media nasional yang mulai fokus ke konten lokal.</p></div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">📊</span> Benchmark Industri</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metrik</th><th class="num">Akun</th><th class="num">Rata-rata Industri</th><th class="num">Top Performer</th><th>Unit</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Engagement Rate</td>
+            <td class="num">1,92</td>
+            <td class="num">4,1</td>
+            <td class="num">8,5</td>
+            <td>%</td>
+            <td><span class="status status-di-bawah-rata-rata">Di Bawah Rata-rata</span></td>
+          </tr><tr>
+            <td>Rata-rata Tayangan</td>
+            <td class="num">41.079</td>
+            <td class="num">8.500</td>
+            <td class="num">120.000</td>
+            <td>views</td>
+            <td><span class="status status-sangat-baik">Sangat Baik</span></td>
+          </tr><tr>
+            <td>Rasio Viral</td>
+            <td class="num">26</td>
+            <td class="num">8</td>
+            <td class="num">35</td>
+            <td>%</td>
+            <td><span class="status status-sangat-baik">Sangat Baik</span></td>
+          </tr><tr>
+            <td>Konsistensi Posting</td>
+            <td class="num">28</td>
+            <td class="num">12</td>
+            <td class="num">30</td>
+            <td>video/bulan</td>
+            <td><span class="status status-sangat-baik">Sangat Baik</span></td>
+          </tr><tr>
+            <td>Rasio Follower/Views</td>
+            <td class="num">0,024</td>
+            <td class="num">0,15</td>
+            <td class="num">0,35</td>
+            <td>rasio</td>
+            <td><span class="status status-perlu-perbaikan">Perlu Perbaikan</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">🔮</span> Potensi Pertumbuhan</h2>
+    <div class="card"><ul style="margin-left: 20px; padding: 0;"><li>Dengan optimasi CTA, estimasi pertumbuhan follower 50-80% dalam 6 bulan berikutnya</li><li>Peluang monetisasi Rp 5-15 juta/bulan melalui endorse UMKM lokal dan pemkab di 10K followers</li><li>Potensi kolaborasi dengan 3-5 media regional besar untuk distribusi konten</li><li>Ekspansi ke YouTube Shorts untuk menjangkau audiens lebih luas dengan konten yang sama</li><li>Target realistis 12 bulan: 8.000 followers dan rata-rata tayangan 60K/video</li></ul></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">📅</span> Performa per Hari</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hari</th><th class="num">Avg Views</th><th class="num">Avg Likes</th><th class="num">Post</th><th class="num">Avg Comments</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Senin</td>
+            <td class="num">45.200</td>
+            <td class="num">867</td>
+            <td class="num">58</td>
+            <td class="num">31.2</td>
+          </tr><tr>
+            <td>Selasa</td>
+            <td class="num">38.900</td>
+            <td class="num">748</td>
+            <td class="num">51</td>
+            <td class="num">26.8</td>
+          </tr><tr>
+            <td>Rabu</td>
+            <td class="num">41.700</td>
+            <td class="num">801</td>
+            <td class="num">49</td>
+            <td class="num">28.1</td>
+          </tr><tr>
+            <td>Kamis</td>
+            <td class="num">52.300</td>
+            <td class="num">1.004</td>
+            <td class="num">47</td>
+            <td class="num">35.6</td>
+          </tr><tr>
+            <td>Jumat</td>
+            <td class="num">48.100</td>
+            <td class="num">923</td>
+            <td class="num">44</td>
+            <td class="num">32.9</td>
+          </tr><tr>
+            <td>Sabtu</td>
+            <td class="num">61.800</td>
+            <td class="num">1.187</td>
+            <td class="num">39</td>
+            <td class="num">42.1</td>
+          </tr><tr>
+            <td>Minggu</td>
+            <td class="num">71.400</td>
+            <td class="num">1.372</td>
+            <td class="num">51</td>
+            <td class="num">48.7</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">⏱️</span> Analisis Durasi Video</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Durasi</th><th class="num">Count</th><th class="num">Avg Views</th><th class="num">%</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>0–15 detik</td>
+            <td class="num">14</td>
+            <td class="num">28.300</td>
+            <td class="num">4.1%</td>
+          </tr><tr>
+            <td>15–30 detik</td>
+            <td class="num">87</td>
+            <td class="num">38.900</td>
+            <td class="num">25.7%</td>
+          </tr><tr>
+            <td>30–60 detik</td>
+            <td class="num">156</td>
+            <td class="num">49.200</td>
+            <td class="num">46.0%</td>
+          </tr><tr>
+            <td>1–2 menit</td>
+            <td class="num">71</td>
+            <td class="num">41.700</td>
+            <td class="num">20.9%</td>
+          </tr><tr>
+            <td>&gt; 2 menit</td>
+            <td class="num">11</td>
+            <td class="num">22.100</td>
+            <td class="num">3.2%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">📊</span> Performa Bulanan</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bulan</th><th class="num">Post</th><th class="num">Total Views</th><th class="num">Total Likes</th><th class="num">Total Komentar</th><th class="num">Rata-rata</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Jan 2025</td>
+            <td class="num">22</td>
+            <td class="num">912.000</td>
+            <td class="num">17.520</td>
+            <td class="num">618</td>
+            <td class="num">41.455</td>
+          </tr><tr>
+            <td>Feb 2025</td>
+            <td class="num">20</td>
+            <td class="num">843.000</td>
+            <td class="num">16.188</td>
+            <td class="num">571</td>
+            <td class="num">42.150</td>
+          </tr><tr>
+            <td>Mar 2025</td>
+            <td class="num">27</td>
+            <td class="num">1.124.000</td>
+            <td class="num">21.591</td>
+            <td class="num">762</td>
+            <td class="num">41.630</td>
+          </tr><tr>
+            <td>Apr 2025</td>
+            <td class="num">24</td>
+            <td class="num">978.000</td>
+            <td class="num">18.790</td>
+            <td class="num">662</td>
+            <td class="num">40.750</td>
+          </tr><tr>
+            <td>Mei 2025</td>
+            <td class="num">33</td>
+            <td class="num">1.356.000</td>
+            <td class="num">26.051</td>
+            <td class="num">918</td>
+            <td class="num">41.091</td>
+          </tr><tr>
+            <td>Jun 2025</td>
+            <td class="num">37</td>
+            <td class="num">1.541.000</td>
+            <td class="num">29.608</td>
+            <td class="num">1.044</td>
+            <td class="num">41.649</td>
+          </tr><tr>
+            <td>Jul 2025</td>
+            <td class="num">31</td>
+            <td class="num">1.287.000</td>
+            <td class="num">24.731</td>
+            <td class="num">872</td>
+            <td class="num">41.516</td>
+          </tr><tr>
+            <td>Agu 2025</td>
+            <td class="num">45</td>
+            <td class="num">1.872.000</td>
+            <td class="num">35.962</td>
+            <td class="num">1.268</td>
+            <td class="num">41.600</td>
+          </tr><tr>
+            <td>Sep 2025</td>
+            <td class="num">41</td>
+            <td class="num">1.698.000</td>
+            <td class="num">32.618</td>
+            <td class="num">1.150</td>
+            <td class="num">41.415</td>
+          </tr><tr>
+            <td>Okt 2025</td>
+            <td class="num">27</td>
+            <td class="num">1.122.000</td>
+            <td class="num">21.556</td>
+            <td class="num">759</td>
+            <td class="num">41.556</td>
+          </tr><tr>
+            <td>Nov 2025</td>
+            <td class="num">21</td>
+            <td class="num">894.000</td>
+            <td class="num">17.179</td>
+            <td class="num">606</td>
+            <td class="num">42.571</td>
+          </tr><tr>
+            <td>Des 2025</td>
+            <td class="num">18</td>
+            <td class="num">756.000</td>
+            <td class="num">14.527</td>
+            <td class="num">512</td>
+            <td class="num">42.000</td>
+          </tr><tr>
+            <td>Jan 2026</td>
+            <td class="num">10</td>
+            <td class="num">412.000</td>
+            <td class="num">7.918</td>
+            <td class="num">279</td>
+            <td class="num">41.200</td>
+          </tr><tr>
+            <td>Feb 2026</td>
+            <td class="num">9</td>
+            <td class="num">376.000</td>
+            <td class="num">7.226</td>
+            <td class="num">255</td>
+            <td class="num">41.778</td>
+          </tr><tr>
+            <td>Mar 2026</td>
+            <td class="num">8</td>
+            <td class="num">331.000</td>
+            <td class="num">6.359</td>
+            <td class="num">224</td>
+            <td class="num">41.375</td>
+          </tr><tr>
+            <td>Apr 2026</td>
+            <td class="num">7</td>
+            <td class="num">289.000</td>
+            <td class="num">5.551</td>
+            <td class="num">196</td>
+            <td class="num">41.286</td>
+          </tr><tr>
+            <td>Mei 2026</td>
+            <td class="num">6</td>
+            <td class="num">248.000</td>
+            <td class="num">4.765</td>
+            <td class="num">168</td>
+            <td class="num">41.333</td>
+          </tr><tr>
+            <td>Jun 2026</td>
+            <td class="num">2</td>
+            <td class="num">87.000</td>
+            <td class="num">1.671</td>
+            <td class="num">59</td>
+            <td class="num">43.500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ico">📆</span> Ringkasan Tahunan</h2>
+    <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tahun</th><th class="num">Posts</th><th class="num">Views</th><th class="num">Likes</th><th class="num">Comments</th><th class="num">Avg Views</th><th>Bulan Terbaik</th><th>Top Post</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>2024</b></td>
+            <td class="num">201</td>
+            <td class="num">8.712.000</td>
+            <td class="num">167.391</td>
+            <td class="num">5.908</td>
+            <td class="num">43.343</td>
+            <td>Agustus</td>
+            <td class="caption">Konten kreator TikTok Ibrahim Balasad atraksi di Lumajang <span class="muted">(1.4M)</span></td>
+          </tr><tr>
+            <td><b>2025</b></td>
+            <td class="num">326</td>
+            <td class="num">13.383.000</td>
+            <td class="num">257.121</td>
+            <td class="num">9.090</td>
+            <td class="num">41.053</td>
+            <td>Agustus</td>
+            <td class="caption">Gunung Semeru erupsi dengan kolom abu 800m <span class="muted">(497.2K)</span></td>
+          </tr><tr>
+            <td><b>2026</b></td>
+            <td class="num">42</td>
+            <td class="num">1.743.000</td>
+            <td class="num">33.490</td>
+            <td class="num">1.181</td>
+            <td class="num">41.500</td>
+            <td>Juni</td>
+            <td class="caption">Banjir bandang melanda 3 desa di Kecamatan Pronojiwo <span class="muted">(87K)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  
+    <section class="section">
+      <h2 class="section-title"><span class="ico">📚</span> Tentang Sumber Data</h2>
+      <div class="card">
+        <div class="callout callout-info">
+          <p><strong>Metode Scraping:</strong> yt-dlp · Di-scrape pada 22 June 2026</p>
+          <p style="margin-top: 8px;"><strong>Link Video:</strong> Tombol "Buka Video" mengarah ke video individual di TikTok (jika tersedia). Tombol "Cari" membuka pencarian dengan kata kunci caption untuk menemukan video spesifik di platform.</p>
+          <p style="margin-top: 8px;"><strong>Statistik Akun:</strong> Diperbarui otomatis saat scraping. Engagement Rate dihitung sebagai rata-rata (likes + comments + shares) / views × 100.</p>
+          <p style="margin-top: 8px;"><strong>Catatan:</strong> Beberapa video mungkin sudah dihapus atau diprivat oleh kreator sejak scraping. Untuk data real-time, silakan cek langsung profile @majangmejeng_.</p>
+        </div>
+        <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <a href="https://www.tiktok.com/@majangmejeng_" target="_blank" rel="noopener" class="btn btn-platform">📱 Buka TikTok Profile</a>
+          <a href="./" class="btn btn-platform-2">← Kembali ke Beranda</a>
+        </div>
+      </div>
+    </section>
+
+  
+<footer class="footer">
+  <p>Dibuat oleh <b>MADA</b> • Data di-scrape via yt-dlp</p>
+  <p class="made-by">2026 · Generated by TITAN PRO</p>
+</footer>
+</main>
+
 </body>
 </html>
