@@ -639,6 +639,75 @@ tbody tr:hover { background: var(--surface); }
   .btn { min-height: 44px; padding: 8px 14px; }
 }
 
+/* === Modern SVG Chart === */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 12px 0;
+  position: relative;
+}
+.chart-card .chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.chart-card .chart-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.chart-card .chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.chart-card .chart-legend .item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chart-card .chart-legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.chart-card .chart-legend .value {
+  color: var(--text);
+  font-weight: 600;
+  margin-left: 4px;
+}
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: var(--font-mono);
+}
+.chart-svg .grid-line { stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 4; }
+.chart-svg .axis-label { fill: var(--text-muted); font-size: 10px; }
+.chart-svg .axis-line { stroke: var(--border-strong); stroke-width: 1; }
+.chart-svg .data-line { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.chart-svg .data-line-fill { opacity: 0.12; }
+.chart-svg .data-point { stroke: var(--bg-card); stroke-width: 2; }
+.chart-svg .data-point:hover { r: 6; }
+.chart-svg .data-bar { transition: opacity 200ms; }
+.chart-svg .data-bar:hover { opacity: 0.85; }
+.chart-svg .donut-slice { transition: transform 200ms; transform-origin: center; }
+.chart-svg .donut-slice:hover { transform: scale(1.04); }
+.chart-svg .donut-center-label { fill: var(--text); font-size: 28px; font-weight: 700; font-family: var(--font-sans); }
+.chart-svg .donut-center-sub { fill: var(--text-muted); font-size: 11px; }
+.chart-svg .donut-legend { fill: var(--text); font-size: 11px; }
+.chart-svg .donut-legend-value { fill: var(--text-muted); font-size: 10px; }
+
 @media (max-width: 480px) {
   body { font-size: 14px; }
   .kpi-grid { grid-template-columns: repeat(2, 1fr); }
