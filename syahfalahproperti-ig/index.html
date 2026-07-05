@@ -21,6 +21,23 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
+  /* Harmonized type scale (V3) */
+  --t-xs:  0.75rem;
+  --t-sm:  0.875rem;
+  --t-md:  1rem;
+  --t-lg:  1.25rem;
+  --t-xl:  1.75rem;
+  --t-2xl: 2.5rem;
+  --t-3xl: 3.5rem;
+  --icon-xs: 14px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+  /* 8pt grid */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+
   /* Surfaces */
   --bg-deep:        #06070b;
   --bg-base:        #0a0b10;
@@ -432,7 +449,7 @@ h2.section-title {
   align-items: center;
   gap: 12px;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-strong);
   letter-spacing: -0.01em;
@@ -971,13 +988,14 @@ tbody tr:hover { background: var(--surface-glass); }
     <path d="M11 17l-1 1a2 2 0 0 1-3 0l-3-3 4-4 3 3M9 14l4-4 3 3M14 11l3-3 4 4-3 3a2 2 0 0 1-3 0l-1-1"/>
   </symbol>
 </svg>
+<script src="./titan-mascot.js" defer></script>
 </head>
 <body>
 
 
 <nav class="topbar" aria-label="Top navigation">
   <a href="../" class="brand" aria-label="TITAN PRO home">
-    <svg class="brand-mark" aria-hidden="true"><use href="#titan-mark-sm"/></svg>
+    <svg class="brand-mark" aria-hidden="true"><use href="#titan-orb-sm"/></svg>
     <span class="brand-text">
       <span class="name">TITAN PRO</span>
       <span class="tag">Social Analytics</span>
@@ -1264,7 +1282,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-trend"/></svg></span> Distribusi Tingkatan Performa</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-distribution"/></svg></span> Distribusi Tingkatan Performa</h2>
     <div class="card">
       
     <div class="chart-card">
@@ -1389,7 +1407,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-spark"/></svg></span> Kolaborasi (Mentions)</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-users"/></svg></span> Kolaborasi (Mentions)</h2>
     <div class="card">
     <div class="mention-list">
       <span class="mention"><code>@ardiantanah</code><span class="count">145</span></span><span class="mention"><code>@jck.property</code><span class="count">112</span></span><span class="mention"><code>@btn_id</code><span class="count">78</span></span><span class="mention"><code>@lembayungproperti</code><span class="count">67</span></span><span class="mention"><code>@kemenpu</code><span class="count">45</span></span><span class="mention"><code>@bhumisakaarum_official</code><span class="count">38</span></span><span class="mention"><code>@bankjatim</code><span class="count">29</span></span><span class="mention"><code>@pupr.jatim</code><span class="count">21</span></span><span class="mention"><code>@bprs_lumajang</code><span class="count">14</span></span><span class="mention"><code>@rumahsubsidijatim</code><span class="count">11</span></span>
@@ -1512,7 +1530,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-spark"/></svg></span> Analisis Durasi Konten</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span> Analisis Durasi Konten</h2>
     <div class="card">
     <div class="table-wrap">
       <table>
@@ -1791,7 +1809,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-spark"/></svg></span> Ringkasan Tahunan</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-year"/></svg></span> Ringkasan Tahunan</h2>
     <div class="card">
     <div class="table-wrap">
       <table>
@@ -1925,7 +1943,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-zap"/></svg></span> Grafik Modern Pertumbuhan Akun per Bulan</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-line-chart"/></svg></span> Grafik Modern Pertumbuhan Akun per Bulan</h2>
     <div class="card">
       
     <div class="chart-card">
@@ -2080,7 +2098,7 @@ tbody tr:hover { background: var(--surface-glass); }
   </section>
 
   <section class="section">
-    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-spark"/></svg></span> Potensi Pertumbuhan</h2>
+    <h2 class="section-title"><span class="ico" aria-hidden="true"><svg><use href="#i-rocket"/></svg></span> Potensi Pertumbuhan</h2>
     <div class="card"><ul style="margin-left: 20px; padding: 0;"><li>Strategi Reels-first bisa mendorong reach organik 3-5x dalam 3 bulan</li><li>Peluang lead generation melalui Instagram DM automation – estimasi 10-20 leads/bulan</li><li>Kerjasama dengan developer properti Jawa Timur untuk ekspansi coverage</li><li>Instagram Shopping untuk properti – fitur baru yang belum dimanfaatkan mayoritas agen lokal</li><li>Target realistis 12 bulan: 3.000 followers dan ER 2.5% dengan strategi Reels</li></ul></div>
   </section>
 
