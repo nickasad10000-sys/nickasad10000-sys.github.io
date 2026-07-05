@@ -193,13 +193,39 @@ body::before {
   font-weight: 700;
   font-size: var(--t-sm);
   letter-spacing: -0.01em;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 .brand-mark {
-  width: 30px; height: 30px;
-  filter: drop-shadow(0 2px 10px var(--gold-glow));
+  width: 36px; height: 40px;
+  flex: 0 0 36px;
+  filter: drop-shadow(0 2px 10px rgba(37, 244, 238, 0.45))
+          drop-shadow(0 1px 4px rgba(245, 193, 75, 0.35));
   transition: transform var(--t-med) var(--ease-spring);
+  display: block;
 }
 .brand:hover .brand-mark { transform: rotate(-8deg) scale(1.05); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text .name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  /* TikTok palette gradient on the brand title */
+  background: linear-gradient(90deg, #25f4ee 0%, #ffffff 38%, #fe2c55 70%, #f5c14b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(37, 244, 238, 0.18));
+}
+.brand-text .tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
 
 .topbar-actions { display: flex; align-items: center; gap: var(--s-2); margin-left: auto; }
 
@@ -282,29 +308,33 @@ body::before {
   font-size: clamp(2.4rem, 7vw, 4.2rem);
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--text-strong);
-  /* Soft cyan-white-pink TikTok palette glow */
-  background: linear-gradient(180deg, #ffffff 0%, #f4f6fb 35%, #c9d3e0 70%, #6f7d96 100%);
+  /* TikTok cyan → white → pink with gold accent edge */
+  background: linear-gradient(92deg,
+                #25f4ee 0%,
+                #6df8f3 14%,
+                #ffffff 38%,
+                #ffe9ed 56%,
+                #fe2c55 78%,
+                #f5c14b 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 24px rgba(37, 244, 238, 0.10)) drop-shadow(0 0 40px rgba(254, 44, 85, 0.05));
-  text-shadow: 0 2px 30px rgba(255, 255, 255, 0.04);
+  filter: drop-shadow(0 0 24px rgba(37, 244, 238, 0.20))
+          drop-shadow(0 0 36px rgba(254, 44, 85, 0.10))
+          drop-shadow(0 2px 6px rgba(245, 193, 75, 0.08));
   white-space: nowrap;
 }
 
 .hero-mascot {
-  width: clamp(56px, 6vw, 80px);
-  height: clamp(56px, 6vw, 80px);
+  width: clamp(72px, 9vw, 120px);
+  height: auto;
   flex-shrink: 0;
-  filter: drop-shadow(0 6px 24px var(--gold-glow));
-  animation: mascotFloat 5.4s ease-in-out infinite;
+  margin-left: var(--s-3);
   cursor: pointer;
+  transition: transform 360ms var(--ease-spring);
 }
-@keyframes mascotFloat {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-6px) rotate(3deg); }
-}
+.hero-mascot:hover { transform: scale(1.06) rotate(-2deg); }
+.hero-mascot:active { transform: scale(0.97); }
 
 .hero-eyebrow {
   display: inline-flex;
@@ -607,9 +637,12 @@ body::before {
 
 <!-- ============================ TOP BAR ============================ -->
 <nav class="topbar" aria-label="Top navigation">
-  <a href="./" class="brand" aria-label="TITAN PRO home">
-    <svg class="brand-mark" aria-hidden="true"><use href="#titan-orb-sm"/></svg>
-    <span>TITAN PRO</span>
+  <a href="./" class="brand" aria-label="TITAN PRO AI home">
+    <svg class="brand-mark topbar-bot" aria-hidden="true"><use href="#titan-bot-sm"/></svg>
+    <span class="brand-text">
+      <span class="name">TITAN PRO AI</span>
+      <span class="tag">Social Analytics</span>
+    </span>
   </a>
 
   <div class="topbar-actions">
@@ -627,8 +660,8 @@ body::before {
   <header class="hero">
     <div class="hero-row">
       <h1 class="hero-title">TITAN PRO</h1>
-      <svg class="hero-mascot" aria-label="TITAN PRO AI mascot" role="img">
-        <use href="#titan-orb"/>
+      <svg class="hero-mascot" aria-label="TITAN PRO AI mascot — robot 3D" role="img">
+        <use href="#titan-bot"/>
       </svg>
     </div>
     <span class="hero-eyebrow"><span class="pip" aria-hidden="true"></span>Social Media Analytics · Lumajang</span>
