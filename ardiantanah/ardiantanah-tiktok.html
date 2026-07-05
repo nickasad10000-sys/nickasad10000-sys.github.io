@@ -818,6 +818,37 @@ tbody tr:hover { background: var(--surface-glass); }
 }
 .brand-text .tag { color: var(--text-dim); }
 
+
+/* V6: hero refinements — face logo on left, no eyebrow, no platform prefix */
+.hero { gap: 12px; align-items: center; }
+.hero .eyebrow { display: none !important; }
+.hero .profile-mark {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  margin: 0 8px 0 0;
+  filter: drop-shadow(0 2px 8px rgba(37, 244, 238, 0.35))
+          drop-shadow(0 0 4px rgba(245, 193, 75, 0.25));
+  transition: transform 280ms var(--ease-spring);
+}
+.hero:hover .profile-mark { transform: rotate(-6deg) scale(1.08); }
+.hero h1 {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  margin: 0;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.1;
+  background: linear-gradient(92deg,
+                #25f4ee 0%, #6df8f3 14%, #ffffff 38%,
+                #ffe9ed 56%, #fe2c55 78%, #f5c14b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.hero h1 .platform-prefix { display: none !important; }
+
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -1020,9 +1051,9 @@ tbody tr:hover { background: var(--surface-glass); }
 
 <nav class="topbar" aria-label="Top navigation">
   <a href="../" class="brand" aria-label="TITAN PRO home">
-    <svg class="brand-mark" topbar-bot aria-hidden="true"><use href="#titan-bot-sm"/></svg>
+    <svg class="brand-mark" topbar-bot aria-hidden="true"><use href="#titan-face"/></svg>
     <span class="brand-text">
-      <span class="name">TITAN PRO AI</span>
+      <span class="name">TITAN PRO</span>
       <span class="tag">Social Analytics</span>
     </span>
   </a>
@@ -1043,9 +1074,8 @@ tbody tr:hover { background: var(--surface-glass); }
 <main class="shell">
   
     <header class="hero">
-  <span class="eyebrow"><span class="pip" aria-hidden="true"></span> TikTok Analytics</span>
-  <svg class="profile-mark" aria-hidden="true"><use href="#titan-mark"/></svg>
-  <h1><span class="platform-prefix">TikTok</span>@ardian.tanah</h1>
+  <svg class="profile-mark" aria-hidden="true"><use href="#titan-face"/></svg>
+  <h1>@ardian.tanah</h1>
   <p class="handle" style="margin:0; visibility:hidden;">placeholder</p>
 </header>
 
