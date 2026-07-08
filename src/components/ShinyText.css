@@ -1,0 +1,7 @@
+/* TITAN PRO · V8 — ShinyText component (uses inline gradient style from JS). */
+
+.shiny-text {
+  display: inline-block;
+  font-weight: inherit;
+  /* Color is applied via inline gradient; this fallback just keeps element size. */
+}

@@ -1,0 +1,70 @@
+/* =====================================================================
+   TITAN PRO · V8 — Shared Animations
+   ===================================================================== */
+
+@keyframes tm-enter {
+  0%   { opacity: 0; transform: translate3d(0, 80px, 0) scale(0.7); }
+  60%  { opacity: 1; transform: translate3d(0, -10px, 0) scale(1.05); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes tm-blink {
+  0%, 100% { transform: scaleY(0); }
+  50%      { transform: scaleY(1); }
+}
+
+@keyframes tm-bob {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50%      { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes tm-spin {
+  from { transform: rotate(0); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes tm-wing-flap-left {
+  0%, 100% { transform: rotate(-12deg); }
+  50%      { transform: rotate(38deg); }
+}
+
+@keyframes tm-wing-flap-right {
+  0%, 100% { transform: rotate(12deg); }
+  50%      { transform: rotate(-38deg); }
+}
+
+@keyframes tm-feather-fall {
+  0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+  25% { transform: translate(calc(var(--dx, 30px) * 0.4), 80px) rotate(calc(var(--rot, 360deg) * 0.4)); opacity: 0.95; }
+  100% { transform: translate(var(--dx, 30px), 360px) rotate(var(--rot, 360deg)); opacity: 0; }
+}
+
+@keyframes tm-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+@keyframes tm-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes tm-target-ring {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes tm-shiny {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@keyframes tm-typing-dot {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1; }
+}
+
+@keyframes tm-clock-second {
+  0%, 100% { transform: rotate(0); }
+  100%     { transform: rotate(360deg); }
+}

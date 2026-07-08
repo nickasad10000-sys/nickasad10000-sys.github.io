@@ -2,3 +2,12 @@ node_modules/
 cookies.json
 *.mp4
 .env
+dist/
+.DS_Store
+.vite/
+*.log
+.claude/
+reference/
+tests/*.png
+tests/*.html
+tests/visual/
