@@ -1,42 +1,67 @@
-// TITAN PRO · V8 — Settings modal for API key + provider/model.
-// Build-time .env vars (VITE_OPENROUTER_API_KEY / VITE_GOOGLE_STUDIO_API_KEY)
-// are read automatically. This dialog is only needed to override at runtime.
+// TITAN PRO · V8 — Settings modal for API keys + provider/model.
+// Build-time .env vars (VITE_OPENROUTER_API_KEY / VITE_OPENROUTER_API_KEY_2/3/4
+// and VITE_GOOGLE_STUDIO_API_KEY) are read automatically. This dialog is only
+// needed to override at runtime — and accepts MULTIPLE keys (one per line)
+// so the chat can failover through them if one hits a credit or rate limit.
 
 import { useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
 import { getSettings, saveSettings } from '../lib/storage.js';
-import { modelOptions, DEFAULT_PROVIDER, DEFAULT_MODEL, envApiKeyFor } from '../lib/llm.js';
+import { modelOptions, DEFAULT_PROVIDER, DEFAULT_MODEL, envApiKeysFor, parseKeyPool } from '../lib/llm.js';
+
+function poolToText(pool) {
+  if (Array.isArray(pool)) return pool.join('\n');
+  return pool || '';
+}
+
+function textToPool(text) {
+  // Split on newlines, also accept comma-separated entries; drop blanks.
+  return text
+    .split(/[\n,]/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
 
 export default function SettingsModal({ open, onClose }) {
   const [provider, setProvider] = useState('openrouter');
-  const [apiKey, setApiKey] = useState('');
+  const [apiKeyText, setApiKeyText] = useState('');
   const [model, setModel] = useState('');
 
   useEffect(() => {
     if (!open) return;
     const s = getSettings();
     setProvider(s.provider ?? 'openrouter');
-    setApiKey(s.apiKey ?? '');
+    setApiKeyText(poolToText(s.apiKey));
     setModel(s.model ?? modelOptions(s.provider ?? 'openrouter')[0] ?? '');
   }, [open]);
 
   if (!open) return null;
 
-  const envKeyPresent = !!envApiKeyFor(provider);
+  const envKeys = envApiKeysFor(provider);
+  const envKeyCount = envKeys.length;
+  const userPool = textToPool(apiKeyText);
+  const userKeyCount = userPool.length;
+  const totalKeyCount = userKeyCount > 0 ? userKeyCount : envKeyCount;
+
   const save = () => {
-    saveSettings({ provider, apiKey: apiKey.trim(), model });
+    const pool = textToPool(apiKeyText);
+    saveSettings({
+      provider,
+      apiKey: pool.length ? pool : '',
+      model,
+    });
     onClose();
   };
 
   const clear = () => {
     saveSettings({ apiKey: '', model: modelOptions(provider)[0] ?? '' });
-    setApiKey('');
+    setApiKeyText('');
   };
 
   const resetAll = () => {
     try { localStorage.removeItem('titan-pro-v8'); } catch {}
     setProvider(DEFAULT_PROVIDER);
-    setApiKey('');
+    setApiKeyText('');
     setModel(DEFAULT_MODEL);
   };
 
@@ -50,8 +75,8 @@ export default function SettingsModal({ open, onClose }) {
         </header>
         <div className="tm-modal__body">
           <p className="tm-modal__status">
-            {envKeyPresent ? (
-              <><Icon name="check" size={12} /> API key dari <code>.env</code> aktif</>
+            {envKeyCount > 0 ? (
+              <><Icon name="check" size={12} /> {envKeyCount} key dari <code>.env</code> aktif — round-robin & failover</>
             ) : (
               <><Icon name="circleInfo" size={12} /> Belum ada key. Isi di bawah, atau pakai smart-pattern.</>
             )}
@@ -77,16 +102,36 @@ export default function SettingsModal({ open, onClose }) {
           </label>
 
           <label className="tm-field">
-            <span>API Key (override)</span>
-            <input
-              type="password"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-              placeholder={provider === 'openrouter' ? 'sk-or-v1-...' : 'AIza...'}
+            <span>
+              API Key (override)
+              {userKeyCount > 1 && (
+                <span className="tm-field__hint"> — {userKeyCount} key, round-robin</span>
+              )}
+            </span>
+            <textarea
+              rows={Math.max(2, Math.min(6, userKeyCount + 1))}
+              value={apiKeyText}
+              onChange={(e) => setApiKeyText(e.target.value)}
+              placeholder={
+                provider === 'openrouter'
+                  ? 'sk-or-v1-...\nsk-or-v1-...\n(satu key per baris, atau dipisah koma)'
+                  : 'AIza...\nAIza...'
+              }
               autoComplete="off"
               spellCheck={false}
             />
+            {userKeyCount === 0 && envKeyCount > 0 && (
+              <span className="tm-field__hint">
+                Kosongkan untuk pakai {envKeyCount} key dari .env
+              </span>
+            )}
           </label>
+
+          {totalKeyCount > 1 && (
+            <p className="tm-modal__status tm-modal__status--muted">
+              <Icon name="wand" size={12} /> {totalKeyCount} key akan dipakai round-robin. Kalau satu gagal (402/429/5xx), otomatis lanjut ke key berikutnya.
+            </p>
+          )}
         </div>
         <footer className="tm-modal__foot">
           <button type="button" className="tm-btn tm-btn--ghost" onClick={clear}><Icon name="trash" size={12} /> Hapus</button>

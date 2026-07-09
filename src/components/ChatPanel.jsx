@@ -5,8 +5,8 @@ import TitanLogo from './TitanLogo.jsx';
 import Icon from './Icon.jsx';
 import { useLlmChat } from '../hooks/useLlmChat.js';
 import { QUICK_PROMPTS } from '../data/prompts.js';
-import { getApiKey, clearChatHistory, getProvider } from '../lib/storage.js';
-import { envApiKeyFor, DEFAULT_PROVIDER } from '../lib/llm.js';
+import { getApiKey, getApiKeyPool, clearChatHistory, getProvider } from '../lib/storage.js';
+import { envApiKeysFor, DEFAULT_PROVIDER } from '../lib/llm.js';
 
 function fmt(ts) {
   try {
@@ -20,7 +20,10 @@ export default function ChatPanel({ open, onClose, context }) {
   const { messages, send, loading, error } = useLlmChat(context);
   const [text, setText] = useState('');
   const scrollRef = useRef(null);
-  const hasKey = !!getApiKey() || !!envApiKeyFor(getProvider() || DEFAULT_PROVIDER);
+  const provider = getProvider() || DEFAULT_PROVIDER;
+  const localPool = getApiKeyPool();
+  const envPool = envApiKeysFor(provider);
+  const hasKey = localPool.length > 0 || envPool.length > 0 || !!getApiKey();
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;

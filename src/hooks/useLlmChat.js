@@ -1,10 +1,10 @@
 // TITAN PRO · V8 — Hook: LLM chat with smart-pattern fallback + history.
 
 import { useEffect, useState, useCallback } from 'react';
-import { chat, envApiKeyFor, DEFAULT_PROVIDER, DEFAULT_MODEL } from '../lib/llm.js';
+import { chat, envApiKeysFor, DEFAULT_PROVIDER, DEFAULT_MODEL } from '../lib/llm.js';
 import { smartReply } from '../lib/smartPattern.js';
 import { buildSystemPrompt } from '../data/prompts.js';
-import { getApiKey, getProvider, getModel, getChatHistory, saveChatHistory } from '../lib/storage.js';
+import { getApiKeyPool, getProvider, getModel, getChatHistory, saveChatHistory } from '../lib/storage.js';
 
 // Strip emojis + non-text symbols from the LLM output. Mascot responses must be
 // pure text. Covers:
@@ -40,9 +40,12 @@ export function useLlmChat(context) {
       const history = [{ role: 'system', content: sys }, ...next.slice(-10).map((m) => ({ role: m.role, content: m.text }))];
 
       // Layered resolution: localStorage > env (build-time)
-      const apiKey = getApiKey() || envApiKeyFor(getProvider() || DEFAULT_PROVIDER);
       const provider = getProvider() || DEFAULT_PROVIDER;
       const model = getModel() || DEFAULT_MODEL;
+      // Key pool: stored array/string → env pool for this provider.
+      const localPool = getApiKeyPool();
+      const envPool = envApiKeysFor(provider);
+      const pool = localPool.length ? localPool : envPool;
 
       // Debug breadcrumb — dev only, silent in production builds
       const debug = import.meta.env.DEV;
@@ -51,8 +54,8 @@ export function useLlmChat(context) {
         console.info('[TITAN LLM] → sending', {
           provider,
           model,
-          hasKey: !!apiKey,
-          keyPrefix: apiKey ? apiKey.slice(0, 10) + '…' : '(none)',
+          keyCount: pool.length,
+          keyPrefix: pool[0] ? pool[0].slice(0, 10) + '…' : '(none)',
           msgCount: history.length,
           ctxChars: (context?.accountContext ?? '').length,
         });
@@ -61,8 +64,8 @@ export function useLlmChat(context) {
       let reply = '';
       let usedFallback = false;
       try {
-        if (apiKey) {
-          reply = await chat({ messages: history, apiKey, provider, model });
+        if (pool.length > 0) {
+          reply = await chat({ messages: history, apiKeyPool: pool, provider, model });
           reply = stripEmoji(reply);
         } else {
           usedFallback = true;
