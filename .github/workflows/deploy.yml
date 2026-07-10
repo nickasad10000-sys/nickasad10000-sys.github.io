@@ -35,11 +35,9 @@ jobs:
       # DevTools, so use keys with a spending cap and rotate them if you ever
       # suspect abuse. .env at the project root is gitignored — secrets
       # come from repo Settings → Secrets and variables → Actions.
-      # The `if:` uses `secrets.` (not `env.`) because env on this step is
-      # defined inside the step itself, which is not yet bound when the
-      # conditional is evaluated.
+      # The step is unconditional; the script writes only the lines whose
+      # secret is non-empty, so it's safe to run with no secrets set.
       - name: Write .env from secrets
-        if: ${{ secrets.VITE_OPENROUTER_API_KEY != '' || secrets.VITE_OPENROUTER_API_KEY_2 != '' || secrets.VITE_GOOGLE_STUDIO_API_KEY != '' || secrets.VITE_CHATWOOT_WEBSITE_TOKEN != '' }}
         env:
           VITE_LLM_PROVIDER: ${{ secrets.VITE_LLM_PROVIDER }}
           VITE_LLM_MODEL: ${{ secrets.VITE_LLM_MODEL }}
@@ -62,8 +60,8 @@ jobs:
             [ -n "$VITE_CHATWOOT_BASE_URL" ]      && echo "VITE_CHATWOOT_BASE_URL=$VITE_CHATWOOT_BASE_URL"
             [ -n "$VITE_CHATWOOT_WEBSITE_TOKEN" ] && echo "VITE_CHATWOOT_WEBSITE_TOKEN=$VITE_CHATWOOT_WEBSITE_TOKEN"
           } > .env
-          echo "Wrote .env:"
-          cat .env | sed -E 's/(KEY|TOKEN|URL)=.+/\1=<redacted>/'
+          echo "Wrote .env (values redacted):"
+          sed -E 's/=.*/=<redacted>/' .env
 
       - name: Build
         run: npm run build
