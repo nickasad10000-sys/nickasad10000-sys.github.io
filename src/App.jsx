@@ -1,4 +1,7 @@
-// TITAN PRO · V8 — App shell: topbar + routes + floating mascot + chat + settings + orb bg.
+// TITAN PRO · V8 — App shell: topbar + routes + floating mascot + chat + orb bg.
+// API key is fully automatic (read from .env at build time). The Settings
+// modal is no longer wired up; the topbar is the only entry point for Chat
+// and Refresh.
 
 import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -6,7 +9,7 @@ import { lazy, Suspense } from 'react';
 import TopBar from './components/TopBar.jsx';
 import TitanMascot from './components/TitanMascot.jsx';
 import ChatPanel from './components/ChatPanel.jsx';
-import SettingsModal from './components/SettingsModal.jsx';
+import SupportInfoModal from './components/SupportInfoModal.jsx';
 import ShinyText from './components/ShinyText.jsx';
 import { accountBySlug, accounts } from './data/accounts.js';
 import { buildAccountContext } from './data/prompts.js';
@@ -64,7 +67,6 @@ function ScrollToTop() {
 
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const { pathname } = useLocation();
   const context = ChatContextForRoute(pathname);
 
@@ -72,10 +74,7 @@ export default function App() {
     <div className="app">
       <div className="app__overlay" aria-hidden="true" />
 
-      <TopBar
-        onOpenChat={() => setChatOpen((v) => !v)}
-        onOpenSettings={() => setSettingsOpen(true)}
-      />
+      <TopBar onOpenChat={() => setChatOpen((v) => !v)} />
 
       <main className="app__main">
         <ScrollToTop />
@@ -99,7 +98,7 @@ export default function App() {
       </footer>
 
       <ChatPanel open={chatOpen} onClose={() => setChatOpen(false)} context={context} />
-      <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <SupportInfoModal />
 
       <TitanMascot
         onClick={() => setChatOpen((v) => !v)}

@@ -1,5 +1,6 @@
 // TITAN PRO · V8 — Digital clock with ShinyText wrapper.
-// Used in the Home page top-right corner. Live HH:MM:SS, updated every second.
+// Used inline in the Home hero (next to "TITAN PRO" title) and in the account
+// page header. Live HH:MM:SS, updated every second.
 
 import { useEffect, useState } from 'react';
 import ShinyText from './ShinyText.jsx';
@@ -7,7 +8,7 @@ import './DigitalClock.css';
 
 const pad = (n) => String(n).padStart(2, '0');
 
-export default function DigitalClock({ className = '' }) {
+export default function DigitalClock({ className = '', compact = false }) {
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
@@ -26,7 +27,10 @@ export default function DigitalClock({ className = '' }) {
     .toUpperCase();
 
   return (
-    <div className={`digital-clock ${className}`} aria-label={`Waktu saat ini ${time}`}>
+    <div
+      className={`digital-clock ${compact ? 'digital-clock--compact' : ''} ${className}`}
+      aria-label={`Waktu saat ini ${time}, ${dateLabel}`}
+    >
       <div className="digital-clock__time">
         <ShinyText
           text={time}
@@ -36,7 +40,7 @@ export default function DigitalClock({ className = '' }) {
           shineColor="#a24bf5"
         />
       </div>
-      <div className="digital-clock__date">{dateLabel}</div>
+      {!compact && <div className="digital-clock__date">{dateLabel}</div>}
     </div>
   );
 }

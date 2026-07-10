@@ -1,43 +1,54 @@
-/* TITAN PRO · V8 — Digital clock with purple ShinyText sweep. */
+/* TITAN PRO · V8 — Digital clock with purple ShinyText sweep.
+   Default: inline block (sits next to title in the hero).
+   Pass `compact` prop on DigitalClock to hide the date label. */
 
 .digital-clock {
-  position: absolute;
-  top: var(--s-4);
-  right: var(--s-5);
-  z-index: 30;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  pointer-events: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 12px;
+  background: rgba(10, 10, 12, 0.55);
+  border: 1px solid rgba(200, 165, 95, 0.18);
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
   user-select: none;
+  white-space: nowrap;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .digital-clock__time {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
-  filter: drop-shadow(0 0 12px rgba(162, 75, 245, 0.30));
+  filter: drop-shadow(0 0 8px rgba(162, 75, 245, 0.30));
+  white-space: nowrap;
 }
 
 .digital-clock__date {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
-  .digital-clock { top: var(--s-3); right: var(--s-3); }
-  .digital-clock__time { font-size: 1.1rem; }
-  .digital-clock__date { font-size: 0.55rem; letter-spacing: 0.14em; }
+  .digital-clock {
+    gap: 8px;
+    padding: 5px 10px;
+  }
+  .digital-clock__time { font-size: 0.95rem; }
+  .digital-clock__date { font-size: 0.55rem; letter-spacing: 0.08em; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
+  /* Hide date on small mobile — only the time shows */
   .digital-clock__date { display: none; }
+  .digital-clock { padding: 4px 8px; }
 }

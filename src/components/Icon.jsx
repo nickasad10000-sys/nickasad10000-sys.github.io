@@ -68,6 +68,9 @@ import {
   faCertificate,
   faArrowUpWideShort,
   faChartPie,
+  faLifeRing,
+  faEnvelope,
+  faCircleXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 // Build a lookup map so we can do <Icon name="cog" /> anywhere without
@@ -139,6 +142,11 @@ const ICONS = {
   medal: faMedal,
   certificate: faCertificate,
   arrowUpWideShort: faArrowUpWideShort,
+  'life-buoy': faLifeRing,
+  lifeBuoy: faLifeRing,
+  mail: faEnvelope,
+  envelope: faEnvelope,
+  x: faCircleXmark,
 };
 
 /**
