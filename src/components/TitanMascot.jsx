@@ -244,28 +244,27 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
     <>
       <style>{`
         .tm-mascot--floating {
-          right: 18px;
-          top: 82px;
+          right: 24px;
+          bottom: 24px;
         }
         @media (max-width: 1024px) {
           .tm-mascot--floating {
-            width: 110px !important;
-            height: 150px !important;
+            width: 130px !important;
+            height: 175px !important;
+            right: 14px !important;
+            bottom: 14px !important;
+            opacity: 0.85;
+          }
+        }
+        @media (max-width: 640px) {
+          .tm-mascot--floating {
+            width: 96px !important;
+            height: 130px !important;
             right: 8px !important;
-            top: 76px !important;
+            bottom: 8px !important;
             opacity: 0.55;
           }
-          .tm-mascot--floating:hover { opacity: 1; }
-        }
-        @media (max-width: 540px) {
-          .tm-mascot--floating {
-            width: 64px !important;
-            height: 88px !important;
-            right: 4px !important;
-            top: 64px !important;
-            opacity: 0.30;
-          }
-          .tm-mascot--floating:hover { opacity: 0.9; }
+          .tm-mascot--floating:hover { opacity: 0.95; }
           .tm-mascot--floating .tm-mascot__ask { display: none; }
           .tm-mascot--floating .tm-mascot__handle { display: none; }
         }
@@ -279,8 +278,8 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
           top: pos.y || 'auto',
           right: pos.x ? 'auto' : 'auto',
           bottom: pos.y ? 'auto' : 'auto',
-          width: 150,
-          height: 200,
+          width: 180,
+          height: 240,
           zIndex: 60,
           cursor: 'pointer',
           userSelect: 'none',

@@ -5,7 +5,7 @@
 // configured) or a fallback info modal with setup instructions.
 
 import { useEffect, useState, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TitanLogo from './TitanLogo.jsx';
 import Icon from './Icon.jsx';
 import { isChatwootConfigured } from '../lib/chatwoot.js';
@@ -35,7 +35,6 @@ function formatRelative(ts) {
 }
 
 export default function TopBar({ onOpenChat }) {
-  const loc = useLocation();
   const [refreshing, setRefreshing] = useState(false);
   const [lastRefresh, setLastRefresh] = useState(readLastRefresh);
 
@@ -100,18 +99,6 @@ export default function TopBar({ onOpenChat }) {
       </Link>
 
       <nav className="tm-topbar__nav" aria-label="Primary">
-        <Link to="/" className={`tm-topbar__link ${loc.pathname === '/' ? 'is-active' : ''}`}>
-          Beranda
-        </Link>
-        <button
-          type="button"
-          className="tm-topbar__link tm-topbar__link--btn"
-          onClick={onOpenChat}
-          aria-label="Tanya TITAN"
-          title="Tanya TITAN"
-        >
-          <Icon name="comments" size={13} />
-        </button>
         <button
           type="button"
           className={`tm-topbar__link tm-topbar__link--btn tm-topbar__refresh ${refreshing ? 'is-loading' : ''}`}

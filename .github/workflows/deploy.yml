@@ -30,6 +30,36 @@ jobs:
       - name: Install
         run: npm ci
 
+      # Build-time env vars. Vite only inlines VITE_* prefixed vars, so the
+      # API keys land inside the public bundle. Anyone can read them in
+      # DevTools, so use keys with a spending cap and rotate them if you ever
+      # suspect abuse. .env at the project root is gitignored — secrets
+      # come from repo Settings → Secrets and variables → Actions.
+      - name: Write .env from secrets
+        if: ${{ env.VITE_OPENROUTER_API_KEY != '' || env.VITE_OPENROUTER_API_KEY_2 != '' || env.VITE_GOOGLE_STUDIO_API_KEY != '' }}
+        env:
+          VITE_LLM_PROVIDER: ${{ secrets.VITE_LLM_PROVIDER }}
+          VITE_LLM_MODEL: ${{ secrets.VITE_LLM_MODEL }}
+          VITE_OPENROUTER_API_KEY: ${{ secrets.VITE_OPENROUTER_API_KEY }}
+          VITE_OPENROUTER_API_KEY_2: ${{ secrets.VITE_OPENROUTER_API_KEY_2 }}
+          VITE_OPENROUTER_API_KEY_3: ${{ secrets.VITE_OPENROUTER_API_KEY_3 }}
+          VITE_OPENROUTER_API_KEY_4: ${{ secrets.VITE_OPENROUTER_API_KEY_4 }}
+          VITE_GOOGLE_STUDIO_API_KEY: ${{ secrets.VITE_GOOGLE_STUDIO_API_KEY }}
+          VITE_CHATWOOT_BASE_URL: ${{ secrets.VITE_CHATWOOT_BASE_URL }}
+          VITE_CHATWOOT_WEBSITE_TOKEN: ${{ secrets.VITE_CHATWOOT_WEBSITE_TOKEN }}
+        run: |
+          {
+            echo "VITE_LLM_PROVIDER=${VITE_LLM_PROVIDER:-openrouter}"
+            echo "VITE_LLM_MODEL=${VITE_LLM_MODEL:-anthropic/claude-3-haiku}"
+            [ -n "$VITE_OPENROUTER_API_KEY" ]     && echo "VITE_OPENROUTER_API_KEY=$VITE_OPENROUTER_API_KEY"
+            [ -n "$VITE_OPENROUTER_API_KEY_2" ]   && echo "VITE_OPENROUTER_API_KEY_2=$VITE_OPENROUTER_API_KEY_2"
+            [ -n "$VITE_OPENROUTER_API_KEY_3" ]   && echo "VITE_OPENROUTER_API_KEY_3=$VITE_OPENROUTER_API_KEY_3"
+            [ -n "$VITE_OPENROUTER_API_KEY_4" ]   && echo "VITE_OPENROUTER_API_KEY_4=$VITE_OPENROUTER_API_KEY_4"
+            [ -n "$VITE_GOOGLE_STUDIO_API_KEY" ]  && echo "VITE_GOOGLE_STUDIO_API_KEY=$VITE_GOOGLE_STUDIO_API_KEY"
+            [ -n "$VITE_CHATWOOT_BASE_URL" ]      && echo "VITE_CHATWOOT_BASE_URL=$VITE_CHATWOOT_BASE_URL"
+            [ -n "$VITE_CHATWOOT_WEBSITE_TOKEN" ] && echo "VITE_CHATWOOT_WEBSITE_TOKEN=$VITE_CHATWOOT_WEBSITE_TOKEN"
+          } > .env
+
       - name: Build
         run: npm run build
 
