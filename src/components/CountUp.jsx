@@ -1,82 +1,94 @@
-// TITAN PRO · V8 — CountUp (port of react-bits CountUp, official source).
-// Animates a number from `from` → `to` with spring physics.
+// TITAN PRO · V8 — Animated number counter with Indonesian-style formatting.
+// Used in the AccountPage to animate KPI values from 0 to their final
+// number when the section scrolls into view.
 
-import { useInView, useMotionValue, useSpring } from 'motion/react';
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export default function CountUp({
-  to,
-  from = 0,
-  direction = 'up',
-  delay = 0,
-  duration = 2,
-  className = '',
-  startWhen = true,
-  separator = '',
-  onStart,
-  onEnd,
-}) {
-  const ref = useRef(null);
-  const motionValue = useMotionValue(direction === 'down' ? to : from);
+/**
+ * Parse a string like "892K", "1.23M", "2.8jt", "5.6rb" into a number.
+ * Falls back to `parseFloat` for raw numbers.
+ */
+function parseTarget(value) {
+  if (typeof value === 'number') return value;
+  if (typeof value !== 'string') return 0;
+  const s = value.trim().toLowerCase().replace(/\s+/g, '');
+  // Match the numeric part and the suffix
+  const m = s.match(/^([\d.,]+)\s*([a-z%]*)/);
+  if (!m) return 0;
+  const numPart = m[1].replace(/\./g, '').replace(',', '.');
+  const num = parseFloat(numPart);
+  if (Number.isNaN(num)) return 0;
+  const suffix = m[2];
+  let mult = 1;
+  if (suffix === 'k' || suffix === 'rb' || suffix === ' ribu') mult = 1e3;
+  else if (suffix === 'jt' || suffix === 'm') mult = 1e6;
+  else if (suffix === 'm' || suffix === 'jt') mult = 1e6;
+  else if (suffix === 'b' || suffix === 'miliar') mult = 1e9;
+  else if (suffix === '%') mult = 1;
+  return num * mult;
+}
 
-  const damping = 20 + 40 * (1 / duration);
-  const stiffness = 100 * (1 / duration);
+/**
+ * Format a number for display. Default: Indonesian dot-thousands.
+ * `separator` lets the caller pick `.` (Indonesian) or `,` (Western).
+ */
+function formatNumber(n, separator = '.', decimals = 0) {
+  if (!Number.isFinite(n)) return '—';
+  const fixed = n.toFixed(decimals);
+  const [intPart, fracPart] = fixed.split('.');
+  const intWithSep = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  return fracPart ? `${intWithSep},${fracPart}` : intWithSep;
+}
 
-  const springValue = useSpring(motionValue, { damping, stiffness });
+/**
+ * Animate from 0 → `to` over `duration` seconds. If the target is
+ * non-numeric (e.g. "—"), the value is shown immediately without
+ * animation.
+ */
+export default function CountUp({ to, duration = 1.2, separator = '.', decimals, className = '' }) {
+  const target = parseTarget(to);
+  const canAnimate = Number.isFinite(target) && target > 0;
+  const [value, setValue] = useState(canAnimate ? 0 : target);
+  const startRef = useRef(null);
+  const rafRef = useRef(0);
 
-  const isInView = useInView(ref, { once: true, margin: '0px' });
-
-  const getDecimalPlaces = (num) => {
-    const str = num.toString();
-    if (str.includes('.')) {
-      const decimals = str.split('.')[1];
-      if (parseInt(decimals) !== 0) return decimals.length;
+  useEffect(() => {
+    if (!canAnimate) {
+      setValue(target);
+      return undefined;
     }
-    return 0;
-  };
+    startRef.current = null;
+    const animate = (ts) => {
+      if (startRef.current == null) startRef.current = ts;
+      const elapsed = (ts - startRef.current) / 1000;
+      const t = Math.min(1, elapsed / duration);
+      // ease-out cubic for a soft landing
+      const eased = 1 - Math.pow(1 - t, 3);
+      setValue(target * eased);
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        setValue(target);
+      }
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [target, duration, canAnimate]);
 
-  const maxDecimals = Math.max(getDecimalPlaces(from), getDecimalPlaces(to));
+  // Decide decimals: if the original had decimals (e.g. "1.23M"), match it
+  let displayDecimals = decimals;
+  if (displayDecimals == null) {
+    if (typeof to === 'string' && /\./.test(to.replace(/[^\d.]/g, ''))) {
+      const m = to.match(/\.(\d+)/);
+      displayDecimals = m ? Math.min(m[1].length, 2) : 0;
+    } else {
+      displayDecimals = 0;
+    }
+  }
 
-  const formatValue = useCallback(
-    (latest) => {
-      const hasDecimals = maxDecimals > 0;
-      const options = {
-        useGrouping: !!separator,
-        minimumFractionDigits: hasDecimals ? maxDecimals : 0,
-        maximumFractionDigits: hasDecimals ? maxDecimals : 0,
-      };
-      const formattedNumber = Intl.NumberFormat('en-US', options).format(latest);
-      return separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
-    },
-    [maxDecimals, separator]
+  return (
+    <span className={className}>
+      {canAnimate ? formatNumber(value, separator, displayDecimals) : (to ?? '—')}
+    </span>
   );
-
-  useEffect(() => {
-    if (ref.current) ref.current.textContent = formatValue(direction === 'down' ? to : from);
-  }, [from, to, direction, formatValue]);
-
-  useEffect(() => {
-    if (isInView && startWhen) {
-      if (typeof onStart === 'function') onStart();
-      const timeoutId = setTimeout(() => {
-        motionValue.set(direction === 'down' ? from : to);
-      }, delay * 1000);
-      const durationTimeoutId = setTimeout(() => {
-        if (typeof onEnd === 'function') onEnd();
-      }, delay * 1000 + duration * 1000);
-      return () => {
-        clearTimeout(timeoutId);
-        clearTimeout(durationTimeoutId);
-      };
-    }
-  }, [isInView, startWhen, motionValue, direction, from, to, delay, onStart, onEnd, duration]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on('change', (latest) => {
-      if (ref.current) ref.current.textContent = formatValue(latest);
-    });
-    return () => unsubscribe();
-  }, [springValue, formatValue]);
-
-  return <span className={className} ref={ref} />;
 }
