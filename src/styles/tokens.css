@@ -36,21 +36,21 @@
   --iron-line:         rgba(75, 75, 77, 0.45);
 
   /* === Surfaces (semantic) === */
-  --bg:                #0a0a0a;
-  --bg-deep:           #060608;
-  --bg-base:           #0a0a0a;
-  --bg-elevated:       #141416;
-  --bg-card:           #141416;
-  --bg-card-hover:     #1c1c1e;
-  --surface-glass:     rgba(20, 20, 22, 0.78);
+  --bg:                #1e1e1e;
+  --bg-deep:           #1a1a1a;
+  --bg-base:           #1e1e1e;
+  --bg-elevated:       #282828;
+  --bg-card:           #282828;
+  --bg-card-hover:     #303030;
+  --surface-glass:     rgba(40, 40, 40, 0.78);
   --surface-line:      rgba(200, 165, 95, 0.08);
   --surface-line-2:    rgba(200, 165, 95, 0.16);
   --surface-line-3:    rgba(200, 165, 95, 0.24);
 
   /* === Text === */
-  --text:              #e8e6e2;
-  --text-strong:       #f5f3ee;
-  --text-muted:        #8a8a8c;
+  --text:              #e0e0e0;
+  --text-strong:       #ffffff;
+  --text-muted:        #aaaaac;
   --text-dim:          #5a5a5c;
   --text-faint:        #3d3d40;
 
@@ -63,7 +63,7 @@
   --tt-gradient:       linear-gradient(135deg, #25f4ee 0%, #ffffff 50%, #fe2c55 100%);
   --ig-gradient:       linear-gradient(135deg, #fcb045 0%, #fd1d1d 45%, #833ab4 100%);
 
-  /* === Purple (data/chart theme) — replaces chart bronze/red gradients === */
+  /* === Purple (data/chart theme) — we keep for shiny text only === */
   --purple:            #a24bf5;
   --purple-light:      #c084fc;
   --purple-2:          #8b3ce0;
