@@ -720,7 +720,8 @@
   .acct-row__platform { font-size: 0.55rem; }
   .acct-row__rank { width: 28px; height: 28px; font-size: 0.78rem; }
   .tm-chat { right: 12px; bottom: 90px; width: calc(100vw - 24px); height: calc(100dvh - 110px); border-radius: var(--radius); }
-  .tm-mascot { width: 130px; height: 180px; right: 12px; bottom: 12px; }
+  /* .tm-mascot sizing now driven by inline <style> in TitanMascot.jsx so
+     desktop is larger and mobile stays compact. */
 }
 
 @media (max-width: 480px) {

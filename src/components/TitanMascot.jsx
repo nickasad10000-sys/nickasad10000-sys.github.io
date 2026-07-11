@@ -246,25 +246,35 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
         .tm-mascot--floating {
           right: 24px;
           bottom: 24px;
+          width: 220px;
+          height: 300px;
+        }
+        @media (max-width: 1280px) {
+          .tm-mascot--floating {
+            width: 180px;
+            height: 250px;
+            right: 18px;
+            bottom: 18px;
+          }
         }
         @media (max-width: 1024px) {
           .tm-mascot--floating {
-            width: 150px !important;
-            height: 200px !important;
-            right: 16px !important;
-            bottom: 16px !important;
-            opacity: 0.9;
+            width: 150px;
+            height: 200px;
+            right: 16px;
+            bottom: 16px;
+            opacity: 0.95;
           }
         }
         @media (max-width: 640px) {
           .tm-mascot--floating {
-            width: 104px !important;
-            height: 140px !important;
-            right: 8px !important;
-            bottom: 8px !important;
-            opacity: 0.7;
+            width: 104px;
+            height: 140px;
+            right: 8px;
+            bottom: 8px;
+            opacity: 0.8;
           }
-          .tm-mascot--floating:hover { opacity: 0.98; }
+          .tm-mascot--floating:hover { opacity: 1; }
           .tm-mascot--floating .tm-mascot__ask { display: none; }
           .tm-mascot--floating .tm-mascot__handle { display: none; }
         }
