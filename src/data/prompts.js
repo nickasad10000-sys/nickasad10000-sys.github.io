@@ -168,5 +168,11 @@ export const buildSystemPrompt = (ctx = {}) => {
   return BASE_PROMPT.replace('{dataBlock}', dataBlock);
 };
 
-export const QUICK_PROMPTS = [];
+export const QUICK_PROMPTS = [
+  'Konten paling viral bulan ini?',
+  'Akun dengan engagement tertinggi?',
+  'Bandingkan TikTok vs Instagram',
+  'Kelemahan utama tim?',
+  'Rekomendasi strategi minggu ini',
+];
 

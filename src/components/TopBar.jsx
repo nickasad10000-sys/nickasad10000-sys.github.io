@@ -1,12 +1,15 @@
 // TITAN PRO · V8 — Top navigation bar with Corinthian logo + tagline, live
-// digital clock, and a refresh-data button. The Chatwoot support widget and
-// settings UI are not exposed; refresh is the only topbar action.
+// digital clock, refresh-data button, and the TITAN mascot that opens the
+// chat panel anchored below it. Chat panel DOM lives here so it can position
+// itself relative to the mascot cluster.
 
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import TitanLogo from './TitanLogo.jsx';
 import Icon from './Icon.jsx';
 import DigitalClock from './DigitalClock.jsx';
+import TopBarMascot from './TopBarMascot.jsx';
+import ChatPanel from './ChatPanel.jsx';
 
 const REFRESH_KEY = 'titan-pro-v8-refresh';
 
@@ -32,7 +35,7 @@ function formatRelative(ts) {
   return `${Math.floor(h / 24)}h`;
 }
 
-export default function TopBar({ onOpenChat }) {
+export default function TopBar({ onOpenChat, chatOpen = false, context }) {
   const [refreshing, setRefreshing] = useState(false);
   const [lastRefresh, setLastRefresh] = useState(readLastRefresh);
 
@@ -41,6 +44,16 @@ export default function TopBar({ onOpenChat }) {
     const id = setInterval(() => setLastRefresh(readLastRefresh()), 30000);
     return () => clearInterval(id);
   }, []);
+
+  // Close chat on Escape for a polished keyboard experience.
+  useEffect(() => {
+    if (!chatOpen) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') onOpenChat?.();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [chatOpen, onOpenChat]);
 
   const handleRefresh = useCallback(async () => {
     if (refreshing) return;
@@ -77,6 +90,19 @@ export default function TopBar({ onOpenChat }) {
       </Link>
 
       <nav className="tm-topbar__nav" aria-label="Primary">
+        <div className="tm-topbar__mascot-cluster">
+          <TopBarMascot
+            onClick={onOpenChat}
+            active={chatOpen}
+            size={56}
+          />
+          <ChatPanel
+            open={chatOpen}
+            onClose={onOpenChat}
+            context={context}
+            anchored
+          />
+        </div>
         <DigitalClock />
         <button
           type="button"

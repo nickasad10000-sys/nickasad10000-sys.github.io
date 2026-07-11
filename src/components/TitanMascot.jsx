@@ -8,9 +8,12 @@
 //   - halo slowly rotates
 //   - mascot body bobs gently
 //   - icon-only ask button (no text label) on the mascot
+//
+// Drag-to-move functionality via useDrag hook.
 
 import { useDrag } from '../hooks/useDrag.js';
 import Icon from './Icon.jsx';
+import '../styles/mascot.css';
 
 const PHOTO_MASCOT = '/mascot/m-full.png';
 const PHOTO_HALO = '/mascot/m-halo.png';
@@ -108,10 +111,11 @@ function MascotSvg() {
 
 export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
   const { ref, pos, onPointerDown } = useDrag({ bounds: true });
+    const isDragging = pos.x !== 0 || pos.y !== 0;
 
   if (variant === 'inline') {
     return (
-      <div className="tm-mascot tm-mascot--inline" style={{ width: '100%', maxWidth: 360 }}>
+      <div className="tm-mascot tm-mascot--inline" style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <MascotSvg />
       </div>
     );
@@ -160,10 +164,14 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
         className="tm-mascot tm-mascot--floating"
         style={{
           position: 'fixed',
-          left: pos.x || 'auto',
-          top: pos.y || 'auto',
-          right: pos.x ? 'auto' : 'auto',
-          bottom: pos.y ? 'auto' : 'auto',
+          ...(isDragging
+            ? {
+                left: `${pos.x}px`,
+                top: `${pos.y}px`,
+                right: 'auto',
+                bottom: 'auto',
+              }
+            : {}),
           width: 220,
           height: 300,
           zIndex: 60,

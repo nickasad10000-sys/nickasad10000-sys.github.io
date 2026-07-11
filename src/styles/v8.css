@@ -197,7 +197,7 @@
 }
 .acct-row__icon {
   width: 48px; height: 48px;
-  display: inline-flex; align-items: center; justify-center;
+  display: inline-flex; align-items: center; justify-content: center;
   background: var(--bg-elevated); border: 1px solid var(--surface-line-2); border-radius: 12px;
   flex-shrink: 0; padding: 4px;
 }
@@ -452,6 +452,18 @@
   .acct-row__platform { font-size: 0.55rem; }
   .acct-row__rank { width: 28px; height: 28px; font-size: 0.78rem; }
   .tm-chat { right: 12px; bottom: 90px; width: calc(100vw - 24px); height: calc(100dvh - 110px); border-radius: var(--radius); }
+  /* On mobile, the anchored chat becomes a full-width sheet pinned to
+     the topbar so the mascot stays tappable and the chat is easy to type in. */
+  .tm-chat--anchored {
+    position: fixed;
+    top: 64px;
+    right: 8px;
+    left: 8px;
+    width: auto;
+    height: calc(100dvh - 80px);
+    max-width: none;
+  }
+  .tm-chat--anchored::before { display: none; }
   /* .tm-mascot sizing now driven by inline <style> in TitanMascot.jsx so
      desktop is larger and mobile stays compact. */
 }
@@ -477,6 +489,57 @@
   box-shadow: var(--shadow-lg);
   z-index: 90; overflow: hidden;
   animation: tm-enter 360ms var(--ease-spring);
+}
+
+/* Anchored variant — used when ChatPanel is rendered inside the topbar
+   mascot cluster, so it sits directly below the mascot instead of
+   floating in the bottom-right corner. */
+.tm-chat--anchored {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -8px;
+  bottom: auto;
+  left: auto;
+  animation: tm-enter 280ms var(--ease-spring);
+}
+.tm-chat--anchored::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  background: var(--surface-glass);
+  border-top: 1px solid var(--surface-line-2);
+  border-left: 1px solid var(--surface-line-2);
+  transform: rotate(45deg);
+  border-top-left-radius: 3px;
+  pointer-events: none;
+}
+
+/* === Topbar mascot cluster === */
+.tm-topbar__mascot-cluster {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.tm-topbar-mascot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+.tm-topbar-mascot:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(245, 183, 51, 0.45));
+}
+.tm-topbar-mascot:focus-visible {
+  box-shadow: 0 0 0 2px var(--bronze), 0 0 0 4px rgba(200, 165, 95, 0.30);
+}
+.tm-topbar-mascot.is-active {
+  filter: drop-shadow(0 0 14px rgba(162, 75, 245, 0.55));
 }
 .tm-chat__head {
   display: flex; align-items: center; gap: 12px;
@@ -541,4 +604,124 @@
   border-bottom-right-radius: 4px;
   box-shadow: var(--shadow-red);
 }
-.tm-chat$${''}
+.tm-chat__text { white-space: pre-wrap; }
+.tm-chat__meta {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.tm-chat__row--user .tm-chat__meta { color: var(--text-strong); }
+.tm-chat__bubble--typing {
+  background: rgba(200, 165, 95, 0.08);
+  border: 1px solid var(--bronze-line);
+  border-bottom-left-radius: 4px;
+  padding: 14px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.tm-chat__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--bronze-light);
+  display: inline-block;
+  animation: tmChatDot 1.1s ease-in-out infinite;
+}
+.tm-chat__dot:nth-child(2) { animation-delay: 0.15s; }
+.tm-chat__dot:nth-child(3) { animation-delay: 0.30s; }
+@keyframes tmChatDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40%           { transform: scale(1);   opacity: 1; }
+}
+
+.tm-chat__quick {
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-top: 1px solid var(--surface-line);
+  background: rgba(0, 0, 0, 0.18);
+}
+.tm-chat__quick button {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--bronze-line);
+  background: rgba(200, 165, 95, 0.08);
+  color: var(--bronze-light);
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+.tm-chat__quick button:hover:not(:disabled) {
+  background: rgba(200, 165, 95, 0.18);
+  color: var(--text-strong);
+  transform: translateY(-1px);
+}
+.tm-chat__quick button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.tm-chat__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--neg-bg);
+  border-top: 1px solid var(--neg);
+  color: var(--neg);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.tm-chat__form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid var(--surface-line);
+  background: rgba(0, 0, 0, 0.32);
+}
+.tm-chat__form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  color: var(--text-strong);
+  font-family: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.tm-chat__form input::placeholder { color: var(--text-dim); }
+.tm-chat__form input:focus {
+  border-color: var(--bronze);
+  background: rgba(255, 255, 255, 0.10);
+}
+.tm-chat__form input:disabled { opacity: 0.5; }
+
+.tm-chat__form button[type="submit"] {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: linear-gradient(135deg, var(--spartan-red), #c00101);
+  color: var(--text-strong);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: var(--shadow-red);
+}
+.tm-chat__form button[type="submit"]:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+.tm-chat__form button[type="submit"]:disabled {
+  opacity: 0.4; cursor: not-allowed;
+  box-shadow: none;
+}

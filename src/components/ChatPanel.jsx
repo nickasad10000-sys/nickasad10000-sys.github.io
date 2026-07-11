@@ -16,7 +16,7 @@ function fmt(ts) {
   }
 }
 
-export default function ChatPanel({ open, onClose, context }) {
+export default function ChatPanel({ open, onClose, context, anchored = false }) {
   const { messages, send, loading, error } = useLlmChat(context);
   const [text, setText] = useState('');
   const scrollRef = useRef(null);
@@ -39,8 +39,10 @@ export default function ChatPanel({ open, onClose, context }) {
 
   if (!open) return null;
 
+  const className = `tm-chat ${anchored ? 'tm-chat--anchored' : ''}`.trim();
+
   return (
-    <aside className="tm-chat" role="dialog" aria-modal="false" aria-label="Chat dengan TITAN">
+    <aside className={className} role="dialog" aria-modal="false" aria-label="Chat dengan TITAN">
       <header className="tm-chat__head">
         <div className="tm-chat__avatar"><TitanLogo size={32} /></div>
         <div className="tm-chat__title">
@@ -56,11 +58,11 @@ export default function ChatPanel({ open, onClose, context }) {
       <div className="tm-chat__body" ref={scrollRef}>
         {messages.length === 0 && (
           <div className="tm-chat__welcome">
-            <p><b>Halo, Kak.</b></p>
+            <p className="tm-chat__welcome-title"><b>Halo, Kak.</b></p>
             <p>{context?.pageTitle === 'Beranda'
               ? 'Aku TITAN — maskot AI untuk 8 akun tim. Tanya soal performa, strategi, atau tren konten di akun manapun.'
               : `Aku TITAN — aku bisa jelasin data lengkap akun ${context?.accountName ?? 'ini'}: KPI, top konten viral, kelemahan, sampai saran strategi.`}</p>
-            <p className="tm-chat__welcome-sub">Langsung ketik pertanyaan di bawah.</p>
+            <p className="tm-chat__welcome-sub">Pilih saran di bawah atau ketik pertanyaan sendiri.</p>
           </div>
         )}
 
@@ -96,7 +98,8 @@ export default function ChatPanel({ open, onClose, context }) {
 
       {error && (
         <div className="tm-chat__error" role="alert" title={error}>
-          ⚠ AI error — pakai smart-pattern. Cek Settings.
+          <Icon name="triangleExclamation" size={12} />
+          <span>AI error — pakai smart-pattern. Cek koneksi.</span>
         </div>
       )}
 
@@ -105,7 +108,7 @@ export default function ChatPanel({ open, onClose, context }) {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Ketik pertanyaan..."
+          placeholder="Tanya soal 8 akun tim Lumajang..."
           disabled={loading}
           autoComplete="off"
         />

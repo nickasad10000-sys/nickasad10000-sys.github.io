@@ -1,14 +1,12 @@
-// TITAN PRO · V8 — App shell: topbar + routes + floating mascot + chat + orb bg.
-// API key is fully automatic (read from .env at build time). The Settings
-// modal and the Chatwoot support widget are not exposed; the topbar is the
-// only entry point for chat (via the mascot) and refresh data.
+// TITAN PRO · V8 — App shell: topbar + routes + orb background.
+// The mascot and chat panel are owned by the TopBar so the chat can anchor
+// directly below the mascot in the navigation. API key is fully automatic
+// (read from .env at build time). Settings modal and Chatwoot are not exposed.
 
 import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import TopBar from './components/TopBar.jsx';
-import TitanMascot from './components/TitanMascot.jsx';
-import ChatPanel from './components/ChatPanel.jsx';
 import ShinyText from './components/ShinyText.jsx';
 import { accountBySlug, accounts } from './data/accounts.js';
 import { buildAccountContext } from './data/prompts.js';
@@ -73,7 +71,11 @@ export default function App() {
     <div className="app">
       <div className="app__overlay" aria-hidden="true" />
 
-      <TopBar onOpenChat={() => setChatOpen((v) => !v)} />
+      <TopBar
+        onOpenChat={() => setChatOpen((v) => !v)}
+        chatOpen={chatOpen}
+        context={context}
+      />
 
       <main className="app__main">
         <ScrollToTop />
@@ -95,13 +97,6 @@ export default function App() {
           shineColor="#a24bf5"
         />
       </footer>
-
-      <ChatPanel open={chatOpen} onClose={() => setChatOpen(false)} context={context} />
-
-      <TitanMascot
-        onClick={() => setChatOpen((v) => !v)}
-        onAsk={() => setChatOpen(true)}
-      />
     </div>
   );
 }
