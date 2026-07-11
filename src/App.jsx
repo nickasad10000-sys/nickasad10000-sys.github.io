@@ -1,7 +1,7 @@
 // TITAN PRO · V8 — App shell: topbar + routes + floating mascot + chat + orb bg.
 // API key is fully automatic (read from .env at build time). The Settings
-// modal is no longer wired up; the topbar is the only entry point for Chat
-// and Refresh.
+// modal and the Chatwoot support widget are not exposed; the topbar is the
+// only entry point for chat (via the mascot) and refresh data.
 
 import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -9,7 +9,6 @@ import { lazy, Suspense } from 'react';
 import TopBar from './components/TopBar.jsx';
 import TitanMascot from './components/TitanMascot.jsx';
 import ChatPanel from './components/ChatPanel.jsx';
-import SupportInfoModal from './components/SupportInfoModal.jsx';
 import ShinyText from './components/ShinyText.jsx';
 import { accountBySlug, accounts } from './data/accounts.js';
 import { buildAccountContext } from './data/prompts.js';
@@ -98,7 +97,6 @@ export default function App() {
       </footer>
 
       <ChatPanel open={chatOpen} onClose={() => setChatOpen(false)} context={context} />
-      <SupportInfoModal />
 
       <TitanMascot
         onClick={() => setChatOpen((v) => !v)}

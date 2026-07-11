@@ -1,10 +1,9 @@
 // TITAN PRO · V8 — Home page: hero with ShinyText title + 8 platform-tinted account rows.
-// The digital clock is inline next to the "Beranda" title.
-// The data refresh button is no longer here — it moved to the TopBar.
+// The live clock now lives in the TopBar (next to the refresh button).
+// The data refresh button is no longer here — it lives in the TopBar too.
 
 import ShinyText from '../components/ShinyText.jsx';
 import AccountRow from '../components/AccountRow.jsx';
-import DigitalClock from '../components/DigitalClock.jsx';
 import Icon from '../components/Icon.jsx';
 import { accounts } from '../data/accounts.js';
 
@@ -13,10 +12,7 @@ export default function Home() {
     <div className="home">
       <section className="home__hero">
         <div className="home__hero-inner">
-          <div className="home__title-row">
-            <span className="home__eyebrow"><Icon name="sword" size={12} /> TITAN PRO · V8</span>
-            <DigitalClock />
-          </div>
+          <span className="home__eyebrow"><Icon name="sword" size={12} /> TITAN PRO · V8</span>
           <h1 className="home__title">
             <ShinyText
               text="TITAN PRO"

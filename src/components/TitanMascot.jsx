@@ -249,22 +249,22 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
         }
         @media (max-width: 1024px) {
           .tm-mascot--floating {
-            width: 130px !important;
-            height: 175px !important;
-            right: 14px !important;
-            bottom: 14px !important;
-            opacity: 0.85;
+            width: 150px !important;
+            height: 200px !important;
+            right: 16px !important;
+            bottom: 16px !important;
+            opacity: 0.9;
           }
         }
         @media (max-width: 640px) {
           .tm-mascot--floating {
-            width: 96px !important;
-            height: 130px !important;
+            width: 104px !important;
+            height: 140px !important;
             right: 8px !important;
             bottom: 8px !important;
-            opacity: 0.55;
+            opacity: 0.7;
           }
-          .tm-mascot--floating:hover { opacity: 0.95; }
+          .tm-mascot--floating:hover { opacity: 0.98; }
           .tm-mascot--floating .tm-mascot__ask { display: none; }
           .tm-mascot--floating .tm-mascot__handle { display: none; }
         }
@@ -278,8 +278,8 @@ export default function TitanMascot({ onClick, onAsk, variant = 'floating' }) {
           top: pos.y || 'auto',
           right: pos.x ? 'auto' : 'auto',
           bottom: pos.y ? 'auto' : 'auto',
-          width: 180,
-          height: 240,
+          width: 220,
+          height: 300,
           zIndex: 60,
           cursor: 'pointer',
           userSelect: 'none',

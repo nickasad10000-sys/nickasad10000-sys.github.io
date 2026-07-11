@@ -1,14 +1,12 @@
-// TITAN PRO · V8 — Top navigation bar with Corinthian logo + tagline.
-// API key is fully automatic (read from .env at build time). The Settings
-// modal is no longer exposed; the only topbar actions are Chat (TITAN) and
-// Refresh data. A small support icon opens either the Chatwoot widget (if
-// configured) or a fallback info modal with setup instructions.
+// TITAN PRO · V8 — Top navigation bar with Corinthian logo + tagline, live
+// digital clock, and a refresh-data button. The Chatwoot support widget and
+// settings UI are not exposed; refresh is the only topbar action.
 
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import TitanLogo from './TitanLogo.jsx';
 import Icon from './Icon.jsx';
-import { isChatwootConfigured } from '../lib/chatwoot.js';
+import DigitalClock from './DigitalClock.jsx';
 
 const REFRESH_KEY = 'titan-pro-v8-refresh';
 
@@ -68,26 +66,6 @@ export default function TopBar({ onOpenChat }) {
     }
   }, [refreshing]);
 
-  // Support button: if Chatwoot is configured at build-time, open its
-  // widget directly. Otherwise show a small info modal explaining the
-  // VITE_CHATWOOT_* env vars the team can set to enable it.
-  const handleSupport = useCallback(() => {
-    if (typeof window === 'undefined') return;
-    if (isChatwootConfigured()) {
-      // Chatwoot SDK exposes a toggle on window.$chatwoot
-      const cw = window.$chatwoot;
-      if (cw && typeof cw.toggle === 'function') {
-        cw.toggle();
-        return;
-      }
-      // Fallback: bubble click (Chatwoot default selector)
-      const bubble = document.querySelector('.woot-widget-bubble');
-      if (bubble) bubble.click();
-      return;
-    }
-    window.dispatchEvent(new CustomEvent('titan:open-support-info'));
-  }, []);
-
   return (
     <header className="tm-topbar">
       <Link to="/" className="tm-topbar__brand" aria-label="TITAN PRO home">
@@ -99,6 +77,7 @@ export default function TopBar({ onOpenChat }) {
       </Link>
 
       <nav className="tm-topbar__nav" aria-label="Primary">
+        <DigitalClock />
         <button
           type="button"
           className={`tm-topbar__link tm-topbar__link--btn tm-topbar__refresh ${refreshing ? 'is-loading' : ''}`}
@@ -109,15 +88,6 @@ export default function TopBar({ onOpenChat }) {
         >
           <Icon name="refresh" size={13} />
           <span className="tm-topbar__refresh-meta">{formatRelative(lastRefresh)}</span>
-        </button>
-        <button
-          type="button"
-          className="tm-topbar__link tm-topbar__link--btn tm-topbar__support"
-          onClick={handleSupport}
-          aria-label={isChatwootConfigured() ? 'Buka support widget' : 'Buka info support'}
-          title="Support"
-        >
-          <Icon name="life-buoy" size={13} />
         </button>
       </nav>
     </header>
