@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import TitanLogo from './TitanLogo.jsx';
 import Icon from './Icon.jsx';
 import { useLlmChat } from '../hooks/useLlmChat.js';
-import { QUICK_PROMPTS } from '../data/prompts.js';
 import { getApiKey, getApiKeyPool, clearChatHistory, getProvider } from '../lib/storage.js';
 import { envApiKeysFor, DEFAULT_PROVIDER } from '../lib/llm.js';
 
@@ -62,7 +61,7 @@ export default function ChatPanel({ open, onClose, context, anchored = false }) 
             <p>{context?.pageTitle === 'Beranda'
               ? 'Aku TITAN — maskot AI untuk 8 akun tim. Tanya soal performa, strategi, atau tren konten di akun manapun.'
               : `Aku TITAN — aku bisa jelasin data lengkap akun ${context?.accountName ?? 'ini'}: KPI, top konten viral, kelemahan, sampai saran strategi.`}</p>
-            <p className="tm-chat__welcome-sub">Pilih saran di bawah atau ketik pertanyaan sendiri.</p>
+            <p className="tm-chat__welcome-sub">Langsung ketik pertanyaan di bawah.</p>
           </div>
         )}
 
@@ -87,14 +86,6 @@ export default function ChatPanel({ open, onClose, context, anchored = false }) 
           </div>
         )}
       </div>
-
-      {QUICK_PROMPTS.length > 0 && (
-        <div className="tm-chat__quick">
-          {QUICK_PROMPTS.map((q) => (
-            <button key={q} type="button" onClick={() => send(q)} disabled={loading}>{q}</button>
-          ))}
-        </div>
-      )}
 
       {error && (
         <div className="tm-chat__error" role="alert" title={error}>

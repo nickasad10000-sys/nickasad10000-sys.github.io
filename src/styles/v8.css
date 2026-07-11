@@ -452,18 +452,31 @@
   .acct-row__platform { font-size: 0.55rem; }
   .acct-row__rank { width: 28px; height: 28px; font-size: 0.78rem; }
   .tm-chat { right: 12px; bottom: 90px; width: calc(100vw - 24px); height: calc(100dvh - 110px); border-radius: var(--radius); }
-  /* On mobile, the anchored chat becomes a full-width sheet pinned to
-     the topbar so the mascot stays tappable and the chat is easy to type in. */
+  /* On mobile, the anchored chat becomes a full-screen sheet pinned just
+     below the topbar. inset + safe-area keeps it inside the viewport on
+     iOS Safari where 100dvh alone over-accounts for chrome. */
   .tm-chat--anchored {
     position: fixed;
-    top: 64px;
-    right: 8px;
-    left: 8px;
-    width: auto;
-    height: calc(100dvh - 80px);
+    top: calc(56px + env(safe-area-inset-top, 0px));
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
     max-width: none;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
   }
   .tm-chat--anchored::before { display: none; }
+  /* Tighten chat internals on mobile so the body has room to scroll. */
+  .tm-chat__head { padding: 12px 14px; }
+  .tm-chat__body { padding: 12px; }
+  .tm-chat__welcome { padding: 12px 14px; font-size: 0.82rem; }
+  .tm-chat__form { padding: 8px 10px; gap: 6px; }
+  .tm-chat__form input { padding: 9px 14px; font-size: 0.85rem; }
+  .tm-chat__form button[type="submit"] { width: 36px; height: 36px; }
   /* .tm-mascot sizing now driven by inline <style> in TitanMascot.jsx so
      desktop is larger and mobile stays compact. */
 }
@@ -634,34 +647,6 @@
   0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
   40%           { transform: scale(1);   opacity: 1; }
 }
-
-.tm-chat__quick {
-  padding: 8px 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  border-top: 1px solid var(--surface-line);
-  background: rgba(0, 0, 0, 0.18);
-}
-.tm-chat__quick button {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--bronze-line);
-  background: rgba(200, 165, 95, 0.08);
-  color: var(--bronze-light);
-  cursor: pointer;
-  transition: all 150ms ease;
-  white-space: nowrap;
-}
-.tm-chat__quick button:hover:not(:disabled) {
-  background: rgba(200, 165, 95, 0.18);
-  color: var(--text-strong);
-  transform: translateY(-1px);
-}
-.tm-chat__quick button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .tm-chat__error {
   display: flex;
