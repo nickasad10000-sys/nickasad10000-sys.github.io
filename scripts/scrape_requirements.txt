@@ -1,0 +1,9 @@
+# TITAN PRO V8 — Python dependencies for the scraper pipeline.
+# Install once:  pip install -r scripts/scrape_requirements.txt
+# Playwright browser:  python -m playwright install chromium
+
+scrapling>=0.4,<1.0     # stealth HTML fetcher + adaptive parser
+playwright>=1.40,<2.0   # headless browser fallback for JS-rendered content
+httpx>=0.27,<1.0        # async HTTP client
+requests>=2.32,<3.0     # sync HTTP client (fallback)
+python-dotenv>=1.0,<2.0 # load .env at runtime

@@ -11,3 +11,23 @@ reference/
 tests/*.png
 tests/*.html
 tests/visual/
+
+# TITAN scraper outputs (PII + ephemeral)
+scripts/scrape/cookies.txt
+scripts/scrape/raw/*.json
+scripts/scrape/output/*.json
+!scripts/scrape/raw/.gitkeep
+!scripts/scrape/output/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Scraper local files (user's own cookies + leftovers — sensitive)
+"# Netscape HTTP Cookie File.txt"
+*tiktokcookiebaru*
+*cookiestiktok*
+
+# Auto-backups from data pipeline formatter
+src/data/*.bak-*.json
