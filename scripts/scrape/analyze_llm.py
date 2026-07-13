@@ -176,6 +176,32 @@ def _build_prompt(
             "by anti-bot — focus on profile meta + KPI totals only."
         )
 
+    # Compute median engagement & outlier note for more honest analysis
+    er_note = ""
+    if top_likes:
+        likes_vals = []
+        for p in top_likes:
+            v = parse_int(p.get("likes", "0"))
+            if v > 0:
+                likes_vals.append(v)
+        if likes_vals:
+            likes_vals_sorted = sorted(likes_vals)
+            n = len(likes_vals_sorted)
+            median = (
+                likes_vals_sorted[n // 2]
+                if n % 2 == 1
+                else (likes_vals_sorted[n // 2 - 1] + likes_vals_sorted[n // 2]) / 2
+            )
+            top = likes_vals_sorted[-1]
+            outlier = top > 5 * median and top > 1000
+            if outlier:
+                er_note = (
+                    f"\nENGAGEMENT DISTRIBUTION: median likes={int(median):,}, "
+                    f"top post={top:,} (viral outlier, >5x median). "
+                    f"Mean is skewed by this viral post. Discuss BOTH typical "
+                    f"engagement (around median) and the viral potential."
+                )
+
     user = f"""Analyze this social media account and respond with ONLY valid JSON (no markdown, no preamble).
 
 ACCOUNT: {profile.get('displayName')} (@{profile.get('handle')}) on {profile.get('platform')}
@@ -190,7 +216,7 @@ TOP 5 BY VIEWS:
 
 TOP 5 BY LIKES:
 {top_lines_l}
-{drift_note}{platform_note}
+{drift_note}{platform_note}{er_note}
 
 JSON SCHEMA:
 {{
