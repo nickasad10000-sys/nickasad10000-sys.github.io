@@ -76,15 +76,16 @@ function Section({ title, icon, children, platform }) {
   );
 }
 
-function TopPostsTable({ rows, color }) {
+function TopPostsTable({ rows, color, metric = 'views' }) {
   if (!rows || rows.length === 0) return <p className="muted">Tidak ada data.</p>;
+  const metricLabel = { views: 'Tayangan', likes: 'Suka', comments: 'Komentar' }[metric] || 'Tayangan';
   return (
     <div className="ap-table-wrap">
       <table className="ap-table">
         <thead>
           <tr>
             <th>#</th>
-            <th className="num">Tayangan</th>
+            <th className="num">{metricLabel}</th>
             <th className="num">Suka</th>
             <th className="num">Komentar</th>
             <th className="num">ER</th>
@@ -273,7 +274,7 @@ function DurationList({ duration }) {
               <div className="ap-duration__bar" style={{ width: `${pct}%` }} />
             </div>
             <div className="ap-duration__meta">
-              <b><CountUp to={d.posts} duration={1.0} /></b> video · {d.views} views · ER {d.er}
+              <b><CountUp to={d.posts} duration={1.0} /></b> video · {d.views} views{d.share ? ` · ${d.share}` : ''}{d.er ? ` · ER ${d.er}` : ''}
             </div>
           </div>
         );
@@ -379,16 +380,22 @@ export default function AccountPage() {
       </Section>
 
       {/* 2-4. Top Posts */}
-      <Section title="5 Post Teratas · Tayangan" icon={<Icon name="crown" size={14} />} platform={profile.platform}>
-        <TopPostsTable rows={topByViews} />
-      </Section>
+      {profile.platform === 'instagram' ? (
+        <Section title="5 Post Teratas · Suka (Tayangan tidak tersedia di IG)" icon={<Icon name="crown" size={14} />} platform={profile.platform}>
+          <TopPostsTable rows={topByLikes} metric="likes" />
+        </Section>
+      ) : (
+        <Section title="5 Post Teratas · Tayangan" icon={<Icon name="crown" size={14} />} platform={profile.platform}>
+          <TopPostsTable rows={topByViews} metric="views" />
+        </Section>
+      )}
 
       <Section title="5 Post Teratas · Suka" icon={<Icon name="heart" size={14} />} platform={profile.platform}>
-        <TopPostsTable rows={topByLikes} />
+        <TopPostsTable rows={topByLikes} metric="likes" />
       </Section>
 
       <Section title="5 Post Teratas · Komentar" icon={<Icon name="comments" size={14} />} platform={profile.platform}>
-        <TopPostsTable rows={topByComments} />
+        <TopPostsTable rows={topByComments} metric="comments" />
       </Section>
 
       {/* 5. Tier Distribution */}

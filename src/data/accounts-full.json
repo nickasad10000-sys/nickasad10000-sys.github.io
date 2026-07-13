@@ -11,7 +11,7 @@
     },
     "kpis": [
       {
-        "value": "2.8K",
+        "value": "9.9K",
         "label": "Followers"
       },
       {
@@ -43,7 +43,7 @@
         "label": "Engagement Rate"
       },
       {
-        "value": "428,8",
+        "value": "428.8",
         "label": "Rata-rata Suka"
       },
       {
@@ -217,19 +217,19 @@
     ],
     "tierDist": [
       {
-        "label": "🔥 Viral (≥100.000)",
+        "label": "🔥 Viral (≥100K)",
         "width": 43.6,
         "count": "34",
         "pct": "15.6%"
       },
       {
-        "label": "⚡ Tinggi (≥10.000)",
+        "label": "⚡ Tinggi (≥10K)",
         "width": 65.4,
         "count": "51",
         "pct": "23.4%"
       },
       {
-        "label": "✅ Bagus (≥1.000)",
+        "label": "✅ Bagus (≥1K)",
         "width": 100,
         "count": "78",
         "pct": "35.8%"
@@ -241,7 +241,7 @@
         "pct": "18.8%"
       },
       {
-        "label": "📉 Rendah (≥100)",
+        "label": "Rendah (<100)",
         "width": 17.9,
         "count": "14",
         "pct": "6.4%"
@@ -355,10 +355,10 @@
       "kekuatan": [
         "Konten yang relevan dan menarik bagi penonton yang tertarik dengan topik properti",
         "Tingkat keterlibatan yang tinggi dengan rata-rata jumlah suka dan komentar yang baik",
-        "Persentase konten viral yang cukup tinggi (15,6%)"
+        "Persentase konten viral yang cukup tinggi (15.6%)"
       ],
       "kelemahan": [
-        "Pertumbuhan pengikut yang lambat, hanya 2,8K saat ini",
+        "Pertumbuhan pengikut yang lambat, hanya 2.8K saat ini",
         "Rata-rata tayangan per video yang masih rendah, hanya 22K",
         "Kurangnya konsistensi dalam mengunggah konten baru"
       ],
@@ -374,7 +374,7 @@
     },
     "benchmark": {
       "industri": "Rata-rata engagement rate 5-8% untuk niche properti",
-      "catatan": "Akun ini memiliki engagement rate yang melebihi benchmark industri, yaitu 1,99%"
+      "catatan": "Akun ini memiliki engagement rate yang melebihi benchmark industri, yaitu 1.99%"
     },
     "growth": {
       "target": "Meningkatkan jumlah pengikut menjadi 5.000 dalam 3 bulan ke depan",
@@ -388,42 +388,42 @@
       {
         "day": "Senin",
         "views": "20K",
-        "likes": "379,8",
+        "likes": "379.8",
         "posts": "38",
         "comments": "15.5"
       },
       {
         "day": "Selasa",
         "views": "17K",
-        "likes": "333,9",
+        "likes": "333.9",
         "posts": "32",
         "comments": "13.6"
       },
       {
         "day": "Rabu",
         "views": "21K",
-        "likes": "406,9",
+        "likes": "406.9",
         "posts": "34",
         "comments": "16.6"
       },
       {
         "day": "Kamis",
         "views": "29K",
-        "likes": "550,8",
+        "likes": "550.8",
         "posts": "29",
         "comments": "22.5"
       },
       {
         "day": "Jumat",
         "views": "34K",
-        "likes": "654,3",
+        "likes": "654.3",
         "posts": "31",
         "comments": "26.7"
       },
       {
         "day": "Sabtu",
         "views": "42K",
-        "likes": "802,5",
+        "likes": "802.5",
         "posts": "28",
         "comments": "32.8"
       },
@@ -638,31 +638,36 @@
         "range": "0–15 detik",
         "posts": 8,
         "views": "14K",
-        "er": "3.7%"
+        "er": "",
+        "share": "3.7%"
       },
       {
         "range": "15–30 detik",
         "posts": 34,
         "views": "20K",
-        "er": "15.6%"
+        "er": "",
+        "share": "15.6%"
       },
       {
         "range": "30–60 detik",
         "posts": 98,
         "views": "27K",
-        "er": "44.9%"
+        "er": "",
+        "share": "45.0%"
       },
       {
         "range": "1–2 menit",
         "posts": 67,
         "views": "24K",
-        "er": "30.7%"
+        "er": "",
+        "share": "30.7%"
       },
       {
         "range": "> 2 menit",
         "posts": 11,
         "views": "17K",
-        "er": "5.0%"
+        "er": "",
+        "share": "5.0%"
       }
     ]
   },
@@ -678,7 +683,7 @@
     },
     "kpis": [
       {
-        "value": "3.4K",
+        "value": "18K",
         "label": "Followers"
       },
       {
@@ -718,7 +723,7 @@
         "label": "Rata-rata Komentar"
       },
       {
-        "value": "88 (26.0%)",
+        "value": "88 (26%)",
         "label": "Viral Posts"
       },
       {
@@ -884,19 +889,19 @@
     ],
     "tierDist": [
       {
-        "label": "🔥 Viral (≥100.000)",
+        "label": "🔥 Viral (≥100K)",
         "width": 89.8,
         "count": "88",
-        "pct": "26.0%"
+        "pct": "26%"
       },
       {
-        "label": "⚡ Tinggi (≥10.000)",
+        "label": "⚡ Tinggi (≥10K)",
         "width": 63.3,
         "count": "62",
         "pct": "18.3%"
       },
       {
-        "label": "✅ Bagus (≥1.000)",
+        "label": "✅ Bagus (≥1K)",
         "width": 100,
         "count": "98",
         "pct": "28.9%"
@@ -905,10 +910,10 @@
         "label": "📊 Rata-rata (≥100)",
         "width": 62.2,
         "count": "61",
-        "pct": "18.0%"
+        "pct": "18%"
       },
       {
-        "label": "📉 Rendah (≥100)",
+        "label": "Rendah (<100)",
         "width": 30.6,
         "count": "30",
         "pct": "8.8%"
@@ -1041,7 +1046,7 @@
     },
     "benchmark": {
       "industri": "Rata-rata engagement rate untuk niche informasi lokal adalah 2-3%",
-      "catatan": "Akun ini telah melampaui benchmark industri dengan engagement rate 1,92%"
+      "catatan": "Akun ini telah melampaui benchmark industri dengan engagement rate 1.92%"
     },
     "growth": {
       "target": "Meningkatkan jumlah pengikut menjadi 25.000 dalam 3 bulan",
@@ -1285,31 +1290,36 @@
         "range": "0–15 detik",
         "posts": 14,
         "views": "28K",
-        "er": "4.1%"
+        "er": "",
+        "share": "4.1%"
       },
       {
         "range": "15–30 detik",
         "posts": 87,
         "views": "39K",
-        "er": "25.7%"
+        "er": "",
+        "share": "25.7%"
       },
       {
         "range": "30–60 detik",
         "posts": 156,
         "views": "49K",
-        "er": "46.0%"
+        "er": "",
+        "share": "46.0%"
       },
       {
         "range": "1–2 menit",
         "posts": 71,
         "views": "42K",
-        "er": "20.9%"
+        "er": "",
+        "share": "20.9%"
       },
       {
         "range": "> 2 menit",
         "posts": 11,
         "views": "22K",
-        "er": "3.2%"
+        "er": "",
+        "share": "3.2%"
       }
     ]
   },
@@ -1325,7 +1335,7 @@
     },
     "kpis": [
       {
-        "value": "5.6K",
+        "value": "33K",
         "label": "Followers"
       },
       {
@@ -1357,11 +1367,11 @@
         "label": "Engagement Rate"
       },
       {
-        "value": "650,8",
+        "value": "650.8",
         "label": "Rata-rata Suka"
       },
       {
-        "value": "22.0",
+        "value": "22",
         "label": "Rata-rata Komentar"
       },
       {
@@ -1531,19 +1541,19 @@
     ],
     "tierDist": [
       {
-        "label": "🔥 Viral (≥100.000)",
+        "label": "🔥 Viral (≥100K)",
         "width": 26.5,
         "count": "9",
         "pct": "9.4%"
       },
       {
-        "label": "⚡ Tinggi (≥10.000)",
+        "label": "⚡ Tinggi (≥10K)",
         "width": 64.7,
         "count": "22",
         "pct": "22.9%"
       },
       {
-        "label": "✅ Bagus (≥1.000)",
+        "label": "✅ Bagus (≥1K)",
         "width": 100,
         "count": "34",
         "pct": "35.4%"
@@ -1555,7 +1565,7 @@
         "pct": "21.9%"
       },
       {
-        "label": "📉 Rendah (≥100)",
+        "label": "Rendah (<100)",
         "width": 29.4,
         "count": "10",
         "pct": "10.4%"
@@ -1912,31 +1922,36 @@
         "range": "0–15 detik",
         "posts": 12,
         "views": "8.9K",
-        "er": "12.5%"
+        "er": "",
+        "share": "12.5%"
       },
       {
         "range": "15–30 detik",
         "posts": 31,
         "views": "11K",
-        "er": "32.3%"
+        "er": "",
+        "share": "32.3%"
       },
       {
         "range": "30–60 detik",
         "posts": 38,
         "views": "17K",
-        "er": "39.6%"
+        "er": "",
+        "share": "39.6%"
       },
       {
         "range": "1–2 menit",
         "posts": 12,
         "views": "14K",
-        "er": "12.5%"
+        "er": "",
+        "share": "12.5%"
       },
       {
         "range": "> 2 menit",
         "posts": 3,
         "views": "9.8K",
-        "er": "3.1%"
+        "er": "",
+        "share": "3.1%"
       }
     ]
   },
@@ -1984,11 +1999,11 @@
         "label": "Engagement Rate"
       },
       {
-        "value": "21,9",
+        "value": "21.9",
         "label": "Rata-rata Suka"
       },
       {
-        "value": "1.0",
+        "value": "1",
         "label": "Rata-rata Komentar"
       },
       {
@@ -2158,16 +2173,16 @@
     ],
     "tierDist": [
       {
-        "label": "🔥 Viral (≥10.000)",
+        "label": "🔥 Viral (≥10K)",
         "width": 1.5,
         "count": "3",
         "pct": "0.7%"
       },
       {
-        "label": "⚡ Tinggi (≥1.000)",
+        "label": "⚡ Tinggi (≥1K)",
         "width": 6.1,
         "count": "12",
-        "pct": "3.0%"
+        "pct": "3%"
       },
       {
         "label": "✅ Bagus (≥100)",
@@ -2182,7 +2197,7 @@
         "pct": "49.4%"
       },
       {
-        "label": "📉 Rendah (≥10)",
+        "label": "Rendah (<10)",
         "width": 51,
         "count": "101",
         "pct": "25.2%"
@@ -2216,7 +2231,7 @@
       {
         "tag": "#hunian",
         "count": 212,
-        "pct": "10.0%",
+        "pct": "10%",
         "avgViews": "1.3K"
       },
       {
@@ -2295,13 +2310,13 @@
     "insight": {
       "kekuatan": [
         "Konten yang berfokus pada properti dan hunian di Lumajang, sesuai dengan niche yang jelas",
-        "Engagement rate yang cukup baik di 1,76%",
+        "Engagement rate yang cukup baik di 1.76%",
         "Memiliki beberapa konten viral dengan views yang tinggi"
       ],
       "kelemahan": [
-        "Jumlah followers yang masih relatif kecil di 1,1K",
-        "Rata-rata views per konten yang masih rendah di 1,3K",
-        "Persentase konten viral yang masih kecil di 0,8%"
+        "Jumlah followers yang masih relatif kecil di 1.1K",
+        "Rata-rata views per konten yang masih rendah di 1.3K",
+        "Persentase konten viral yang masih kecil di 0.8%"
       ],
       "rekomendasi": [
         "Meningkatkan frekuensi posting untuk menjaga konsistensi konten",
@@ -2315,7 +2330,7 @@
     },
     "benchmark": {
       "industri": "Engagement rate 5-8% untuk niche properti dan hunian",
-      "catatan": "Engagement rate akun saat ini di 1,76% masih di bawah benchmark industri, sehingga perlu ditingkatkan."
+      "catatan": "Engagement rate akun saat ini di 1.76% masih di bawah benchmark industri, sehingga perlu ditingkatkan."
     },
     "growth": {
       "target": "Meningkatkan jumlah followers menjadi 2K dan engagement rate menjadi 3% dalam 3 bulan ke depan",
@@ -2329,49 +2344,49 @@
       {
         "day": "Senin",
         "views": "1.2K",
-        "likes": "21,8",
+        "likes": "21.8",
         "posts": "68",
         "comments": "1.1"
       },
       {
         "day": "Selasa",
         "views": "1.2K",
-        "likes": "20,7",
+        "likes": "20.7",
         "posts": "59",
         "comments": "0.9"
       },
       {
         "day": "Rabu",
         "views": "1.4K",
-        "likes": "24,4",
+        "likes": "24.4",
         "posts": "63",
-        "comments": "1.0"
+        "comments": "1"
       },
       {
         "day": "Kamis",
         "views": "1.4K",
-        "likes": "24,9",
+        "likes": "24.9",
         "posts": "57",
         "comments": "1.2"
       },
       {
         "day": "Jumat",
         "views": "1.7K",
-        "likes": "29,5",
+        "likes": "29.5",
         "posts": "61",
         "comments": "1.4"
       },
       {
         "day": "Sabtu",
         "views": "1.3K",
-        "likes": "23,2",
+        "likes": "23.2",
         "posts": "48",
-        "comments": "1.0"
+        "comments": "1"
       },
       {
         "day": "Minggu",
         "views": "1.1K",
-        "likes": "20,2",
+        "likes": "20.2",
         "posts": "45",
         "comments": "0.8"
       }
@@ -2589,31 +2604,36 @@
         "range": "0–15 detik",
         "posts": 21,
         "views": "980",
-        "er": "5.2%"
+        "er": "",
+        "share": "5.2%"
       },
       {
         "range": "15–30 detik",
         "posts": 112,
         "views": "1.4K",
-        "er": "27.9%"
+        "er": "",
+        "share": "27.9%"
       },
       {
         "range": "30–60 detik",
         "posts": 178,
         "views": "1.6K",
-        "er": "44.4%"
+        "er": "",
+        "share": "44.4%"
       },
       {
         "range": "1–2 menit",
         "posts": 76,
         "views": "1.3K",
-        "er": "18.9%"
+        "er": "",
+        "share": "19.0%"
       },
       {
         "range": "> 2 menit",
         "posts": 14,
         "views": "890",
-        "er": "3.5%"
+        "er": "",
+        "share": "3.5%"
       }
     ]
   },
@@ -2657,7 +2677,7 @@
         "label": "Rata-rata Views"
       },
       {
-        "value": "0.00%",
+        "value": "61.56%",
         "label": "Engagement Rate"
       },
       {
@@ -2669,7 +2689,7 @@
         "label": "Rata-rata Komentar"
       },
       {
-        "value": "0 (0.0%)",
+        "value": "0 (0%)",
         "label": "Viral Posts"
       },
       {
@@ -2681,30 +2701,6 @@
       {
         "rank": "1",
         "views": "0",
-        "likes": "65",
-        "comments": "20",
-        "shares": "0",
-        "er": "0.00%",
-        "date": "2026-01-14",
-        "caption": "Kalo nikah sama ardian tanah sudah jelas soalnya\n\n#ardiantanah #humor #komedi #mafiatanah",
-        "_url": "https://www.instagram.com/p/DTeT7QFE372/",
-        "_id": "3809569969399889654_3292893687"
-      },
-      {
-        "rank": "2",
-        "views": "0",
-        "likes": "121",
-        "comments": "1",
-        "shares": "0",
-        "er": "0.00%",
-        "date": "2026-07-11",
-        "caption": "kalau kalian pilih yang coffe latte atau strawberry sweet??☺️\n\n#ardiantanah #komedi\nLokasi @kopi.begog",
-        "_url": "https://www.instagram.com/p/DapK6CjzgmZ/",
-        "_id": "3938727318055160217_3292893687"
-      },
-      {
-        "rank": "3",
-        "views": "0",
         "likes": "34K",
         "comments": "1.8K",
         "shares": "0",
@@ -2715,28 +2711,52 @@
         "_id": "3938022345554042744_3292893687"
       },
       {
-        "rank": "4",
+        "rank": "2",
         "views": "0",
-        "likes": "27",
-        "comments": "5",
+        "likes": "11K",
+        "comments": "243",
         "shares": "0",
         "er": "0.00%",
-        "date": "2026-07-08",
-        "caption": "menurut kalian apakah tindakan ini fantasss??\n\n#ardiantanah #komedi",
-        "_url": "https://www.instagram.com/p/DahuKVdzz66/",
-        "_id": "3936630569681501882_3292893687"
+        "date": "2026-06-01",
+        "caption": "pensiun jadi fans arsenal🙏🏻",
+        "_url": "https://www.instagram.com/p/DZC9OjqTHZU/",
+        "_id": "3909956707711481428_3292893687"
+      },
+      {
+        "rank": "3",
+        "views": "0",
+        "likes": "292",
+        "comments": "11",
+        "shares": "0",
+        "er": "0.00%",
+        "date": "2026-03-29",
+        "caption": "Ikan di dalam kolam❌\nAyam goreng dalam kolam✅😅\n\n. \n. \n. \n\n#ardiantanah #syahfalahproperti #wisatalumajang #kontenlucu",
+        "_url": "https://www.instagram.com/p/DWdi-1OkzfG/",
+        "_id": "3863397906695534534_3292893687"
+      },
+      {
+        "rank": "4",
+        "views": "0",
+        "likes": "277",
+        "comments": "58",
+        "shares": "0",
+        "er": "0.00%",
+        "date": "2026-03-30",
+        "caption": "Jomblo jangan senyum-senyum sendiri😋\n\n \n. \n. \n. \n\n#ardiantanah #nisyananda #wisatalumajang #romance",
+        "_url": "https://www.instagram.com/p/DWf20AVk3cH/",
+        "_id": "3864048073593550599_3292893687"
       },
       {
         "rank": "5",
         "views": "0",
-        "likes": "65",
-        "comments": "2",
+        "likes": "260",
+        "comments": "9",
         "shares": "0",
         "er": "0.00%",
-        "date": "2026-07-09",
-        "caption": "Seperti yahg sudah-sudah kalo urusan hibur menghibur serahkan saja pada @priskilaoktavianii @bangbondt dan @ardiantanah,",
-        "_url": "https://www.instagram.com/p/DakYW-xgf0a/",
-        "_id": "3937379106576006426_7532504573"
+        "date": "2026-03-22",
+        "caption": "Bocil = aset pas hari raya, \"uangnya dipegang ayah dulu ya le\"😂\n\n. \n. \n. \n\n#ardiantanah #SyahfalahProperti #RumahSubsidi",
+        "_url": "https://www.instagram.com/p/DWLhzrrkwQQ/",
+        "_id": "3858326192903095312_3292893687"
       }
     ],
     "topByLikes": [
@@ -2865,34 +2885,34 @@
     ],
     "tierDist": [
       {
-        "label": "Viral (≥10.000)",
+        "label": "Viral (≥10K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
-        "label": "Tinggi (≥1.000)",
+        "label": "Tinggi (≥1K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Bagus (≥100)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rata-rata (≥10)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rendah (<10)",
         "width": 100,
         "count": "24",
-        "pct": "100.0%"
+        "pct": "100%"
       }
     ],
     "hashtags": [
@@ -3287,7 +3307,7 @@
         "label": "Rata-rata Views"
       },
       {
-        "value": "0.00%",
+        "value": "2.41%",
         "label": "Engagement Rate"
       },
       {
@@ -3299,7 +3319,7 @@
         "label": "Rata-rata Komentar"
       },
       {
-        "value": "0 (0.0%)",
+        "value": "0 (0%)",
         "label": "Viral Posts"
       },
       {
@@ -3311,18 +3331,6 @@
       {
         "rank": "1",
         "views": "0",
-        "likes": "29",
-        "comments": "0",
-        "shares": "0",
-        "er": "0.00%",
-        "date": "2026-07-10",
-        "caption": "Full Line Up sudah rilis. Info intelejen mimin sih gak ada OTS, jadi feelingku fren sikat aja tiket 2 days pass. Daripad",
-        "_url": "https://www.instagram.com/p/DamT1aTGMP6/",
-        "_id": "3937922157435732986_36883918534"
-      },
-      {
-        "rank": "2",
-        "views": "0",
         "likes": "836",
         "comments": "36",
         "shares": "0",
@@ -3333,7 +3341,7 @@
         "_id": "3927163708309526737_36883918534"
       },
       {
-        "rank": "3",
+        "rank": "2",
         "views": "0",
         "likes": "154",
         "comments": "3",
@@ -3345,28 +3353,40 @@
         "_id": "3929261405065267451_57806687104"
       },
       {
+        "rank": "3",
+        "views": "0",
+        "likes": "49",
+        "comments": "4",
+        "shares": "0",
+        "er": "0.00%",
+        "date": "2026-07-10",
+        "caption": "Siapa dari kalian yang biasanya sholat di Masjid Anas Mahfud ketika main ke Alun-alun Lumajang lur? Coba komen di bawah",
+        "_url": "https://www.instagram.com/p/DamaJxFmDzQ/",
+        "_id": "3937949944573869264_36883918534"
+      },
+      {
         "rank": "4",
         "views": "0",
-        "likes": "1",
+        "likes": "29",
         "comments": "0",
         "shares": "0",
         "er": "0.00%",
-        "date": "2026-07-12",
-        "caption": "Cos Maybeeeee!! Fans Inggris siapno mental ws, kesok ketemu anak FIFA\n\nDidukung oleh:\n@nfsecondstore @pmstorelumajang\n\n#",
-        "_url": "https://www.instagram.com/p/Darx-zVmMaV/",
-        "_id": "3939462119075399317_36883918534"
+        "date": "2026-07-10",
+        "caption": "Full Line Up sudah rilis. Info intelejen mimin sih gak ada OTS, jadi feelingku fren sikat aja tiket 2 days pass. Daripad",
+        "_url": "https://www.instagram.com/p/DamT1aTGMP6/",
+        "_id": "3937922157435732986_36883918534"
       },
       {
         "rank": "5",
         "views": "0",
-        "likes": "3",
-        "comments": "0",
+        "likes": "27",
+        "comments": "2",
         "shares": "0",
         "er": "0.00%",
-        "date": "2026-07-12",
-        "caption": "Fenomena ribuan ikan mabuk kembali terjadi di Ranu Klakah, Desa Tegalrandu, Kecamatan Klakah, Kabupaten Lumajang, Minggu",
-        "_url": "https://www.instagram.com/p/DarvtlMzYiV/",
-        "_id": "3939452139571349653_36883918534"
+        "date": "2026-07-10",
+        "caption": "Siapa yang tahu sejarah beliau? Wong Majang seharusnya tahu sejarah Lumajang sih.\nGimana lurr bangga nggak punya Bupati ",
+        "_url": "https://www.instagram.com/p/DanJD8JmC96/",
+        "_id": "3938156252321296250_36883918534"
       }
     ],
     "topByLikes": [
@@ -3495,34 +3515,34 @@
     ],
     "tierDist": [
       {
-        "label": "Viral (≥10.000)",
+        "label": "Viral (≥10K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
-        "label": "Tinggi (≥1.000)",
+        "label": "Tinggi (≥1K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Bagus (≥100)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rata-rata (≥10)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rendah (<10)",
         "width": 100,
         "count": "23",
-        "pct": "100.0%"
+        "pct": "100%"
       }
     ],
     "hashtags": [
@@ -3571,19 +3591,19 @@
       {
         "tag": "#terraeworld",
         "count": 1,
-        "pct": "2.0%",
+        "pct": "2%",
         "avgViews": "0"
       },
       {
         "tag": "#ranupani",
         "count": 1,
-        "pct": "2.0%",
+        "pct": "2%",
         "avgViews": "0"
       },
       {
         "tag": "#conservationrun",
         "count": 1,
-        "pct": "2.0%",
+        "pct": "2%",
         "avgViews": "0"
       }
     ],
@@ -3615,13 +3635,13 @@
     ],
     "insight": {
       "kekuatan": [
-        "Pertumbuhan pengikut yang signifikan (57,9% peningkatan)",
+        "Pertumbuhan pengikut yang signifikan (57.9% peningkatan)",
         "Konten yang menarik dan relevan dengan niche",
         "Keterlibatan komunitas yang baik melalui komentar"
       ],
       "kelemahan": [
         "Kurangnya konten yang viral (0% konten viral)",
-        "Rendahnya tingkat keterlibatan (rata-rata 0,00% ER)",
+        "Rendahnya tingkat keterlibatan (rata-rata 0.00% ER)",
         "Kurangnya konten video/reel yang dapat meningkatkan keterlibatan"
       ],
       "rekomendasi": [
@@ -3786,7 +3806,7 @@
         "label": "Rata-rata Views"
       },
       {
-        "value": "0.00%",
+        "value": "0.01%",
         "label": "Engagement Rate"
       },
       {
@@ -3798,7 +3818,7 @@
         "label": "Rata-rata Komentar"
       },
       {
-        "value": "0 (0.0%)",
+        "value": "0 (0%)",
         "label": "Viral Posts"
       },
       {
@@ -3810,6 +3830,18 @@
       {
         "rank": "1",
         "views": "0",
+        "likes": "157",
+        "comments": "13",
+        "shares": "0",
+        "er": "0.00%",
+        "date": "2026-06-16",
+        "caption": "Niat nonton konser ✅️\nSemangat njajan ✅️\n\nMbak @dewiinatalia sampe binun buanyaak bgt booth jajanan di 3rd Anniversary @",
+        "_url": "https://www.instagram.com/p/DZoR6BjpQny/",
+        "_id": "3920462229818116594_2044055622"
+      },
+      {
+        "rank": "2",
+        "views": "0",
         "likes": "3",
         "comments": "2",
         "shares": "0",
@@ -3820,7 +3852,7 @@
         "_id": "3939360419109206102_2319759819"
       },
       {
-        "rank": "2",
+        "rank": "3",
         "views": "0",
         "likes": "3",
         "comments": "7",
@@ -3832,7 +3864,7 @@
         "_id": "3933617885872978947_2319759819"
       },
       {
-        "rank": "3",
+        "rank": "4",
         "views": "0",
         "likes": "3",
         "comments": "0",
@@ -3844,7 +3876,7 @@
         "_id": "3933008997352012605_2319759819"
       },
       {
-        "rank": "4",
+        "rank": "5",
         "views": "0",
         "likes": "3",
         "comments": "2",
@@ -3854,18 +3886,6 @@
         "caption": "🤎\n\n@kanayacafeofficial\n\nCutie 🥨\n\nI made you a playlist 🎶",
         "_url": "https://www.instagram.com/p/DaUlLnllAH6/",
         "_id": "3932931900742828538_2319759819"
-      },
-      {
-        "rank": "5",
-        "views": "0",
-        "likes": "3",
-        "comments": "3",
-        "shares": "0",
-        "er": "0.00%",
-        "date": "2026-06-17",
-        "caption": "udah hafal lagunya Barasuara cuma 1 malah ketinggalan, bisa diulang lagi ngga sihhh @magnolia.coffee . Janji dehh gaa gi",
-        "_url": "https://www.instagram.com/p/DZrs5D6iOLq/",
-        "_id": "3921425335816086250_2319759819"
       }
     ],
     "topByLikes": [
@@ -3994,34 +4014,34 @@
     ],
     "tierDist": [
       {
-        "label": "Viral (≥10.000)",
+        "label": "Viral (≥10K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
-        "label": "Tinggi (≥1.000)",
+        "label": "Tinggi (≥1K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Bagus (≥100)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rata-rata (≥10)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rendah (<10)",
         "width": 100,
         "count": "24",
-        "pct": "100.0%"
+        "pct": "100%"
       }
     ],
     "hashtags": [
@@ -4452,7 +4472,7 @@
         "label": "Rata-rata Views"
       },
       {
-        "value": "0.00%",
+        "value": "1.71%",
         "label": "Engagement Rate"
       },
       {
@@ -4464,7 +4484,7 @@
         "label": "Rata-rata Komentar"
       },
       {
-        "value": "0 (0.0%)",
+        "value": "0 (0%)",
         "label": "Viral Posts"
       },
       {
@@ -4476,14 +4496,14 @@
       {
         "rank": "1",
         "views": "0",
-        "likes": "49",
-        "comments": "9",
+        "likes": "87",
+        "comments": "16",
         "shares": "0",
         "er": "0.00%",
-        "date": "2025-11-18",
-        "caption": "JANGAN MAU TERTIPU, BELI RUMAH SUBSIDI KOK HARUS RENOVASI\n\nPerumahan Mustika Lembayung Sumbersuko. Rumah Subsidi Tanpa R",
-        "_url": "https://www.instagram.com/p/DRMgWAgElez/",
-        "_id": "3768529238057179059_6516969650"
+        "date": "2026-06-09",
+        "caption": "PILIH MANA..?\nNgontrak = bayar punya orang. \nNyicil = bayar punya sendiri.\n\nMending uangnya buat nyicil yang pasti-pasti",
+        "_url": "https://www.instagram.com/p/DZXdNJCPx0W/",
+        "_id": "3915726847425322262_6516969650"
       },
       {
         "rank": "2",
@@ -4500,6 +4520,18 @@
       {
         "rank": "3",
         "views": "0",
+        "likes": "49",
+        "comments": "9",
+        "shares": "0",
+        "er": "0.00%",
+        "date": "2025-11-18",
+        "caption": "JANGAN MAU TERTIPU, BELI RUMAH SUBSIDI KOK HARUS RENOVASI\n\nPerumahan Mustika Lembayung Sumbersuko. Rumah Subsidi Tanpa R",
+        "_url": "https://www.instagram.com/p/DRMgWAgElez/",
+        "_id": "3768529238057179059_6516969650"
+      },
+      {
+        "rank": "4",
+        "views": "0",
         "likes": "48",
         "comments": "17",
         "shares": "0",
@@ -4510,28 +4542,16 @@
         "_id": "3514795702704409086_6516969650"
       },
       {
-        "rank": "4",
-        "views": "0",
-        "likes": "15",
-        "comments": "3",
-        "shares": "0",
-        "er": "0.00%",
-        "date": "2026-07-04",
-        "caption": "BENER² GA INGET UMUR MARKETING KITA SATU INI😭\n\nMumpung masih muda dan punya uang 100 ribu  mending uangnya buat booking ",
-        "_url": "https://www.instagram.com/p/DaXDtONBVOp/",
-        "_id": "3933629101298242473_6516969650"
-      },
-      {
         "rank": "5",
         "views": "0",
-        "likes": "13",
-        "comments": "0",
+        "likes": "46",
+        "comments": "13",
         "shares": "0",
         "er": "0.00%",
-        "date": "2026-07-04",
-        "caption": "GALAU TAPI GAK PREMIUM 😂 \n\nSoalnya yang premium cuma ada di Perumahan Mustika Lembayung Sumbersuko Lumajang \n\nRumah prem",
-        "_url": "https://www.instagram.com/p/DaXHOTxhW7z/",
-        "_id": "3933644569161592563_6516969650"
+        "date": "2026-06-25",
+        "caption": "GARA-GARA 100 RIBU SAMPAI JADI GINI 😭 \n\nSoalnya cuma 100rb udah bisa booking rumah istimewa di Mustika Lembayung Sumbers",
+        "_url": "https://www.instagram.com/p/DZ_yzmCBGMf/",
+        "_id": "3927080847945261855_6516969650"
       }
     ],
     "topByLikes": [
@@ -4660,34 +4680,34 @@
     ],
     "tierDist": [
       {
-        "label": "Viral (≥10.000)",
+        "label": "Viral (≥10K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
-        "label": "Tinggi (≥1.000)",
+        "label": "Tinggi (≥1K)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Bagus (≥100)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rata-rata (≥10)",
         "width": 0,
         "count": "0",
-        "pct": "0.0%"
+        "pct": "0%"
       },
       {
         "label": "Rendah (<10)",
         "width": 100,
         "count": "24",
-        "pct": "100.0%"
+        "pct": "100%"
       }
     ],
     "hashtags": [
@@ -4718,7 +4738,7 @@
       {
         "tag": "#rumahsubsidi",
         "count": 13,
-        "pct": "11.0%",
+        "pct": "11%",
         "avgViews": "0"
       },
       {
@@ -4752,12 +4772,7 @@
         "avgViews": "0"
       }
     ],
-    "mentions": [
-      {
-        "handle": "@gmail.com",
-        "count": 1
-      }
-    ],
+    "mentions": [],
     "insight": {
       "kekuatan": [
         "Konten yang menarik dan informatif tentang properti di Lumajang",
@@ -4765,7 +4780,7 @@
         "Konsistensi dalam mengunggah konten"
       ],
       "kelemahan": [
-        "Engagement rate yang rendah, hanya 0,00%",
+        "Engagement rate yang rendah, hanya 0.00%",
         "Tidak ada konten yang viral, dengan 0% dari total postingan",
         "Tidak ada tayangan dan share pada postingan"
       ],
